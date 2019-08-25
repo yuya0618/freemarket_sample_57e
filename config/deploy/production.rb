@@ -47,12 +47,7 @@
 #    auth_methods: %w(password)
 #  }
 #
-set :ssh_options, {
-  port: 3000,#XXXにポート番号
-  keys: [File.expand_path('~/.ssh/mercari57E')],#'~/.ssh/id_rsa'部分をローカル環境の鍵のパスに
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
+
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",
@@ -65,4 +60,11 @@ set :ssh_options, {
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server '3.113.226.226', user: 'ec2-user', roles: %w{app db web}
+server '3.113.226.226',
+  user: 'ec2-user',
+  roles: %w{app db web},
+  ssh_options:{
+      port: 80,
+      keys: %w(~/.ssh/mercari57E.pem),
+      forward_agent: true
+  }
