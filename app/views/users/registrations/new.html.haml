@@ -1,2 +1,39 @@
-
+.devise-main__registration
+  %h2.devise-main__registration__head 会員情報入力
+  = form_for(resource, url: create_user_registration_path, html: { class: 'devise-main__registration__form' }) do |f|
+    .field
+      %span.label ニックネーム
+      %span.necessary 必須
+      = f.text_field :nickname, autofocus: true, placeholder: "例）メルカリ太郎"
+      - if resource.errors.messages[:nickname].present?
+        - resource.errors.messages[:nickname].each do |message|
+          %p.error= message
+    .field
+      %span.label メールアドレス
+      %span.necessary 必須
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+      - if resource.errors.messages[:email].present?
+        - resource.errors.messages[:email].each do |message|
+          %p.error= message
+    .field
+      %span.label パスワード
+      %span.necessary 必須
+      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+      - if resource.errors.messages[:password].present?
+        - resource.errors.messages[:password].each do |message|
+          %p.error= message
+    .field
+      %span.label パスワード（確認）
+      %span.necessary 必須
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+      - if resource.errors.messages[:password_confirmation].present?
+        - resource.errors.messages[:password_confirmation].each do |message|
+          %p.error= message
+    .field
+      = recaptcha_tags
+      - if resource.errors.messages[:base].present?
+        - resource.errors.messages[:base].each do |message|
+          %p.error= message
+    .actions
+      = f.submit "メルカリをはじめる"
 
