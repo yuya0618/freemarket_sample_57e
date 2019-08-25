@@ -5,9 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/sign_up
-  # def new
+  def new
   #   super
-  # end
+  end
 
   # POST /resource
   # def create
