@@ -1,0 +1,39 @@
+.user_new
+  %body
+    / Google Tag Manager (noscript)
+    %noscript
+      %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", :style => "display:none;visibility:hidden", :width => "0"}
+    / End Google Tag Manager (noscript)
+    .single-container
+      %header.single-header
+        %h1
+          %a{:href => "https://www.mercari.com/jp/"}
+            %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512"}/
+      %main.single-main
+        %section.l-single-container
+          %h2.l-single-head.registration 新規会員登録
+          .l-single-inner.registration-form
+            .l-single-content
+              %a.btn-default.btn-mail{:href => "https://www.mercari.com/jp/signup/registration/"}
+                %i.icon-mail
+                メールアドレスで登録する
+              %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+                %i.icon-facebook
+                Facebookで登録する
+              %button#google-login.btn-default.btn-sns.btn-sns-google
+                Googleで登録する
+        %input#facebook_app_id{:type => "hidden", :value => "466308336793848"}/
+      %footer.single-footer
+        %nav
+          %ul.clearfix
+            %li
+              %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+            %li
+              %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+            %li
+              %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+        %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
+        %p
+          %small © 2019 Mercari
+
