@@ -1,6 +1,6 @@
-.devise-main__registration
-  %h2.devise-main__registration__head 会員情報入力
-  = form_for(resource, url: create_user_registration_path, html: { class: 'devise-main__registration__form' }) do |f|
+.user_new
+  %h2.single-container-registration 会員情報入力
+  = form_for(resource, url: create_user_registration_path, html: { class: 'single-container-registration__form' }) do |f|
     .field
       %span.label ニックネーム
       %span.necessary 必須
