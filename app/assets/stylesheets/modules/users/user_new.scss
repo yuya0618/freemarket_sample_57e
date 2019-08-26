@@ -40,23 +40,41 @@
         font-size:14px;
         line-height: 50px;
         &__e-mail{
+          border-radius: 4px;
           background-color: #ea352d;
           color:white;
           text-decoration: none;
           margin-bottom: 16px;
+          .icon{
+            float:left;
+            margin-top:20px;
+            margin-left:10px;
+          }
         }
         &__facebook{
+          border-radius: 4px;
           background-color:#385185;
           color:white;
           text-decoration: none;
           margin-bottom: 16px;
+          img{
+            float:left;
+            margin-top:10px;
+            margin-left:10px;
+          }
         }
         &__google{
-          background: white;
+          border-radius: 4px;
+          background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
           border: #979797 solid 1px;
           color: #333;
           text-decoration: none;
           margin-bottom: 16px;
+          img{
+            float:left;
+            margin-top:10px;
+            margin-left:10px;
+          }
         }
       }
     }
