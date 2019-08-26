@@ -11,6 +11,8 @@
 - has_one :profile
 - has_one :credit_card
 - has_many :items
+- has_many :likes
+- has_many :comments
 
 
 ## profilesテーブル
@@ -20,12 +22,7 @@
 |lasrname|string|null: false|
 |firstname-kana|string|null: false|
 |lastname-kana|string|null: false|
-|firstname|string|null: false|
-|lasrname|string|null: false|
-|first_name_kana|string|null: false|
-|zipcode|string|null: false|
 |prefecture|string|null: false|
-|first_name_kana|string|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null:false|
@@ -40,11 +37,10 @@
 ### Association
 - belongs_to :user
 
-## credit_cardテーブル
+## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |card_number|integer|null: false|
-|expiration_month|integer|null: false|
 |expiration_month|integer|null:false|
 |user_id|refernces|null: false, foreign_key: true|
 
@@ -56,6 +52,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
+|details|string|null: false|
 |user_id|refernces|null: false, foreign_key: true|
 |category_id|refernces|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
@@ -67,8 +64,14 @@
 
 ### Association
 - belongs_to :category
-- has_many :brands
+- belongs_to :brand
 - belongs_to :user
+- belongs_to :size
+- has_one :order
+- has_many :likes
+- has_many :comments
+- has_many :images
+
 
 
 ## categoriesテーブル
@@ -78,65 +81,89 @@
 |item_id|refernces|null: false, foreign_key: true|
 
 ### Association
+- has_many :items
+- has_many :category_sizes
+- has_many :sizes, through: :category_size
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|item_id|refernces|null: false, foreign_key: true|
+
+## category_sizeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size_id|references|null: false, foreign_key: true|
+|category_id|refernces|null: false, foreign_key: true|
+
+### Association
 - has_many :item
-- belongs_to :user
 
-## ~~テーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|name|string|null: false|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :item
 
-## ~~テーブル
+## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|name|string|null: false|
+|item_id|refernces|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :items
+- has_many :category_size
+- has_many :categores, through: :category_size 
 
-## ~~テーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|refernces|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :item
 - belongs_to :user
 
-## ~~テーブル
+
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|text|string||
+|user_id|references|null: false, foreign_key: true|
+|item_id|refernces|null: false, foreign_key: true|
 
-### Association
-- belongs_to :group
-- belongs_to :user
-
-## ~~テーブル
+## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|status|integer|null: false|
+|item_id|refernces|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|refernces|null: false, foreign_key: :true|
 
-### Association
-- belongs_to :group
-- belongs_to :user
 
-## ~~テーブル
+## buyersテーブル
 |Column|Type|Options|
 |------|----|-------|
-||integer|null: false, foreign_key: true|
-||integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
-### Association
-- belongs_to :group
-- belongs_to :user
+
+## sellersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+
+
+## reviewsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|evaluation|integer|null: false|
+|text|string||
+|buyer_id|references|null: false, foreign_key: true|
+|seller_id|refernces|null: false, foreign_key: true|
+|order_id|refernces|null: false, foreign_key: true|
