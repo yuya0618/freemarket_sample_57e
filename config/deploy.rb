@@ -47,13 +47,16 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
 end
-set :default_env, {
-  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
-  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
-}
+
+#Basic認証？？
+# set :default_env, {
+#   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
+#   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+# }

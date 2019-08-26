@@ -63,8 +63,8 @@
 server '3.113.226.226',
   user: 'ec2-user',
   roles: %w{app db web},
-  ssh_options:{
-      port: 80,
-      keys: %w(~/.ssh/mercari57E.pem),
-      forward_agent: true
-  }
+  # ssh_options:{
+  #     port: 80,
+  #     keys: %w(~/.ssh/mercari57E.pem),
+  #     forward_agent: true
+  # }
