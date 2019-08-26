@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "freemarket_sample_57e"
-set :repo_url, "git@github.com/yuya0618/freemarket_sample_57e.git"
+set :repo_url, "http://github.com/yuya0618/freemarket_sample_57e.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
