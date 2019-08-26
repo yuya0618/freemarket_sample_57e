@@ -14,18 +14,23 @@
             %li.active
               会員情報
               .progress-status
+              .progress-status2
             %li
               電話番号認証
               .progress-status
+              .progress-status2
             %li
               お届け先住所入力
               .progress-status
+              .progress-status2
             %li
               支払い方法
               .progress-status
+              .progress-status2
             %li
               完了
               .progress-status
+              .progress-status2
       %main.single-main
         %section.l-single-container
           %h2.l-single-head.registration 会員情報入力
@@ -234,13 +239,14 @@
                   「次へ進む」のボタンを押すことにより、
                   %a{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
                   に同意したものとみなします
-              %button.btn-default.btn-red{:type => "submit"} 次へ進む
+              %button.btn-default.btn-red
+                = link_to '次へ進む','/sms_confirmation'
               .form-group.text-right
                 %p
                   %a{:href => "/jp/help_center/article/423/", :target => "_blank"}
                     本人情報の登録について
                     %i.icon-arrow-right
-      %footer.single-footer
+      .footer.single-footer
         %nav
           %ul.clearfix
             %li
@@ -250,24 +256,6 @@
             %li
               %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
         %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?575670517", :width => "80"}/
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
         %p
           %small © 2019 Mercari
-    %script{:src => "//www-mercari-jp.akamaized.net/assets/js/app.js?3003975446"}
-    / Google Tag Manager
-    :javascript
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KLPT5L5');
-    / End Google Tag Manager
-    %div{:style => "display: none; visibility: hidden;"}
-      :javascript
-        !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1964320460558899");fbq("track","PageView");
-      %noscript
-    %div{:style => "visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"}
-      %div{:style => "width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"}
-      %div{:style => "margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"}
-        %iframe{:frameborder => "0", :name => "c-nge5gr89f97c", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/bframe?hl=ja&v=v1565591531251&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&cb=2uuz8au7y7tc", :style => "width: 100%; height: 100%;", :title => "reCAPTCHA による確認"}
-
