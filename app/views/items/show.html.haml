@@ -11,21 +11,26 @@
           .item__info
             .item__left
               .item__left__main
-                %img.item__left__mainpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__mainpic"
+
+                
+
               / ミニ１段目
               .item__left__sub1
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+
               / ミニ２段目
               .item__left__sub2
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+                =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+
             .item__right
               %table
                 %tr
@@ -80,9 +85,10 @@
           .description
             %p こちらの商品は、、、、
           .bottom
-            %a.bottom__content1 ♡いいね！＃
-            %a.bottom__content1 不適切な商品の報告
-            %a.bottom__content2 あんしん：あんぜんへの取り組み
+            =link_to "♡いいね！＃", "#", class: "bottom__content1"
+            =link_to "不適切な商品の報告", "#", class: "bottom__content1"
+            =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
+
       / コメント
       .comment
         .caution
@@ -101,18 +107,21 @@
 
       / SNS
       .sns
-        %a
-          %img{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
-        %a
-          %img{:src => "https://image.flaticon.com/icons/svg/124/124021.svg"}/
-        %a
-          %img{:src => "https://image.flaticon.com/icons/svg/124/124027.svg"}/
-        %a
-          %img{:src => "https://image.flaticon.com/icons/svg/124/124039.svg"}/
+
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124021.svg"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124027.svg"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg"
+
+
       / 商品一覧
       .posts
         = link_to '？？さんの投稿', '#', class:"posts__title"
-        -# %p.posts__title ？？さんの投稿
+
       / ユーザーその他の商品表示 １段落目
       .posts__items
         .posts__item1
@@ -134,7 +143,7 @@
 
       .posts
         = link_to 'その他の商品', '#', class:"posts__title"
-        -# %p.posts__title その他の商品
+        
       / その他オススメ商品表示 １段落目
       .posts__items
         .posts__item1
