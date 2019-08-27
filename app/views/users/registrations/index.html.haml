@@ -3,7 +3,7 @@
     .header.single-header
       %h1
         = link_to "https://www.mercari.com/jp/" do
-          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512"}/
+          %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512"}/
     .single-container-registration
       .single-container-registration__top 
         %h2
@@ -13,10 +13,10 @@
           = fa_icon 'envelope', class: 'icon'
           メールアドレスで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__facebook' do
-          %img{:src=> "images/facebook_logo.png", width: "25px", height: "25px"}
+          %img{src: "images/facebook_logo.png", width: "25px", height: "25px"}
           Facebookで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__google' do
-          %img{:src=> "images/google_logo.png", width: "25px", height: "25px"}
+          %img{src: "images/google_logo.png", width: "25px", height: "25px"}
           Googleで登録する
       
       .footer.single-footer
