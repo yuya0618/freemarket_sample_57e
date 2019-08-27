@@ -56,7 +56,7 @@ namespace :deploy do
 end
 
 # Basic認証
-set :default_env, {
-  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
-  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+set :default_env{
+  username: ENV["BASIC_AUTH_USER"],
+  password: ENV["BASIC_AUTH_PASSWORD"]
 }
