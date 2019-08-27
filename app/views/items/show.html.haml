@@ -1,0 +1,163 @@
+%body
+  %header
+    %div
+    %div
+  .wrapper
+    .container
+      .item
+        .item__detail
+          .item__name
+            %p#item__name バック
+          .item__info
+            .item__left
+              .item__left__main
+                %img.item__left__mainpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+              / ミニ１段目
+              .item__left__sub1
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+              / ミニ２段目
+              .item__left__sub2
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+                %img.item__left__subpic{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+            .item__right
+              %table
+                %tr
+                  %th 出品者
+                  %td
+                    %a ユーザー名
+                    %p
+                    .ratings
+                      .rating__good
+                      .rating__okay
+                      .rating__soso
+                %tr
+                  %th カテゴリー
+                  %td
+                    %div
+                      %a category
+                    %div
+                      %a category
+                    %div
+                      %a category
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品のサイズ
+                  %td
+                %tr
+                  %th 商品の状態
+                  %td
+                %tr
+                  %th 配送料の負担
+                  %td
+                %tr
+                  %th 配送の方法
+                  %td
+                %tr
+                  %th 配送元地域
+                  %td
+                %tr
+                  %th 発送日の目安
+                  %td
+          / 金額から商品詳細まで
+          .price
+            %span.price__one
+              金額
+            %span.price__two
+              （税込）
+            %span.price__three
+              送料込み
+          .checkout
+            購入画面に進む
+          .description
+            %p こちらの商品は、、、、
+          .bottom
+            %a.bottom__content1 ♡いいね！＃
+            %a.bottom__content1 不適切な商品の報告
+            %a.bottom__content2 あんしん：あんぜんへの取り組み
+      / コメント
+      .comment
+        .caution
+          %p#caution
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .field
+          %textarea
+        .action
+          %button コメントする
+      / 前後ページリンク
+      .page
+        %a.page__btn1 &lt; back
+        %a.page__btn2 forward &gt;
+      / SNS
+      .sns
+        %a
+          %img{:src => "https://image.flaticon.com/icons/svg/124/124010.svg"}/
+        %a
+          %img{:src => "https://image.flaticon.com/icons/svg/124/124021.svg"}/
+        %a
+          %img{:src => "https://image.flaticon.com/icons/svg/124/124027.svg"}/
+        %a
+          %img{:src => "https://image.flaticon.com/icons/svg/124/124039.svg"}/
+      / 商品一覧
+      .posts
+        %p.posts__title ？？さんの投稿
+      / ユーザーその他の商品表示 １段落目
+      .posts__items
+        .posts__item1
+          = render partial: 'partial/show-items'
+        .posts__item1
+          = render partial: 'partial/show-items'
+        .posts__item1
+          = render partial: 'partial/show-items'
+
+      / ユーザーその他の商品表示 ２段落目
+      .posts__items
+        .posts__item2
+          = render partial: 'partial/show-items'
+        .posts__item2
+          = render partial: 'partial/show-items'
+        .posts__item2
+          = render partial: 'partial/show-items'
+
+
+      .posts
+        %p.posts__title その他の商品
+      / その他オススメ商品表示 １段落目
+      .posts__items
+        .posts__item1
+          = render partial: 'partial/show-items'
+        .posts__item1
+          = render partial: 'partial/show-items'
+        .posts__item1
+          = render partial: 'partial/show-items'
+          
+      / その他オススメ商品表示 ２段落目
+      .posts__items
+        .posts__item2
+          = render partial: 'partial/show-items'
+        .posts__item2
+          = render partial: 'partial/show-items'
+        .posts__item2
+          = render partial: 'partial/show-items'
+
+          
+    / 下部ホームリンク
+    .bottom_pagination
+      %p
+        %a{:href => "/"} メルカリ ＞
+        %span 商品名
+    .bottom__banner
+    = render partial: 'partial/bottom-banner'
+
+    / フッターリンク （リンク貼ってません！）
+    %footer
+    = render partial: 'partial/footer-black'
+
