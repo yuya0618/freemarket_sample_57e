@@ -34,7 +34,6 @@ header{
 
 .item{
   background-color: white;
-  // width: 50%;
   box-sizing: border-box;
   padding: 0px 35px;
   margin: 0 auto 0;
@@ -166,7 +165,6 @@ table,td,th{
 
 .comment{
   background-color: white;
-  // width: 45%;
   margin: 5px auto 10px;
   box-sizing: border-box;
   padding: 10px 35px 0 35px;
@@ -250,7 +248,6 @@ button{
     font-size: 20px;
 }
   &__items{
-    // width: 45%;
     margin: 5px auto 0;
     display: flex;
     height: 400px;
