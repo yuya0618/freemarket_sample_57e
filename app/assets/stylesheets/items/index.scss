@@ -1,0 +1,143 @@
+.main{
+  margin-top:100px;
+  background-color: white;
+  .swiper-container{
+    width: 100%;
+    height: 390px;
+    background-image:url("boyake.jpg");
+    background-size: cover;
+    background-position: center;
+    .swiper-slide{
+      max-width: 840px;
+      position: relative;
+      margin: 0 auto;
+      height: 100%;
+      .slide--left-text{
+        position: absolute;
+        width: 60%;
+        top:15%;
+        left:0;
+        color: black;
+        h2{
+          font-size: 60px;
+          line-height: 1.2;
+          font-weight: bold;
+        }
+        p{
+          font-size:18px;
+          margin: 16px 0 0;
+          line-height: 1.77778;
+        }
+        &--icon{
+          margin: 24px 0 0;
+          .apple{
+            width: 170px;
+            height: 50px;
+          }
+          .apple:hover{
+            opacity: 0.7;
+          }
+          .google{
+            width: 170px;
+            height: 50px;
+          }
+          .google:hover{
+            opacity: 0.7;
+          }
+        }
+      }
+      .slide--left-image{
+        position: absolute;
+        top:0;
+        right:0;
+        height: 100%;
+      }
+    }
+  }
+  .pickup{
+    background: #f5f5f5;
+    padding:40px 0;
+    .pickup-top{
+      font-size: 28px;
+      text-align: center;
+      font-weight: bold;
+      color: darkslategray;
+    }
+    .items-container{
+      width: 70%;
+      margin: 0 auto;
+      .items-head{
+        font-size: 22px;
+        margin: 26px 11px;
+        text-align: center;
+        a{
+          color: #0099e8;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+      .items-box{
+        width: auto;
+        display: flex;
+        .item{
+          background-color: white;
+          width: 213px;
+          margin: 0 0 0 20px;
+          &-photo{
+            width: 213px;
+            height: 213px;
+            &-pic{
+              height: 100%;
+              width:100%;
+            }
+          }
+          &-body{
+            height: 110px;
+            padding: 16px;
+            &-name{
+              color: black;
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+            }
+            &-num{
+              display: flex;
+              justify-content: space-between;
+              margin:8px 0 0;
+              &-price{
+                font-size:15px;
+                font-weight: 600;
+                color:#333;
+              }
+              &-like{
+              }
+              &-icon{
+                font-size: 15px;
+                font-weight: 400;
+                color: #333;
+              }
+              span{
+                font-size: 15px;
+                font-weight: 400;
+                color: #333;
+              }
+            }
+          }
+        }
+      }
+      .more-items{
+        padding: 20px 0 30px;
+        text-align: right;
+        width:93%;
+        &-text{
+          color: #0099e8;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

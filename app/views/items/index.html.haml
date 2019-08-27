@@ -1,0 +1,48 @@
+.main
+  .swiper-container
+    .swiper-slide
+      .slide--left-text
+        %h2 スマホでかんたんフリマアプリ
+        %p メルカリはスマホカメラからすぐに出品できる
+        %p 購入時も安心な独自システムのアプリです
+        .slide--left-text--icon
+          = link_to '#' do
+            = image_tag 'apple_store.png',class:"apple"
+          = link_to '#' do
+            = image_tag 'google_play.jpg',class:"google"
+      .slide--left-image
+        = image_tag 'main_content_pc.png',class:"slide--left-image"
+
+    .swiper-slide
+
+  .swiper-pagination
+  .swiper-button-prev
+  .swiper-button-next
+  .swiper-scrollbar
+
+  .pickup
+    %h2.pickup-top ピックアップカテゴリー
+
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+
+    -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
+    -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
+    -# = render partial: 'partial/item-top', locals: { items: @kids_items, word: 'ベビー・キッズ' }
+    -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
+
+
+    .pickup
+    %h2.pickup-top ピックアップブランド
+
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+    = render partial: 'partial/item-top'
+
+    -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
+    -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
+    -# = render partial: 'partial/item-top', locals: { items: @kids_items, word: 'ベビー・キッズ' }
+    -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
