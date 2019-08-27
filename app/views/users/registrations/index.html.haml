@@ -9,25 +9,27 @@
         %h2
         新規会員登録
       .single-container-registration__link
-        = link_to new_user_registration_path, class: 'single-container-registration__link__e-mail' do
-          = fa_icon 'picture-o', class: 'icon'
+        = link_to edit_user_registration_path, class: 'single-container-registration__link__e-mail' do
+          = fa_icon 'envelope', class: 'icon'
           メールアドレスで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__facebook' do
-          = fa_icon 'picture-o', class: 'icon'
+          %img{:src=> "images/facebook_logo.png", width: "25px", height: "25px"}
           Facebookで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__google' do
-          = fa_icon 'picture-o', class: 'icon'
+          %img{:src=> "images/google_logo.png", width: "25px", height: "25px"}
           Googleで登録する
-    .footer
-      %nav
-        %ul.clearfix
-          %li
-            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-          %li
-            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-          %li
-            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
-      %p
-        %small © 2019 Mercari
+      
+      .footer.single-footer
+        %nav
+          %ul.clearfix
+            %li
+              %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+            %li
+              %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+            %li
+              %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+        %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
+        %p
+          %small © 2019 Mercari
+      

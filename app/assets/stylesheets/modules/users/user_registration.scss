@@ -1,0 +1,216 @@
+body {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  text-align:center;
+  height: 100vh;
+  width: 100vw;
+  .single-container{
+    text-align: center;
+    background: #f5f5f5;
+    header.single-header{
+      height: 128px;
+      display: flex;
+      h1{
+        a{
+          img{
+            width: 185px;
+            height: 49px;
+          }
+        }
+      }
+      nav.progress-bar.signup-bar{
+        ol.clearfix{
+          padding: 40px 0 0 44px;
+          border: 0;
+          display: flex;
+          justify-content: center;
+          li.active{
+            color: #EA352D;
+            font-weight:600;
+            .progress-status{
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background-color: #EA352D;
+              border-radius: 50%;
+            }
+          }
+          li{
+            padding-right:48px;
+            font-weight:600;
+            .progress-status{
+              bottom: 5px;
+              z-index: -1;
+              display: block;
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ccc;
+              border-radius: 50%;
+            }
+            .progress-status2{
+            }
+          }
+        }
+      }
+    }
+    main.single-main{
+      margin: 0 auto;
+      width:700px;
+      section.l-single-container{
+        background-color: white;
+        margin: 0 auto;
+        h2.l-single-head.registration{
+          font-size: 22px;
+          padding:16px;
+          font-weight: bold;
+          margin-block-start: 0.83em;
+          margin-block-end: 0.83em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+        }
+        form.l-single-inner.registration-form{
+          .l-single-content{
+            width:343px;
+            margin:0 auto;
+            .form-group{
+              margin: 24px 0 0;
+              label{
+                display: flex;
+                flex-direction: column;
+                float:left;
+                font-weight: bold;
+              }
+              span.form-require{
+                background-color:#EA352D;
+                color:white;
+                padding: 2px 4px;
+                width:30px;
+              }
+              input.input-default{
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                width: 100%;
+              }
+              input.input-default.half{
+                width: calc(50% - 6px);
+              }
+              h3.text-left.l-chapter-sub-head{
+                display:flex;
+              }
+              p.l-single-text{
+              background-color:white;
+              display:flex;
+              }
+              .birthday-select-wrap{
+                .select-wrap{
+                  margin: 8px 0 0;
+                  i.icon-arrow-bottom{
+                    display:inline-block;
+                    font-size: 8px;
+                  }
+                  select.select-default{
+                    display: inline-block;
+                    width: calc(34% - 17px);
+                    height: 48px;
+                    background-color:white;
+                  }
+                }
+                span{
+                }
+                .select-wrap.select-wrap__month{
+                  i.icon-arrow-bottom{
+
+                  }
+                  select.select-default{
+                  }
+                }
+              }
+              p.form-info-text{
+
+              }
+            }
+            .l-single-content{
+              .form-group{
+                .g-recaptcha.signup-recaptcha{
+
+                }
+                p.l-single-text.text-center{
+                  a{
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            button.btn-default.btn-red{
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              width: 100%;
+              height:50px;
+              font-size: 14px;
+              a{
+                color:white;
+                text-decoration: none;
+              }
+            }
+            .form-group.text-right{
+              p{
+                text-decoration: none;
+                a{
+                  text-decoration: none;
+                  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+                  color: #333;
+                  i.icon-arrow-right{
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer.single-footer{
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 250px;
+      padding: 40px 0;
+      text-align: center;
+      nav{
+        ul.clearfix{
+          font: 66.66667% sans-serif;
+          display: flex;
+          justify-content: center;
+          li{
+            a{
+              color: rgb(51, 51, 51);
+              text-decoration: none;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      a.single-footer-logo{
+        img{
+          width: 500px;
+          height: 65px;
+          margin: 40px auto 0;
+        }
+      }
+    }
+  }
+}
