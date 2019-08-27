@@ -96,11 +96,14 @@ Column|Type|Options|
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|parent_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
 - has_many :category_sizes
 - has_many :sizes, through: :category_size
+- belongs_to :parent, class_name: :Category
+- has_many :children, class_name: :Category, foreign_key: :parent_id
 
 ## brandsテーブル
 |Column|Type|Options|
