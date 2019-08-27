@@ -1,0 +1,21 @@
+.breadcrumb {
+  height: 48px;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  position: relative;
+  background-color: $white;
+  &__list {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+  }
+  &__item {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  &__link {
+    color: #333;
+    text-decoration: none;
+  }
+}
