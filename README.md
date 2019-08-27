@@ -1,5 +1,7 @@
 # README
 
+
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -15,9 +17,11 @@
 - has_many :comments
 
 
+
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|text|string||
 |firstname|string|null: false|
 |lasrname|string|null: false|
 |firstname-kana|string|null: false|
@@ -43,6 +47,7 @@
 |card_number|integer|null: false|
 |expiration_month|integer|null:false|
 |user_id|refernces|null: false, foreign_key: true|
+|security_code|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -61,6 +66,7 @@
 |delivery_method|integer|null:false|
 |delivery_location|integer|null:false|
 |delivery_term|integer|null:false|
+|size_id|references||
 
 ### Association
 - belongs_to :category
@@ -74,11 +80,11 @@
 
 
 
+
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|refernces|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
@@ -89,7 +95,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|refernces|null: false, foreign_key: true|
 
 ## category_sizeテーブル
 |Column|Type|Options|
@@ -113,7 +118,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|refernces|null: false, foreign_key: true|
 
 ### Association
 - has_many :items

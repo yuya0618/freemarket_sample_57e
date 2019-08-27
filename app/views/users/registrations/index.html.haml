@@ -2,8 +2,8 @@
   .body
     .header.single-header
       %h1
-        %a{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512"}/
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",alt:"mercari"
     .single-container-registration
       .single-container-registration__top 
         %h2
@@ -13,23 +13,12 @@
           = fa_icon 'envelope', class: 'icon'
           メールアドレスで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__facebook' do
-          %img{:src=> "images/facebook_logo.png", width: "25px", height: "25px"}
+          = image_tag "images/facebook_logo.png", size: "25×25"
           Facebookで登録する
         = link_to edit_user_registration_path, class: 'single-container-registration__link__google' do
-          %img{:src=> "images/google_logo.png", width: "25px", height: "25px"}
+          = image_tag "images/google_logo.png", size: "25×25"
           Googleで登録する
       
       .footer.single-footer
-        %nav
-          %ul.clearfix
-            %li
-              %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-            %li
-              %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-            %li
-              %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-        %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
-        %p
-          %small © 2019 Mercari
+        = render 'shared/loginfooter'
       
