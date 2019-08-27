@@ -40,7 +40,7 @@
 ### Association
 - belongs_to :user
 
-## adressテーブル
+## adressesテーブル
 Column|Type|Options|
 |------|----|-------|
 |zip_code|integer|null:false|
