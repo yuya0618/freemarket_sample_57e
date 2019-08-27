@@ -1,0 +1,13 @@
+.main-container {
+  display: flex;
+  background-color: $main_background_grey;
+  width: 1020px;
+  height: 100%;
+  margin: 40px auto;
+  padding-bottom: 40px;
+
+  .main-content {
+    width: 700px;
+  }
+
+}

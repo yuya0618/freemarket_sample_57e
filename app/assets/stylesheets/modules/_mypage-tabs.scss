@@ -1,0 +1,40 @@
+.mypage-tabs {
+  display: flex;
+  &__head {
+    width: 50%;
+  }
+  &__link {
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__notification {
+    background-color: $white
+  }
+  &__notification-item {
+    min-height: 80px;
+    padding: 16px;
+    color: #333;
+    display: flex;
+    border-bottom: 1px solid #eee;
+  }
+  &__show-text {
+    display: block;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(238, 238, 238);
+    margin: 0 auto;
+    line-height: 56px;
+    width: 100%;
+  }
+  .active {
+    background-color: $white;
+    border-top: 2px solid #ea352d;
+    box-sizing: content-box;
+  }
+}

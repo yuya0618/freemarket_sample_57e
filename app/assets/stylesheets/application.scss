@@ -1,8 +1,12 @@
 @import "font-awesome";
 @import "config/reset";
 @import "config/variable";
-@import "items/index";
-@import "modules/users/user_new";
-@import "modules/users/user_registration";
-@import "modules/users/confirmation"
-@import "items/show";
+@import "config/body";
+@import "users/users";
+@import "modules/header";
+@import "modules/breadcrumb";
+@import "modules/sell-btn";
+@import "modules/mypage-side";
+@import "modules/mypage-tabs";
+@import "modules/mypage-tabs-dealed-items";
+@import "modules/mypage-user-info";
