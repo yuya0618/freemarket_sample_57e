@@ -170,12 +170,17 @@ Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 
-
+### Association
+- belongs_to :user
+- has_many : reviews
 ## sellersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 
+### Association
+- belongs_to :user
+- has_many : reviews
 
 ## reviewsテーブル
 |Column|Type|Options|
@@ -185,3 +190,7 @@ Column|Type|Options|
 |buyer_id|references|null: false, foreign_key: true|
 |seller_id|refernces|null: false, foreign_key: true|
 |order_id|refernces|null: false, foreign_key: true|
+
+### Association
+- belongs_to :buyer
+- belongs_to :seller
