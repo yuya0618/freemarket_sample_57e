@@ -1,0 +1,17 @@
+= render 'shared/header'
+
+= render 'shared/breadcrumb'
+
+
+%main.main-container
+
+  = render 'users/shared/main-side'
+
+  .main-content
+    .mypage-user-info
+
+    = render 'users/shared/mypage-tabs'
+
+    = render 'users/shared/mypage-tabs-dealed-items'
+
+  = render 'shared/sell-btn'

@@ -1,0 +1,21 @@
+.mypage-tabs-dealed-items {
+  margin-top: 40px;
+  &__detail {
+    width: 700px;
+  }
+  &__head-text {
+    padding-left: 16px;
+    background-color: rgb(250, 250, 250);
+    font-size: 16px;
+    line-height: 72px;
+    box-sizing: content-box;
+  }
+  &__item--notfound {
+    padding: 160px 0 60px;
+    font-weight: 600;
+    background-color: $white;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+  }
+}
