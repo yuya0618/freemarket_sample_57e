@@ -1,0 +1,70 @@
+%body
+  .wrapper
+    .container
+      %header
+        -# %a.header__link{:href => "https://www.mercari.com/jp/"}
+        -#   %img.header__icon{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517/"}/
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517/",class: "header__icon"
+      
+      .main
+        .main__content1
+          .main__one
+            %p 購入内容の確認
+          .main__two
+            .main__two__detail
+              .main__two__detail__left
+                =image_tag "https://static.mercdn.net/thumb/photos/m34363578232_1.jpg?1566519883", id: "main__two__detail"
+              .main__two__detail__right
+                %p 商品名
+            .main__two__price
+              %p
+                金額
+                %span 送料込み
+            .main__two__point
+              %p ポイントはありません
+            .main__two__total
+              .main__two__total__left
+                %p 支払い金額
+              .main__two__total__right
+                %p ¥〇〇円
+            .main__two__caution
+              %p 配送先と支払い方法の入力を完了してください。
+            .main__two__purchase
+              %a{:href => ""}
+                %p 購入する
+          .main__three
+            .main__three__address
+              %p 配送先
+              %p
+                %span
+                  郵便番号
+                  %span
+              %p
+                %span
+                  都道府県
+                  %span
+              %p
+                %span
+                  名前
+                  %span
+            =link_to "変更する ＞", "#", class: "edit__btn"
+          .main__four
+            .main__four__payment
+              %p 支払い方法
+              %p
+                %span
+                  クレジット・振込
+                  %span
+            =link_to "変更する ＞", "#", class: "edit__btn"
+      %footer
+        .link
+          =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+          =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+          =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+          
+        .icon
+          =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?575670517"
+        .year
+          %p ©️2019 Mercari
+          %div

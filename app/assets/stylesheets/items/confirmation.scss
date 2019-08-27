@@ -1,0 +1,186 @@
+// Place all the styles related to the tests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  .wrapper{
+    background-color:  #F1EEED;
+    height: 100%;
+    header{
+      width: 100%;
+      height: 80px;
+      padding: 25px 600px 0 600px;    
+      .header__icon{
+        width: 15%;
+      }
+      .header__icon:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.main{
+  margin: 0 auto;
+  width: 50%;
+  background-color: white;
+  &__content1{
+    font-weight: bold;
+    text-align: center;
+  }
+  &__one{
+    height: 80px;
+    p{
+      line-height: 80px;
+      font-size: 20px;
+      text-align: center;
+      border-bottom: solid 1px lightgray;
+    }
+  }
+  &__two{
+    padding: 15px 175px 15px 175px;
+    border-bottom: solid 1px lightgray;
+    &__detail{
+      display: flex;
+      &__right{
+        p{
+          font-size: 15px;
+        }
+      }
+    }
+    &__price{
+      p{
+        font-size: 15px;
+        span{
+          font-weight: 100;
+          font-size: 10px;
+        }
+      }
+    }
+    &__point{
+      background: lightgray;
+      height: 40px;
+      p{
+        line-height: 40px;
+        font-weight: 100;
+      }
+    }
+    &__total{
+      p{
+        font-size: 20px;
+      }
+    }
+    &__caution{
+      clear: both;
+      p{
+        color: red;
+        font-weight: 100;
+        font-size: 14px;
+      }
+    }
+    &__purchase{
+      background: gray;
+      height: 40px;
+      a{
+        text-decoration: none;
+        p{
+          color: white;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+
+  &__three{
+    height: 150px;
+    border-bottom: solid 1px lightgray;
+    padding: 15px 175px 15px 175px;
+    position: relative;
+    &__address{
+      float: left;
+    }
+    p{
+      margin: 3px 0;
+      text-align: left;
+    }
+    span{
+      font-weight: 100;
+    }
+    a p{
+      color: rgba(0, 183, 255, 0.863);
+      margin-bottom: 10px;
+    }
+  }
+  &__four{
+    height: 150px;
+    padding: 15px 175px 15px 175px;
+    position: relative;
+    &__payment{
+      float: left;
+    }
+    a p{
+      color: rgba(0, 183, 255, 0.863);
+      margin-bottom: 10px;
+    }
+    p{
+      margin: 3px 0 15px 0;
+      text-align: left;
+    }
+    span{
+      font-weight: 100;
+    }
+  }
+}
+
+#main__two__detail{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.main__two__total__left{
+  float: left;
+
+}
+
+.main__two__total__right{
+  float: right;
+}
+
+footer{
+  height: 200px;
+  text-align: center;
+  padding: 30px 0;
+  text-decoration: none;
+  font-weight: 100;
+  a{
+    text-decoration: none;
+    font-weight: 100;
+    color: black;
+    font-size: 12px;
+  }
+  .icon{
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+  }
+  .year p{
+    font-size: 11px;
+    margin: 0;
+  }
+}
+
+.edit__btn{
+  float: right;
+  text-decoration: none;
+  position: absolute;
+  right: 175px;
+  bottom: 0;
+  color: rgba(0, 183, 255, 0.863);
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
