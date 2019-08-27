@@ -13,11 +13,11 @@
           %ol.clearfix
             %li.active
               会員情報
-              .progress-status
+              .progress-status.active
               .progress-status2
-            %li
+            %li.active
               電話番号認証
-              .progress-status
+              .progress-status.activve
               .progress-status2
             %li
               お届け先住所入力
@@ -31,22 +31,23 @@
               完了
               .progress-status
               .progress-status2
-      %main.single-main
+      %main.sms_body
         %section.l-single-container
           %h2.l-chapter-head.registration 電話番号の確認
-          %form.l-single-inner.registration-form{:action => "https://www.mercari.com/jp/signup/sms_confirmation/sms/", :method => "POST", :novalidate => "novalidate"}
-            %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
+          %form.l-single-inner.registration-form{action:"#", method:"POST", :novalidate => "novalidate"}
+            %input{name:"after_save_callback", type:"hidden", value:""}/
             .l-single-content
               .form-group
-                %label{:for => "phone_number"} 携帯電話の番号
+                %label{for: "phone_number"} 携帯電話の番号
                 %input.input-default{:name => "phone_number", :placeholder => "携帯電話の番号を入力", :type => "tel", :value => ""}/
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-              %button.btn-default.btn-red{:type => "submit"} SMSを送信する
+              %button.btn-default.btn-red{type:"submit"} SMSを送信する
               %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
               .form-group.text-right
-                %a{:href => "/jp/help_center/article/244/", :target => "_blank"}
-                  電話番号の確認が必要な理由
+                %a{:href => "#", :target => "_blank"}
+                  電話番号の確認が必要な理由 
                   %i.icon-arrow-right
+                  >
             %input{:name => "__csrf_value", :type => "hidden", :value => "3da2a6ff03ec81c8a39fe8f5529d6fadf1bc37cb79421a62e453a1ac3fa389b2406738c8a42402eefc2fd6b0c1a63cf5ce711d5cfc95464347933ddbb04cc607d"}/
             %input{:name => "id", :type => "hidden", :value => "297052499"}/
 
@@ -54,12 +55,12 @@
         %nav
           %ul.clearfix
             %li
-              %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+              %a{ href: "#"} プライバシーポリシー
             %li
-              %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+              %a{ href: "#"} メルカリ利用規約
             %li
-              %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-        %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-          %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512", :width => "80"}/
+              %a{href: "#"} 特定商取引に関する表記
+        %a.single-footer-logo{href: "#"}
+          %img{alt:"mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4248847005", width: "80"}/
         %p
           %small © 2019 Mercari

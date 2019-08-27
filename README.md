@@ -1,5 +1,6 @@
 # README
 
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -13,6 +14,7 @@
 - has_many :items
 - has_many :likes
 - has_many :comments
+
 
 
 ## profilesテーブル
@@ -71,6 +73,7 @@
 - has_many :likes
 - has_many :comments
 - has_many :images
+
 
 
 
