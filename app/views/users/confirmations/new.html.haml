@@ -7,7 +7,7 @@
     .single-container
       %header.single-header
         %h1
-          %a{:href => "https://www.mercari.com/jp/"}
+          = link_to "https://www.mercari.com/jp/" do
             %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517"}/
         %nav.progress-bar.signup-bar
           %ol.clearfix
@@ -44,7 +44,7 @@
               %button.btn-default.btn-red{type:"submit"} SMSを送信する
               %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
               .form-group.text-right
-                %a{:href => "#", :target => "_blank"}
+                = link_to '#' do
                   電話番号の確認が必要な理由 
                   %i.icon-arrow-right
                   >
@@ -52,15 +52,4 @@
             %input{:name => "id", :type => "hidden", :value => "297052499"}/
 
       .footer.single-footer
-        %nav
-          %ul.clearfix
-            %li
-              %a{ href: "#"} プライバシーポリシー
-            %li
-              %a{ href: "#"} メルカリ利用規約
-            %li
-              %a{href: "#"} 特定商取引に関する表記
-        %a.single-footer-logo{href: "#"}
-          %img{alt:"mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4248847005", width: "80"}/
-        %p
-          %small © 2019 Mercari
+        = render 'shared/loginfooter'
