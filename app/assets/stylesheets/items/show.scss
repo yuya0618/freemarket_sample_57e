@@ -1,0 +1,432 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #F1EEED;
+
+}
+
+header{
+  width: 100%;
+  height: 100px;
+
+}
+
+.wrapper{
+  background-color: #F1EEED;
+
+}
+
+.container{
+  background-color: #F1EEED;
+  padding-top: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+.item{
+  background-color: white;
+  // width: 50%;
+  box-sizing: border-box;
+  padding: 0px 35px;
+  margin: 0 auto 0;
+
+  &__name{
+    padding: 15px 0 15px 0;
+  }
+
+
+  &__left{
+    width: 48%;
+    height: 100%;
+    float: left;
+    background-color: #F8F5F4;
+    align-items: center;
+
+    &__main{
+      width: 100%;
+      height: 60%;
+    }
+    
+    &__mainpic{
+      height: 100%;
+      width: 100%;
+    }
+    &__sub1{
+      width: 100%;
+      height: 20%;
+      background-color: pink;
+    }
+
+    &__sub2{
+      width: 100%;
+      height: 20%;
+      background-color:red;
+    }
+    &__subpic{
+      width: 18%;
+      height: 100%;
+    }
+
+  }
+
+  &__right{
+    width: 48%;
+    float: right;
+    height: 100%;
+  }
+
+  &__info{
+    margin-bottom: 15px;
+    height: 450px;
+  }
+}
+
+
+#item__name{
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 40px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+table,td,th{
+  border: 1px solid #F2F2ED;
+  border-collapse: collapse;
+  font-size: 14px;
+  box-sizing: border-box;
+  // padding: 12px;
+  width: 100%;
+  text-align: left;
+  font-weight: 100;
+  a{
+    color: rgba(0, 183, 255, 0.863);
+
+  }
+
+  th{
+    background-color: #F8F5F4;
+    width: 40%;
+    padding: 12px;
+  }
+  td{
+    width: 60%;
+    padding: 12px;
+  }
+}
+
+
+
+.price{
+  text-align: center;
+  height: 50px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  &__one{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  &__two{
+    font-size: 5px;
+  }
+  &__three{
+    font-size: 15px;
+  }
+}
+
+.checkout{
+  text-align: center;
+  padding-top:10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  width:100%;
+  height:45px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.description{
+  height: 300px;
+}
+
+.comment{
+  background-color: white;
+  // width: 45%;
+  margin: 5px auto 10px;
+  box-sizing: border-box;
+  padding: 10px 35px 0 35px;
+  height: 220px;
+}
+
+.sns{
+  text-align: center;
+  padding-top: 70px;
+  box-sizing: border-box;
+  img{
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  }
+}
+
+.bottom{
+  padding: 15px 9px 40px 9px;
+  box-sizing: border-box;
+  &__content1{
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 50px;
+    height: 20px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+  &__content2{
+    color: rgba(0, 183, 255, 0.863);
+    float: right;
+  }
+}
+
+
+
+#caution{
+  padding: 5px 5px;
+  box-sizing: border-box;
+  background-color: #F9F2B4;
+  width: 100%;
+}
+
+textarea{
+  width: 100%;
+  height: 60px;
+}
+
+button{
+  width: 100%;
+  background: gray;
+  height: 40px;
+  font-size: 15px;
+  color: white;
+}
+
+.page{
+  height: 30px;
+  margin: 5px auto 0;
+  &__btn1{
+    color: rgba(0, 183, 255, 0.863);
+    float: left;
+  }
+  &__btn2{
+    color: rgba(0, 183, 255, 0.863);
+    float: right;
+  }
+}
+
+.sns{
+  width: 100%;
+  height: 150px;
+  background: white;
+  margin: 5px auto 0;
+}
+
+.posts{
+  &__title{
+    color: rgba(0, 183, 255, 0.863);
+    font-size: 20px;
+}
+  &__items{
+    // width: 45%;
+    margin: 5px auto 0;
+    display: flex;
+    height: 400px;
+  }
+  &__item1{
+    width: 33%;
+    height: 300px;
+    margin: 0px 10px 20px 0px;
+  }
+  &__item2{
+    width: 33%;
+    height: 300px;
+    margin: 0px 10px 20px 0px;
+  }
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+}
+
+.explaination{
+  background-color: white;
+  width: 100%;
+  height: 100px;
+
+}
+
+.bottom_pagination{
+  border-top: 1px solid lightgray;
+  color: black;
+  width: 100%;
+  padding-left: 200px;
+  box-sizing: border-box;
+  margin: 30px 15px 0px 15px;
+  a{
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  span{
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+
+.bottom__banner{
+  padding: 50px 350px;
+  box-sizing: border-box;
+  height: 250px;
+  width: 100%;
+  position: relative;
+  background: url("https://patch.com/img/cdn20/users/23121104/20190506/053259/styles/patch_image/public/abstract-backdrop-background-bar-blank-blur-blurred-blurry-bokeh-cafe-celebrate-celebration-city-coffee-color-community-coun-20190506173218-55152900.jpg?width=705")
+}
+
+.bottom__banner__sentence{
+  color:white;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 10px;
+  span{
+    font-size: 35px;
+  }
+}
+
+
+.bottom__image1{
+  &__merucari{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+.bottom__image{
+  display: flex;
+  #bottom__image{
+    padding-right: 10px;
+  }
+}
+
+
+#bottom__banner__right{
+  height: 100%;
+  width:300px;
+  position: absolute;
+  top: 0px;
+  right: 350px;
+}
+
+footer{
+  height: 350px;
+  background-color: black;
+  // background-color: rgb(33, 33, 33);
+  padding: 50px 200px;
+
+.footer{
+  display:flex;
+  width: 100%;
+
+  &__title{
+    color: white;
+    font-weight: bold;
+  }
+
+  &__main{
+    width: 20%;
+  }
+
+  p{
+    font-size: 12px;
+    font-weight: 100;
+    color:lightgray;
+    margin-right: 5px;
+  }
+  
+
+}
+#top{
+  color: black;
+}
+
+#title1{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+#title2{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+#title3{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+#title4{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+.icons{
+  padding-top: 15px;
+}
+
+.icon{
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.footer__bottom{
+  display: flex;
+  padding-top: 20px;
+  &__logo{
+
+    padding-right: 300px;
+  }
+  &__year{
+    color: white;
+  }
+}
+
+#footer__bottom__year{
+  font-size: 11px;
+}
+
+
+}
