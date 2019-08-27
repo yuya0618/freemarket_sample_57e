@@ -31,7 +31,7 @@
                 %tr
                   %th 出品者
                   %td
-                    %a ユーザー名
+                    =link_to "ユーザー","#"
                     %p
                     .ratings
                       .rating__good
@@ -41,11 +41,11 @@
                   %th カテゴリー
                   %td
                     %div
-                      %a category
+                      =link_to "category"
                     %div
-                      %a category
+                      =link_to "category"
                     %div
-                      %a category
+                      =link_to "category"
                 %tr
                   %th ブランド
                   %td
@@ -75,8 +75,8 @@
               （税込）
             %span.price__three
               送料込み
-          .checkout
-            購入画面に進む
+          .check
+            =link_to "購入画面に進む", "#", class: "checkout"
           .description
             %p こちらの商品は、、、、
           .bottom
@@ -92,10 +92,13 @@
           %textarea
         .action
           %button コメントする
+
+          
       / 前後ページリンク
       .page
-        %a.page__btn1 &lt; back
-        %a.page__btn2 forward &gt;
+        = link_to '＜ back', '#', class:"page__btn1"
+        = link_to 'forward ＞', '#', class:"page__btn2"
+
       / SNS
       .sns
         %a
@@ -108,7 +111,8 @@
           %img{:src => "https://image.flaticon.com/icons/svg/124/124039.svg"}/
       / 商品一覧
       .posts
-        %p.posts__title ？？さんの投稿
+        = link_to '？？さんの投稿', '#', class:"posts__title"
+        -# %p.posts__title ？？さんの投稿
       / ユーザーその他の商品表示 １段落目
       .posts__items
         .posts__item1
@@ -129,7 +133,8 @@
 
 
       .posts
-        %p.posts__title その他の商品
+        = link_to 'その他の商品', '#', class:"posts__title"
+        -# %p.posts__title その他の商品
       / その他オススメ商品表示 １段落目
       .posts__items
         .posts__item1
@@ -151,13 +156,13 @@
           
     / 下部ホームリンク
     .bottom_pagination
-      %p
-        %a{:href => "/"} メルカリ ＞
-        %span 商品名
+      .btn
+        = link_to "メルカリ ＞", "#", class:"home"
     .bottom__banner
-    = render partial: 'partial/bottom-banner'
+      = render partial: 'partial/bottom-banner'
 
     / フッターリンク （リンク貼ってません！）
     %footer
-    = render partial: 'partial/footer-black'
+      = render partial: 'partial/footer-black'
+
 

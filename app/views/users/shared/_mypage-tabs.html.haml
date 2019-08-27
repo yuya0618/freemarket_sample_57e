@@ -1,0 +1,26 @@
+%ul.mypage-tabs
+  %li.mypage-tabs__head
+    %h3 
+      = link_to "お知らせ", "#", class: "mypage-tabs__link active"
+  %li.mypage-tabs__head
+    %h3 
+      = link_to "やることリスト", "#", class: "mypage-tabs__link"
+%ul.mypage-tabs__notification
+  %li.mypage-tabs__notification-item
+    = image_tag "mercari_profile.png", size: "48x48", alt: "ロゴアイコン"
+    《メルペイあと払いでP5,000があたる！》メルペイジャンボ！キャンペーン開催
+  %li.mypage-tabs__notification-item
+    = image_tag "mercari_profile.png", size: "48x48", alt: "ロゴアイコン"
+    事務局から個別メッセージ「ログイン通知」
+  %li.mypage-tabs__notification-item
+    = image_tag "mercari_profile.png", size: "48x48", alt: "ロゴアイコン"
+    事務局から個別メッセージ「ログイン通知」
+  %li.mypage-tabs__notification-item
+    = image_tag "mercari_profile.png", size: "48x48", alt: "ロゴアイコン"
+    《今週分のポイントを受け取られていない方へ》セブンイレブンの買い物でP100還元！
+    たとえばセブンカフェのアイスコーヒーLが実質80円！
+  %li.mypage-tabs__notification-item
+    = image_tag "mercari_profile.png", size: "48x48", alt: "ロゴアイコン"
+    7日後、200Pの有効期限が切れます！
+  %li.mypage-tabs__notification-item
+    = link_to "一覧を見る", "#", class: "mypage-tabs__show-text"

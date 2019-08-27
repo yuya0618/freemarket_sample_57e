@@ -1,0 +1,80 @@
+%header.header
+  .header-inner
+    .header-top
+      .header-top__logo-box
+      = image_tag "logo.svg", size: "134x36", alt: "ロゴ"
+      .header-top__search-form-box
+        = form_with model: @item, class: 'header-top__search-form' do |f|
+          = f.text_field :id, {class: 'header-top__input-field', placeholder: '何かお探しですか？'}
+          .header-top__send
+            = f.label :id, class: 'header-top__search-icon' do
+              = fa_icon 'search', class: 'header-top__fa'
+              = f.submit '', class: 'hidden'
+
+    .header-bottom
+      %nav.header-bottom__left
+        %ul.header-bottom__nav
+          %li.header-bottom__search-by-category
+            = fa_icon 'list', class: 'header-bottom__icon'
+            %span.header-bottom__text カテゴリーから探す
+            %ul
+              %li
+                = link_to "レディース", "#"
+              %li
+                = link_to "メンズ", "#"
+              %li
+                = link_to "ベビー・キッズ", "#"
+              %li
+                = link_to "インテリア・住まい・小物", "#"
+              %li
+                = link_to "本・音楽・ゲーム", "#"
+              %li
+                = link_to "おもちゃ・ホビー・グッズ", "#"
+              %li
+                = link_to "コスメ・香水・美容", "#"
+              %li
+                = link_to "家電・スマホ・カメラ", "#"
+              %li
+                = link_to "スポーツ・レジャー", "#"
+              %li
+                = link_to "ハンドメイド", "#"
+              %li
+                = link_to "チケット", "#"
+              %li
+                = link_to "自動車・オートバイ", "#"
+              %li
+                = link_to "その他", "#"
+              %li
+                = link_to "カテゴリー一覧", "#"
+          %li.header-bottom__search-by-brand
+            = fa_icon 'tag', class: 'header-bottom__icon'
+            %span.header-bottom__text ブランドから探す
+            %ul
+              %li
+                = link_to "シャネル", "#"
+              %li
+                = link_to "ナイキ", "#"
+              %li
+                = link_to "ルイ　ヴィトン", "#"
+              %li
+                = link_to "シュプリーム", "#"
+              %li
+                = link_to "アディダス", "#"
+              %li
+                = link_to "ブランド一覧", "#"
+
+
+      .header-bottom__right
+        %ul.header-bottom__user-nav
+          %li.header-bottom__likes
+            = fa_icon 'heart', class: 'header-bottom__right-icon'
+            %span.header-bottom__item いいね！一覧
+          %li.header-bottom__notification
+            = fa_icon 'bell', class: 'header-bottom__right-icon'
+            %span.header-bottom__item お知らせ
+          %li.header-bottom__todo
+            = fa_icon 'check', class: 'header-bottom__right-icon'
+            %span.header-bottom__item やることリスト
+          %li.header-bottom__mypage
+            = fa_icon 'user-circle', class: 'header-bottom__right-icon'
+            %span.header-bottom__item マイページ
