@@ -1,4 +1,6 @@
+
 # README
+
 
 
 
@@ -8,10 +10,12 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|adess_id|references|null:false, foreign_key: true|
 
 ### Association
 - has_one :profile
 - has_one :credit_card
+- has_one :adress
 - has_many :items
 - has_many :likes
 - has_many :comments
@@ -31,12 +35,19 @@
 |birth_month|integer|null: false|
 |birth_day|integer|null:false|
 |phone_number|integer||
+|user_id|references|null:false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## adressesテーブル
+Column|Type|Options|
+|------|----|-------|
 |zip_code|integer|null:false|
 |adress_pref|integer|null: false|
 |adress_city|string|null:false|
 |adress_number|string|null:false|
 |building|string||
-|user_id|references|null:false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -85,11 +96,14 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|parent_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
 - has_many :category_sizes
 - has_many :sizes, through: :category_size
+- belongs_to :parent, class_name: :Category
+- has_many :children, class_name: :Category, foreign_key: :parent_id
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -156,12 +170,17 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 
-
+### Association
+- belongs_to :user
+- has_many : reviews
 ## sellersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 
+### Association
+- belongs_to :user
+- has_many : reviews
 
 ## reviewsテーブル
 |Column|Type|Options|
@@ -171,3 +190,7 @@
 |buyer_id|references|null: false, foreign_key: true|
 |seller_id|refernces|null: false, foreign_key: true|
 |order_id|refernces|null: false, foreign_key: true|
+
+### Association
+- belongs_to :buyer
+- belongs_to :seller
