@@ -200,17 +200,20 @@
             cursor: pointer;
           }
         }
-        .root-return-btn{
-          background: #aaa;
-          border: 1px solid #aaa;
-          color: #fff;
-          cursor: pointer;
+        &__return{
           text-align: center;
-          display: inline-block;
-          margin: 20px auto 40px;
-          padding: 20px 100px;
-          &:hover{
-            opacity: 0.7;
+          .root-return-btn{
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin: 20px auto 40px;
+            padding: 17px 120px;
+            &:hover{
+              opacity: 0.7;
+            }
           }
         }
       }

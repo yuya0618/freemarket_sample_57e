@@ -10,7 +10,6 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|adess_id|references|null:false, foreign_key: true|
 
 ### Association
 - has_one :profile
@@ -47,6 +46,7 @@ Column|Type|Options|
 |adress_city|string|null:false|
 |adress_number|string|null:false|
 |building|string||
+|user_id|references|null:false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -135,7 +135,7 @@ Column|Type|Options|
 ### Association
 - has_many :items
 - has_many :category_size
-- has_many :categores, through: :category_size 
+- has_many :categores, through: :category_size
 
 ## likesテーブル
 |Column|Type|Options|
