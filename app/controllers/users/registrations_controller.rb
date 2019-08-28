@@ -4,6 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
   end
 
+  def new
+  end
+
   # GET /resource/sign_up
 
   # POST /resource
