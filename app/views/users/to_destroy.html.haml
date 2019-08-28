@@ -1,0 +1,12 @@
+= render 'shared/header'
+
+= render 'shared/breadcrumb'
+
+%main.main-container
+
+  = render 'users/shared/main-side'
+
+  .log-out
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class:'log-out__btn'
+
+  = render 'shared/sell-btn'

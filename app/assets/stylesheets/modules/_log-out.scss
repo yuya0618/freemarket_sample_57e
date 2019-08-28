@@ -1,0 +1,16 @@
+.log-out {
+  width: 700px;
+  height: 100%;
+  padding: 64px;
+  background: $white;
+  &__btn {
+    max-width: 320px;
+    margin: 0px auto;
+    display: block;
+    color: rgb(255, 255, 255);
+    background: rgb(234, 53, 45);
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+  }
+}

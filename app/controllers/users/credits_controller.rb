@@ -1,4 +1,4 @@
-class Users::ConfirmationsController < Devise::ConfirmationsController
+class Users::CreditsController< Devise::RegistrationsController
   # GET /resource/confirmation/new
   def index
   end
