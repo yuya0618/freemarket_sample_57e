@@ -24,40 +24,15 @@ header{
   height: 100%;
   width: 50%;
   margin: 0 auto;
-}
-
-.item{
-  background-color: white;
-  box-sizing: border-box;
-  padding: 0px 35px;
-  margin: 0 auto 0;
-
-  &__name{
-    padding: 15px 0 15px 0;
-  }
-
-
-  &__left{
-    width: 48%;
-    height: 100%;
-    float: left;
-    background-color: #F8F5F4;
-    align-items: center;
-
-    &__main{
-      width: 100%;
-      height: 60%;
-    }
-    &__mainpic{
   .item{
     background-color: white;
     box-sizing: border-box;
     padding: 0px 35px;
     margin: 0 auto 0;
-
+  
     &__name{
       padding: 15px 0 15px 0;
-    }
+    }  
     &__left{
       width: 48%;
       height: 100%;
@@ -67,7 +42,7 @@ header{
       &__main{
         width: 100%;
         height: 60%;
-      }
+      }   
       &__mainpic{
         height: 100%;
         width: 100%;
@@ -103,7 +78,7 @@ header{
       font-weight: 100;
       a{
         color: rgba(0, 183, 255, 0.863);
-      }
+      }    
       th{
         background-color: #F8F5F4;
         width: 40%;
@@ -114,13 +89,13 @@ header{
         padding: 12px;
       }
     }
-
-
+    
+  
     &__info{
       margin-bottom: 15px;
       height: 450px;
     }
-  }
+  }  
   #item__name{
     text-align: center;
     width: 100%;
@@ -160,9 +135,9 @@ header{
       padding: 10px 200px;
       color: white;
       font-weight: bold;
-    }
+    }  
   }
-
+  
   .description{
     height: 300px;
 
@@ -176,7 +151,7 @@ header{
     box-sizing: border-box;
     padding: 30px 35px 0 35px;
     height: 220px;
-
+  
     .sns{
       text-align: center;
       padding-top: 70px;
@@ -194,19 +169,19 @@ header{
       width: 100%;
       margin-bottom: 5px;
     }
-
+    
     textarea{
       width: 100%;
       height: 80px;
     }
-
+    
     button{
       width: 100%;
       background: gray;
       height: 40px;
       font-size: 15px;
       color: white;
-    }
+    }    
   }
 
   .page{
@@ -253,12 +228,12 @@ header{
     width: 100%;
     height: 100%;
   }
-
+  
   .explaination{
     background-color: white;
     width: 100%;
     height: 100px;
-  }
+  }  
 }
 
 .bottom_pagination{
