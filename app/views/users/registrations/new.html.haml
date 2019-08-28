@@ -34,8 +34,8 @@
       %main.single-main
         %section.l-single-container
           %h2.l-single-head.registration 会員情報入力
-          %form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", :method => "POST", :novalidate => "novalidate"}
-            %input{name: "__csrf_value", type: "hidden", value: "4f864757dc8c886b24bb2a8927ea4154269a12d3c2edcad11703012f8b516b5a76335329deda53302efbcb669b8ca3f99566d66f0c84145ae55f6d92712ba521f"}/
+          %form.l-single-inner.registration-form
+            %input
             .l-single-content
               .form-group
                 %label{for:"nickname"} ニックネーム
@@ -219,9 +219,8 @@
                       %option{value: "1989"} 1902
                       %option{value: "1989"} 1901
                       %option{value: "1989"} 1900
- 
                   %span 年
-                  .select-wrap.select-wrap__month
+                  .select-wrap
                     %i.icon-arrow-bottom
                     %select.select-default{name: "month"}
                       %option{value: ""} --
@@ -238,7 +237,7 @@
                       %option{value: "11"} 11
                       %option{value: "12"} 12
                   %span 月
-                  .select-wrap.select-wrap__day
+                  .select-wrap.select-wrap
                     %i.icon-arrow-bottom
                     %select.select-default{name: "day"}
                       %option{value: ""} --
@@ -261,7 +260,7 @@
                   = link_to' 利用規約','#'
                   に同意したものとみなします
               %button.btn-default.btn-red
-                = link_to '次へ進む','/sms_confirmation'
+                = link_to signup_sms_confirmation_path
               .form-group.text-right
                 %p
                   = link_to '#' do

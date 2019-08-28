@@ -1,0 +1,66 @@
+.l-single-content
+  .form-group
+    %label{for:"nickname"} カード番号
+    %span.form-require 必須
+    %input.input-default{ name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
+    %ul.signup-card-list
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", :width => "49"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?3951034907", :width => "34"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?3951034907", :width => "30"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?3951034907", :width => "32"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?3951034907", :width => "21"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?3951034907", :width => "32"}/
+      %li
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?3951034907", :width => "32"}/
+  .form-group
+    %label{for: "birthday"} 生年月日
+    %span.form-require 必須
+    %br/
+    .birthday-select-wrap
+      .select-wrap
+        %i.icon-arrow-bottom
+        %select.select-default.half{:name => "year"}
+          %option{value: ""} --
+          %option{value: "1"} 1
+          %option{value: "2"} 2
+          %option{value: "3"} 3
+          %option{value: "4"} 4
+          %option{value: "5"} 5
+          %option{value: "6"} 6
+          %option{value: "7"} 7
+          %option{value: "8"} 8
+          %option{value: "9"} 9
+          %option{value: "10"} 10
+          %option{value: "11"} 11
+          %option{value: "12"} 12
+        %span 月
+        %select.select-default.half{:name => "year"}
+          %option{value: ""} --
+          %option{value: "19"} 19
+          %option{value: "20"} 20
+          %option{value: "21"} 21
+          %option{value: "22"} 22
+          %option{value: "23"} 23
+          %option{value: "24"} 24
+          %option{value: "25"} 25
+          %option{value: "26"} 26
+          %option{value: "27"} 27
+          %option{value: "28"} 28
+          %option{value: "29"} 29
+        %span 年
+  .form-group
+    %label{for:"nickname"} セキュリティコード
+    %span.form-require 必須
+    %input.input-default{ name: "nickname", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", value: ""}/
+  .form-group.text-right
+    .form-text
+      %span.question ?
+      %p.question カード裏面の番号とは?
+  %button.btn-default.btn-red
+    = link_to '次へ進む'
