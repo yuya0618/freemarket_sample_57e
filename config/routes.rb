@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'users#edit'
+  root to: 'users#index'
   devise_for :users
 
-  # root 'items#index'
+  root 'items#index'
   resources :items
   resources :users, only: [:index, :edit, :update, :create]
   devise_scope :user do
