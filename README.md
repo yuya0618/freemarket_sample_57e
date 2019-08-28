@@ -58,14 +58,14 @@
 |name|string|null: false|
 |price|integer|null: false|
 |details|string|null: false|
-|user_id|refernces|null: false, foreign_key: true|
-|category_id|refernces|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
 |condition|integer|null: false|
 |delivery_fee|integer|null:false|
 |delivery_method|integer|null:false|
 |delivery_location|integer|null:false|
 |delivery_term|integer|null:false|
+|user_id|refernces|null: false, foreign_key: true|
+|category_id|refernces|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
 |size_id|references||
 
 ### Association

@@ -2,10 +2,11 @@
 @import "config/reset";
 @import "config/variable";
 @import "items/index";
-@import "modules/users/user_new";
-@import "modules/users/user_registration";
-@import "modules/users/confirmation";
 @import "items/show";
+@import "items/new";
+@import "modules/users/user_new";
+// @import "modules/users/user_registration";
+@import "modules/users/confirmation";
 @import "config/body";
 @import "users/users";
 @import "modules/header";
