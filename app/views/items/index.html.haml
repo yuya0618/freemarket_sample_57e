@@ -1,4 +1,6 @@
-.main
+= render 'shared/header'
+
+.item-toppage
   .swiper-container
     .swiper-slide
       .slide--left-text
@@ -46,3 +48,6 @@
     -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
     -# = render partial: 'partial/item-top', locals: { items: @kids_items, word: 'ベビー・キッズ' }
     -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
+
+    = render 'shared/sell-btn'
+    = render 'partial/footer-black'
