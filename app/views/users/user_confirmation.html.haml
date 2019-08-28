@@ -1,0 +1,99 @@
+%header
+  -# =render "shared/header"
+  -# 後ほど追加するため一旦コメントアウト
+
+.container
+  .main
+    .main__left
+      = render 'main-side'
+
+    .main__right
+      .main__right__top
+        本人情報の確認
+      .main__right__middle
+        %p お客さまの本人情報をご登録ください。
+        %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        =link_to "本人確認書類のアップロードについて ＞", "#", class: "upload"
+      .main__right__main
+        .main__right__maincontainer
+
+          .main__right__container
+            %label お名前
+            %p.main__right__container1 メルカリ
+
+
+          .main__right__container
+            %label お名前カナ
+            %p.main__right__container1 メルカリ
+
+
+          .main__right__container
+            %label 生年月日
+            %p.main__right__container1 メルカリ
+
+          .main__right__input
+            -# DB未作成のためコメントアウト
+            -# = form_for @profile do |f|
+
+            -#   = f.label :name, "郵便番号"
+            -#   = f.span "任意", class: "logo"
+            -#   = f.text_field :name, placeholder: "例）123456"
+
+            -#   = f.label :prefecture, "都道府県"
+            -#   = f.span "任意", class: "logo"
+            -#   = f.text_field :prefecture
+
+            -#   = f.label :area, "市区町村"
+            -#   = f.span "任意", class: "logo"
+            -#   = f.text_field :area
+
+            -#   = f.label :address_number, "番地"
+            -#   = f.span "任意", class: "logo"
+            -#   = f.text_field :address_number
+
+            -#   = f.label :building, "建物名"
+            -#   = f.span "任意", class: "logo"
+            -#   = f.text_field :building, placeholder: "例）柳ビル103"
+
+            -#   = f.submit "#", id: "registraton__btn"
+
+            %form
+              .main__right__input__form
+                %label 郵便番号
+                %span.logo 任意
+                %input
+
+              .main__right__input__form
+                %label 都道府県
+                %span.logo 任意
+                %input
+
+              .main__right__input__form
+                %label 市区町村
+                %span.logo 任意
+                %input
+
+              .main__right__input__form
+                %label 番地
+                %span.logo 任意
+                %input
+
+              .main__right__input__form
+                %label 建物名
+                %span.logo 任意
+                %input
+            %button
+              = link_to "登録する", "#", id: "registraton__btn"
+
+          
+      .main__right__bottom
+        =link_to "本人情報の登録について ＞", "#", class: "upload"
+        
+
+.bottom__banner
+  = render partial: 'partial/bottom-banner'
+
+/ フッターリンク （リンク貼ってません！）
+%footer
+  = render partial: 'partial/footer-black'
+

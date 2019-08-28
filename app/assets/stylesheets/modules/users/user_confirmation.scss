@@ -1,0 +1,296 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+header{
+  height: 100px;
+  width: 100%; 
+}
+.container{
+  background-color: #F1EEED;
+  padding: 0px 150px;
+}
+.main{
+  display: flex;
+  &__right{
+    width: 70%;
+    background-color: white;
+    margin-top: 20px;
+    height: 100%;
+
+    &__top{
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 1px solid #F1EEED;
+    }
+
+    &__middle{
+      padding: 80px;
+      font-size: 14px;
+      font-weight: 100;
+      .upload{
+        text-decoration: none;
+        color: #0099e8;
+        float: right;
+        font-size: 14px;
+      }
+    }
+
+    &__bottom{
+      padding: 0 80px 80px 80px;
+      .upload{
+        text-decoration: none;
+        color:#0099e8;
+        float: right;
+        font-size: 14px;
+      }
+    }
+    &__main{
+      padding: 5px 80px;
+    }
+    &__maincontainer{
+      p{
+        font-size: 14px;
+      }
+      label{
+        font-weight: bold;
+        margin: 7px 0;
+        font-size: 14px;
+      }
+      .container1{
+        font-weight: bold;
+        margin: 7px 0;
+      }
+      .main__right__input{
+        &__form{
+          padding: 10px 0;
+        }
+        form label{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        form span{
+          color: white;
+          background-color: #CCC;
+          font-size: 13px;
+          padding: 2px;
+          border-radius: 10%;
+        }
+        form input{
+          width: 100%;
+          height: 30px;
+          border-radius: 5px;
+          border: 2px solid #F1EEED;
+          margin-top: 5px;
+        }
+        button{
+          padding: 15px 0;
+          margin: 30px 0;
+          background-color: red;
+          width: 100%;
+
+          a{
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            background-color: red;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.main-side {
+  margin-right: 40px;
+  width: 280px;
+}
+.mypage-nav li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+  list-style: none;
+
+}
+.mypage-nav__item {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 16px;
+  display: block;
+  color: #333;
+
+}
+.mypage-nav-head {
+  margin-top: 40px;
+}
+.mypage-nav-merpay li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+  list-style: none;
+
+}
+.mypage-nav-config li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+}
+.main-side {
+  margin-right: 40px;
+  width: 280px;
+}
+.mypage-nav li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+
+}
+.mypage-nav__item {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 16px;
+  display: block;
+  color: #333;
+
+}
+.mypage-nav-head {
+  margin-top: 40px;
+}
+.mypage-nav-merpay li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+}
+.mypage-nav-config li {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+  list-style: none;
+}
+
+.bottom__banner{
+  padding: 0 300px;
+  display: flex;
+  position: relative;
+  background: url("https://patch.com/img/cdn20/users/23121104/20190506/053259/styles/patch_image/public/abstract-backdrop-background-bar-blank-blur-blurred-blurry-bokeh-cafe-celebrate-celebration-city-coffee-color-community-coun-20190506173218-55152900.jpg?width=705");
+  &__sentence{
+    &__top{
+      font-size: 25px;
+      color:white;
+    }
+    &__bottom{
+      color:white;
+      font-size: 35px;
+    }
+  }
+}
+
+.bottom__image{
+  display: flex;
+  #bottom__image{
+    padding-right: 10px;
+  }
+  
+}
+
+#bottom__image1__merucari{
+  width: 60px;
+  height: 60px;
+  padding-right: 7px;
+}
+
+#bottom__image2__twitter{
+  padding-right: 7px;
+}
+
+.bottom__banner__right{
+  #bottom__banner__right{
+    height: 100%;
+    width:300px;
+    position: absolute;
+    top: 0px;
+    right: 350px;
+  }  
+}
+
+footer{
+  height: 400px;
+  background-color: black;
+  position: relative;
+  padding:15px 150px 0 150px;
+  .footer{
+  display:flex;
+  width: 100%;
+  p{
+    margin: 0; 
+  }
+  &__title{
+    color: white;
+    font-weight: bold;
+  }
+  &__main{
+    width: 20%;
+  }
+
+  #title1{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  #title2{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }  
+  #title3{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  #title4{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p{
+    font-size: 12px;
+    font-weight: 100;
+    color:lightgray;
+    margin-right: 5px;
+    padding: 5px 0;
+  }  
+}
+
+#top{
+  color: black;
+}
+.icons{
+  padding-top: 15px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+}
+.icon{
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+.footer__bottom{
+  display: flex;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 15px;
+  &__logo{
+
+    padding-right: 300px;
+  }
+  &__year{
+    color: white;
+    #footer__bottom__year{
+      font-size: 11px;
+    }   
+  }
+}
+}
