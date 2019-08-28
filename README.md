@@ -21,7 +21,6 @@
 - has_many :comments
 
 
-
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
