@@ -1,58 +1,59 @@
-.footer
-  .footer__main
-    %p#title1 メルカリについて
-    %p 会社概要
-    %p 採用情報
-    %p プレスリリース
-    %p 公式ブログ
-    %p メルカリロゴ利用ガイド
-    .icons
-      =link_to "https://twitter.com/mercari_jp" do
-        =image_tag "https://image.freepik.com/free-icon/twitter-social-network-symbol_318-31407.jpg", class:"icon"
+ %footer 
+  .footer
+    .footer__main
+      %p#title1 メルカリについて
+      %p 会社概要
+      %p 採用情報
+      %p プレスリリース
+      %p 公式ブログ
+      %p メルカリロゴ利用ガイド
+      .icons
+        =link_to "https://twitter.com/mercari_jp" do
+          =image_tag "https://image.freepik.com/free-icon/twitter-social-network-symbol_318-31407.jpg", class:"icon"
 
-      =link_to "https://www.facebook.com/mercarijp" do
-        =image_tag "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8AAAA0NDRMTEzDw8OlpaX6+voZGRl2dnZQUFDY2Ni2trb4+PixsbF8fHwpKSnS0tKHh4fIyMiVlZXBwcEvLy8jIyMQEBBBQUFbW1uqqqpkZGTw8PBOTk7k5OQ4ODhsbGzg4OALCws/Pz+HY3GGAAAC9UlEQVR4nO3c727aMBSHYVZGKBAoA8L/FWjv/x477cMkWtruGOucn633vYDIj0Rjx3Ha6wV1nK+mg9lue+rWw5cfX/cYNcjEmstkeei+QZUrfF6dnyy4woTNdGTWlSQcPybxihHOd6m+MoTjO3xFCGf3+AoQjk/3AeWFgzt98sLkO2gpwjv/BPWFhwxAaeGvHEBl4T4LUFg4zwPUFbab2oU5bqPSwly/UVlhs61dmOk+qits7JsVhQkn+YCawuahduEqI1BTmGXFrSxscwIlhdPqhWk7vwUJj1mBisJF9cI8j/bKwtfahZn/DAWF4+qFeWdDRWHmG42gMO98ryhMffjdrLvX/uhD/WU06H1Jt9LdcnJp26aJHvx/lXArnT1HD9qUfc22ih6yMfMWzSR6xNas+4j96AGbs06Hi+gBmzO+r9hGj9ee8c293Gz3fWebsLwfqXUnsayp8G/GE15t9Hjt2RbemzIWalfZhGuEgtmEXfRwE7IJT9HDTcgmfIgebkIIEeqHEKF+CBHqhxChfggR6ofwOuln/MXPWy1sH1Q+rW5e5eqKUcC8h0i/aBglbIZOwkP1wln1wrD3b27CffXCefXCcfXCsHeoXsKXsHeoXsJ1FNBNGLdy9RLuqheGLWnchIPqhXFHF72EcYemvIRhSxo34bF2YRd34MZJGHj+1EkYN+F7CeMmfC9h3ITvJZxWLww8Je0kvFQvDDwl7SQMPGHrI4w8YesjHFUvPFcvDFzSOAkjP4vyEUZ+fukjjHvC9xJGfvjlI4zbw/gj9ABGLml6zeBme9s/o1vfvsq/qwUCP+23SSh9YuiTbMIST331ESKUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9EPoK3wACMEg2idKzXAAAAABJRU5ErkJggg==", class: "icon"
+        =link_to "https://www.facebook.com/mercarijp" do
+          =image_tag "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8AAAA0NDRMTEzDw8OlpaX6+voZGRl2dnZQUFDY2Ni2trb4+PixsbF8fHwpKSnS0tKHh4fIyMiVlZXBwcEvLy8jIyMQEBBBQUFbW1uqqqpkZGTw8PBOTk7k5OQ4ODhsbGzg4OALCws/Pz+HY3GGAAAC9UlEQVR4nO3c727aMBSHYVZGKBAoA8L/FWjv/x477cMkWtruGOucn633vYDIj0Rjx3Ha6wV1nK+mg9lue+rWw5cfX/cYNcjEmstkeei+QZUrfF6dnyy4woTNdGTWlSQcPybxihHOd6m+MoTjO3xFCGf3+AoQjk/3AeWFgzt98sLkO2gpwjv/BPWFhwxAaeGvHEBl4T4LUFg4zwPUFbab2oU5bqPSwly/UVlhs61dmOk+qits7JsVhQkn+YCawuahduEqI1BTmGXFrSxscwIlhdPqhWk7vwUJj1mBisJF9cI8j/bKwtfahZn/DAWF4+qFeWdDRWHmG42gMO98ryhMffjdrLvX/uhD/WU06H1Jt9LdcnJp26aJHvx/lXArnT1HD9qUfc22ih6yMfMWzSR6xNas+4j96AGbs06Hi+gBmzO+r9hGj9ee8c293Gz3fWebsLwfqXUnsayp8G/GE15t9Hjt2RbemzIWalfZhGuEgtmEXfRwE7IJT9HDTcgmfIgebkIIEeqHEKF+CBHqhxChfggR6ofwOuln/MXPWy1sH1Q+rW5e5eqKUcC8h0i/aBglbIZOwkP1wln1wrD3b27CffXCefXCcfXCsHeoXsKXsHeoXsJ1FNBNGLdy9RLuqheGLWnchIPqhXFHF72EcYemvIRhSxo34bF2YRd34MZJGHj+1EkYN+F7CeMmfC9h3ITvJZxWLww8Je0kvFQvDDwl7SQMPGHrI4w8YesjHFUvPFcvDFzSOAkjP4vyEUZ+fukjjHvC9xJGfvjlI4zbw/gj9ABGLml6zeBme9s/o1vfvsq/qwUCP+23SSh9YuiTbMIST331ESKUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9EPoK3wACMEg2idKzXAAAAABJRU5ErkJggg==", class: "icon"
 
- 
-  .footer__main
-    %p#title2 ヘルプ＆ガイド
-    %p メルカリガイド
-    %p らくらくメルカリ便
-    %p ゆうゆうメルカリ便
-    %p 大型メルカリ便
-    %p 車体取引ガイド
-    %p メルカリあんしん・あんぜん宣言！
-    %p 偽ブランド品撲滅への取り組み
-    %p メルカリボックス
-  .footer__main
-    %p#title3 プライバシーと利用規約
-    %p プライバシーポリシー
-    %p メルカリ利用規約
-    %p
-      あんしんスマホサポート制度に
-      %br>/
-      関する利用規約
-    %p コンプライアンスポリシー
-  .footer__main
-    %p#top 1111111
-    %p 
-      個人データの安全管理に係る
-      %br>/
-      基本方針
-    %p 特定商取引特定商取引に関する表記
-    %p 資金決済法法に基づく表示
-    %p 法令順守と犯罪防止のために
-  .footer__main
-    %p#title4 国
-    %p 日本
-    %p United States
-    %p
+  
+    .footer__main
+      %p#title2 ヘルプ＆ガイド
+      %p メルカリガイド
+      %p らくらくメルカリ便
+      %p ゆうゆうメルカリ便
+      %p 大型メルカリ便
+      %p 車体取引ガイド
+      %p メルカリあんしん・あんぜん宣言！
+      %p 偽ブランド品撲滅への取り組み
+      %p メルカリボックス
+    .footer__main
+      %p#title3 プライバシーと利用規約
+      %p プライバシーポリシー
+      %p メルカリ利用規約
+      %p
+        あんしんスマホサポート制度に
+        %br>/
+        関する利用規約
+      %p コンプライアンスポリシー
+    .footer__main
+      %p#top 1111111
+      %p 
+        個人データの安全管理に係る
+        %br>/
+        基本方針
+      %p 特定商取引特定商取引に関する表記
+      %p 資金決済法法に基づく表示
+      %p 法令順守と犯罪防止のために
+    .footer__main
+      %p#title4 国
+      %p 日本
+      %p United States
+      %p
 
-/ 最下部
-.footer__bottom
-  .footer__bottom__logo
-    =link_to "#" do
-      =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?3611986733"
+  / 最下部
+  .footer__bottom
+    .footer__bottom__logo
+      =link_to "#" do
+        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?3611986733"
 
-  .footer__bottom__year
-    %p#footer__bottom__year ©️2019 Mercari
+    .footer__bottom__year
+      %p#footer__bottom__year ©️2019 Mercari
