@@ -1,0 +1,80 @@
+footer{
+  height: 400px;
+  background-color: black;
+  position: relative;
+  padding:15px 150px 0 150px;
+  .footer{
+  display:flex;
+  width: 100%;
+  p{
+    margin: 0; 
+  }
+  &__title{
+    color: white;
+    font-weight: bold;
+  }
+  &__main{
+    width: 20%;
+  }
+
+  #title1{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  #title2{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }  
+  #title3{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  #title4{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p{
+    font-size: 12px;
+    font-weight: 100;
+    color:lightgray;
+    margin-right: 5px;
+    padding: 5px 0;
+  }  
+}
+
+#top{
+  color: black;
+}
+.icons{
+  padding-top: 15px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+}
+.icon{
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+.footer__bottom{
+  display: flex;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 15px;
+  &__logo{
+
+    padding-right: 300px;
+  }
+  &__year{
+    color: white;
+    #footer__bottom__year{
+      font-size: 11px;
+    }   
+  }
+}
+}

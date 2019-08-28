@@ -1,0 +1,45 @@
+.bottom__banner{
+  padding: 0 300px;
+  display: flex;
+  position: relative;
+  background: url("https://patch.com/img/cdn20/users/23121104/20190506/053259/styles/patch_image/public/abstract-backdrop-background-bar-blank-blur-blurred-blurry-bokeh-cafe-celebrate-celebration-city-coffee-color-community-coun-20190506173218-55152900.jpg?width=705");
+  &__sentence{
+    &__top{
+      font-size: 25px;
+      color:white;
+    }
+    &__bottom{
+      color:white;
+      font-size: 35px;
+    }
+  }
+}
+
+.bottom__image{
+  display: flex;
+  #bottom__image{
+    padding-right: 10px;
+  }
+  
+}
+
+#bottom__image1__merucari{
+  width: 60px;
+  height: 60px;
+  padding-right: 7px;
+}
+
+#bottom__image2__twitter{
+  padding-right: 7px;
+}
+
+.bottom__banner__right{
+  #bottom__banner__right{
+    height: 100%;
+    width:300px;
+    position: absolute;
+    top: 0px;
+    right: 350px;
+  }  
+}
+
