@@ -1,0 +1,68 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+header{
+  height: 100px;
+  width: 100%; 
+}
+.container{
+  background-color: #F1EEED;
+  padding: 0px 150px;
+}
+.main{
+  display: flex;
+  &__right{
+    width: 70%;
+    background-color: white;
+    margin-top: 20px;
+    height: 100%;
+
+    &__top{
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 1px solid #F1EEED;
+    }
+    &__middle{
+      padding: 100px;
+      font-size: 14px;
+      font-weight: 100;
+      &__top{
+        padding: 0 20px 20px 20px;
+        border-bottom: 1px solid #F1EEED;
+        text-align: center; 
+      }
+      &__card{
+        font-weight: bold;
+        font-size: 15px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+      }
+      button{
+        background-color: red;
+        text-decoration: none;
+        width: 50%;
+        height: 50px;
+      }
+      &__btn{
+        color: white;
+        font-size: 15px;
+      }
+    }
+    &__bottom{
+      padding: 0 80px 80px 80px;
+      .upload{
+        text-decoration: none;
+        color:#0099e8;
+        float: right;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }    
+  }
+}
