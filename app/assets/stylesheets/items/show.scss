@@ -248,7 +248,7 @@ header{
 }
 
 .bottom__banner{
-  box-sizing: border-box;
+  padding: 0 300px;
   display: flex;
   position: relative;
   background: url("https://patch.com/img/cdn20/users/23121104/20190506/053259/styles/patch_image/public/abstract-backdrop-background-bar-blank-blur-blurred-blurry-bokeh-cafe-celebrate-celebration-city-coffee-color-community-coun-20190506173218-55152900.jpg?width=705");
@@ -256,7 +256,6 @@ header{
     &__top{
       font-size: 25px;
       color:white;
-      padding-bottom: 5px;
     }
     &__bottom{
       color:white;
@@ -270,13 +269,17 @@ header{
   #bottom__image{
     padding-right: 10px;
   }
-  .bottom__image1{
-    &__merucari{
-      width: 60px;
-      height: 60px;
-    }
-  }
   
+}
+
+#bottom__image1__merucari{
+  width: 60px;
+  height: 60px;
+  padding-right: 7px;
+}
+
+#bottom__image2__twitter{
+  padding-right: 7px;
 }
 
 .bottom__banner__right{
@@ -290,18 +293,20 @@ header{
 }
 
 footer{
-  height: 350px;
+  height: 400px;
   background-color: black;
   position: relative;
+  padding:15px 150px 0 150px;
   .footer{
   display:flex;
   width: 100%;
-
+  p{
+    margin: 0; 
+  }
   &__title{
     color: white;
     font-weight: bold;
   }
-
   &__main{
     width: 20%;
   }
@@ -326,7 +331,6 @@ footer{
     font-weight: bold;
     font-size: 16px;
   }
-  
   p{
     font-size: 12px;
     font-weight: 100;
@@ -341,11 +345,15 @@ footer{
 }
 .icons{
   padding-top: 15px;
+  height: 30px;
+  width: 30px;
+  display: flex;
 }
 .icon{
   height: 30px;
   width: 30px;
   border-radius: 5px;
+  padding-right: 5px;
 }
 .footer__bottom{
   display: flex;
