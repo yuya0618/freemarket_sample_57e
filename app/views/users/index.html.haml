@@ -9,6 +9,15 @@
 
   .main-content
     .mypage-user-info
+      = link_to "#", class: "mypage-user-info__link" do
+        = fa_icon 'user-circle', class: 'mypage-user-info__icon'
+        %h2.mypage-user-info__user-name
+        .mypage-user-info__numbers
+          .mypage-user-info__rating
+            評価　123
+          .mypage-user-info__items
+            出品数　321
+
 
     = render 'users/shared/mypage-tabs'
 
