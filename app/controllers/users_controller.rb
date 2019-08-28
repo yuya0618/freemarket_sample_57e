@@ -6,4 +6,7 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def to_destroy
+  end
+
 end
