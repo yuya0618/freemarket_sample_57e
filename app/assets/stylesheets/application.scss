@@ -2,10 +2,11 @@
 @import "config/reset";
 @import "config/variable";
 @import "items/index";
+@import "items/show";
+@import "items/new";
 @import "modules/users/user_new";
 @import "modules/users/user_registration";
 @import "modules/users/confirmation";
-@import "items/show";
 @import "config/body";
 @import "users/users";
 @import "modules/header";
@@ -17,5 +18,8 @@
 @import "modules/mypage-user-info";
 @import "modules/profile-edit";
 @import "items/confirmation";
+@import "modules/users/user_confirmation";
 @import "modules/footer-black";
 @import "modules/bottom-banner";
+@import "modules/log-out";
+@import "modules/payment-registration";
