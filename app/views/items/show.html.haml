@@ -99,7 +99,11 @@
         .action
           %button コメントする
 
-          
+        =form for
+          =f.text_field :comment, class:"field"
+          =f.submit,  class: "action"
+
+
       / 前後ページリンク
       .page
         = link_to '＜ back', '#', class:"page__btn1"
