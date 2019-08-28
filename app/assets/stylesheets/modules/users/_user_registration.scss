@@ -1,4 +1,4 @@
-body {
+.user_registration {
   position: relative;
   min-height: 100%;
   background: #f5f5f5;
@@ -92,6 +92,12 @@ body {
                 padding: 2px 4px;
                 width:30px;
               }
+              span.form-more{
+                background-color:#f5f5f5;
+                color:white;
+                padding: 2px 4px;
+                width:30px;
+              }
               input.input-default{
                 margin: 8px 0 0;
                 height: 48px;
@@ -102,6 +108,13 @@ body {
                 line-height: 1.5;
                 font-size: 16px;
                 width: 100%;
+              }
+              ul.signup-card-list{
+                display:flex;
+                margin: 8px 0 0;
+                li{
+                  margin: 0 0 0 8px;
+                }
               }
               input.input-default.half{
                 width: calc(50% - 6px);
@@ -115,6 +128,28 @@ body {
               }
               .birthday-select-wrap{
                 .select-wrap{
+                  display:flex;
+                  margin: 8px 0 0;
+                  i.icon-arrow-bottom{
+                    display:inline-block;
+                    font-size: 8px;
+                  }
+                  select.select-default{
+                    width: calc(34% - 17px);
+                    height: 48px;
+                    background-color:white;
+                    display: flex;
+                  }
+                  select.select-default.half{
+                    width: calc(100% - 38px);
+                    height: 48px;
+                    background-color:white;
+                    display:flex;
+                  }
+                }
+              }
+              .prefecture-btn{
+                .prefecture-wrap{
                   margin: 8px 0 0;
                   i.icon-arrow-bottom{
                     display:inline-block;
@@ -122,20 +157,13 @@ body {
                   }
                   select.select-default{
                     display: inline-block;
-                    width: calc(34% - 17px);
+                    width:100%;
                     height: 48px;
                     background-color:white;
                   }
                 }
-                span{
-                }
-                .select-wrap.select-wrap__month{
-                  i.icon-arrow-bottom{
-
-                  }
-                  select.select-default{
-                  }
-                }
+              }
+              span{
               }
               p.form-info-text{
 
@@ -144,7 +172,6 @@ body {
             .l-single-content{
               .form-group{
                 .g-recaptcha.signup-recaptcha{
-
                 }
                 p.l-single-text.text-center{
                   a{
@@ -154,6 +181,7 @@ body {
               }
             }
             button.btn-default.btn-red{
+              margin: 24px 0 50px;
               background: #ea352d;
               border: 1px solid #ea352d;
               color: #fff;
@@ -166,14 +194,24 @@ body {
               }
             }
             .form-group.text-right{
-              p{
-                text-decoration: none;
-                a{
+              .form-text{
+                display: flex;
+                justify-content: flex-end;
+                span.question{
+                  display: inline-block;
+                  width: 14px;
+                  height: 14px;
+                  border-radius: 50%;
+                  background: #0099e8;
+                  color: #fff;
+                  line-height: 14px;
+                  font-size: 12px;
+                  text-align: center;
+                }
+                p.question{
                   text-decoration: none;
                   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-                  color: #333;
-                  i.icon-arrow-right{
-                  }
+                  color: #0099e8;
                 }
               }
             }
