@@ -30,7 +30,12 @@
       %section.l-single-container
         %h2.l-single-head.registration 会員登録完了
         %h2.creating-text
-        ありがとうございます。
-        会員登録が完了しました。
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+          %button.btn-default.btn-red
+            = link_to 'メルカリを始める', '/signup/sms_confirmation'
       %section.l-single-container
-        = render ''
+        = render 'partial/bottom-banner'
+    .footer.single-footer
+      = render 'shared/loginfooter'
