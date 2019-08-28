@@ -11,12 +11,13 @@
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        .item-registration__form__group__image
-          = f.file_field :name
-          .nest-form
-            .nest-form__head
-              %p ドラッグアンドドロップ
-              %p またはクリックしてファイルをアップロード
+        =f.label :name do
+          .item-registration__form__group__image
+            .nest-form
+              .nest-form__head
+                = f.file_field :name,style:"display:none;"
+                %p ドラッグアンドドロップ
+                %p またはクリックしてファイルをアップロード
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名
@@ -120,4 +121,5 @@
           %p に同意したことになります。
         .item-registration__form__group__actions
           = f.submit "出品する"
-        = link_to 'もどる', root_path, class: 'root-return-btn'
+        .item-registration__form__group__return
+          = link_to 'もどる', root_path, class: 'root-return-btn'
