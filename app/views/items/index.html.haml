@@ -25,10 +25,10 @@
   .pickup
     %h2.pickup-top ピックアップカテゴリー
 
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
     -# 今後の部分テンプレート用
     -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
     -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
@@ -39,10 +39,10 @@
     .pickup
     %h2.pickup-top ピックアップブランド
 
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
-    = render partial: 'partial/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
+    = render 'shared/item-top'
     -# 今後の部分テンプレート用
     -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
     -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
@@ -50,4 +50,5 @@
     -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
 
     = render 'shared/sell-btn'
-    = render 'partial/footer-black'
+    = render 'shared/bottom-banner'
+    = render 'shared/footer-black'
