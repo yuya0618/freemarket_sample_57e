@@ -6,7 +6,8 @@
     .item
       .item__detail
         .item__name
-          %p#item__name バック
+          %spanp#item__name
+          = @item.name
 
             
         .item__info
@@ -118,8 +119,16 @@
         %button コメントする
 
     .page
-      = link_to '＜ back', '#', class:"page__btn1"
+      = link_to '< back', '#', class:"page__btn1"
+      -# = link_to item_path(@previous), class:"page__btn1"
+      -# %span
+      -#   = @item.name
+        
       = link_to 'forward ＞', '#', class:"page__btn2"
+      -# = link_to item_path(@next), class:"page__btn2"
+      -# %span
+      -#   = @item.name
+
 
     .sns
       .sns__icons
@@ -175,7 +184,7 @@
         
 .bottom_pagination
   .btn
-    = link_to "メルカリ ＞", "#", class:"home"
+    = link_to "メルカリ ＞", "/", class:"home"
     %span
       = @item.name
       
