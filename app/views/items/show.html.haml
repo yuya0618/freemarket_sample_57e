@@ -12,10 +12,11 @@
             
         .item__info
           .item__left
+            .triangle
+              .sold SOLD
             .item__left__main
               =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
-            
-              
+
 
             .item__left__sub1
               =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
@@ -122,12 +123,15 @@
       = link_to '< back', '#', class:"page__btn1"
       -# = link_to item_path(@previous), class:"page__btn1"
       -# %span
+      -# =fa-icon "chevron-left"
       -#   = @item.name
         
       = link_to 'forward ＞', '#', class:"page__btn2"
       -# = link_to item_path(@next), class:"page__btn2"
       -# %span
       -#   = @item.name
+      -# =fa-icon "chevron-right"
+
 
 
     .sns
