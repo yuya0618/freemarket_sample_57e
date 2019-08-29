@@ -1,11 +1,11 @@
 .items-container
   %h3.items-head
-    =link_to 'レディース新着アイテム',"#", class:"items-top"
+    =link_to 'レディース新着アイテム',root_path, class:"items-top"
   .items-box
     .item-box
-      = link_to "#" do
+      = link_to root_path do
         .item-box-photo
-          = image_tag 'fightclub.jpeg', class:"item-box-photo-pic"
+          = image_tag asset_path('fightclub.jpg'), class:"item-box-photo-pic"
         .item-box-body
           %h3.item-box-body-name 【新品未開封】ファイトクラブ
           .item-box-body-num
@@ -15,9 +15,9 @@
               %span 18
 
     .item-box
-      = link_to "#" do
+      = link_to root_path do
         .item-box-photo
-          = image_tag 'fightclub.jpeg', class:"item-box-photo-pic"
+          = image_tag asset_path('fightclub.jpg'), class:"item-box-photo-pic"
         .item-box-body
           %h3.item-box-body-name 【新品未開封】ファイトクラブ
           .item-box-body-num
@@ -27,9 +27,9 @@
               %span 18
 
     .item-box
-      = link_to "#" do
+      = link_to root_path do
         .item-box-photo
-          = image_tag 'fightclub.jpeg', class:"item-box-photo-pic"
+          = image_tag asset_path('fightclub.jpg'), class:"item-box-photo-pic"
         .item-box-body
           %h3.item-box-body-name 【新品未開封】ファイトクラブ
           .item-box-body-num
@@ -39,9 +39,9 @@
               %span 18
 
     .item-box
-      = link_to "#" do
+      = link_to root_path do
         .item-box-photo
-          = image_tag 'fightclub.jpeg', class:"item-box-photo-pic"
+          = image_tag asset_path('fightclub.jpg'), class:"item-box-photo-pic"
         .item-box-body
           %h3.item-box-body-name 【新品未開封】ファイトクラブ
           .item-box-body-num
@@ -51,4 +51,4 @@
               %span 18
 
   .more-items
-    =link_to 'すべての商品を見る',"#", class:"more-items-text"
+    =link_to 'すべての商品を見る',root_path, class:"more-items-text"

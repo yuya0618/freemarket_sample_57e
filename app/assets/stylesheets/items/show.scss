@@ -1,35 +1,13 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-body{
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #F1EEED;
-
-}
-
-header{
-  width: 100%;
-  height: 100px;
-
-}
-
 .container{
-  background-color: #F1EEED;
   padding-top: 40px;
   box-sizing: border-box;
-  height: 100%;
-  width: 50%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 20px auto;
   .item{
     background-color: white;
     box-sizing: border-box;
     padding: 0px 35px;
     margin: 0 auto 0;
-  
     &__name{
       padding: 15px 0 15px 0;
     }  
@@ -50,12 +28,12 @@ header{
       &__sub1{
         width: 100%;
         height: 20%;
-        background-color: pink;
+        padding-left: 10px;
       }
       &__sub2{
         width: 100%;
         height: 20%;
-        background-color:red;
+        padding-left: 10px;
       }
       &__subpic{
         width: 18%;
@@ -72,7 +50,6 @@ header{
       border-collapse: collapse;
       font-size: 14px;
       box-sizing: border-box;
-      // padding: 12px;
       width: 100%;
       text-align: left;
       font-weight: 100;
@@ -88,9 +65,7 @@ header{
         width: 60%;
         padding: 12px;
       }
-    }
-    
-  
+    }  
     &__info{
       margin-bottom: 15px;
       height: 450px;
@@ -106,14 +81,13 @@ header{
     box-sizing: border-box;
     margin: 0;
   }
-
   .price{
     text-align: center;
-    height: 50px;
+    height: 70px;
     padding: 10px 0;
     box-sizing: border-box;
     &__one{
-      font-size: 25px;
+      font-size: 45px;
       font-weight: bold;
     }
     &__two{
@@ -123,10 +97,9 @@ header{
       font-size: 15px;
     }
   }
-
   .check{
-
-    .checkout{
+    text-align: center;
+    .to_checkout{
       text-align: center;
       box-sizing: border-box;
       font-size: 20px;
@@ -137,53 +110,91 @@ header{
       font-weight: bold;
     }  
   }
-  
+  .choice{
+    text-align: center;
+    .to_checkout{
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 20px;
+      height:45px;
+      background-color: red;
+      padding: 10px 200px;
+      color: white;
+      margin-top: 5px;
+    }
+    .to_edit .to_delete{
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 20px;
+      height:45px;
+      background-color:lightgray;
+      padding: 10px 200px;
+      color: white;
+    }
+  }
   .description{
     height: 300px;
-
-    margin: 20px;
+    margin: 30px;
   }
+  .bottom{
+    padding: 25px 0;
+    &__content1{
+      color: black;
+      font-size: 13px;
+      margin-right: 5px;
+      background-color: lightgray;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+    &__content2{
+      color: rgba(0, 183, 255, 0.863);
+      float: right;
+      font-size: 13px;
 
-
+    }
+  }
   .comment{
     background-color: white;
     margin: 15px auto 0px;
     box-sizing: border-box;
-    padding: 30px 35px 0 35px;
+    padding: 20px 35px 20px 35px;
     height: 220px;
-  
-    .sns{
-      text-align: center;
-      padding-top: 70px;
-      box-sizing: border-box;
-      img{
-      height: 40px;
-      width: 40px;
-      border-radius: 5px;
-      }
-    }
     #caution{
       padding: 5px 5px;
       box-sizing: border-box;
-      background-color: #F9F2B4;
+      background-color: #fff6de;
       width: 100%;
       margin-bottom: 5px;
+      font-size: 14px;
     }
-    
     textarea{
       width: 100%;
       height: 80px;
     }
-    
     button{
       width: 100%;
-      background: gray;
+      background: #aaa;
       height: 40px;
-      font-size: 15px;
+      font-size: 14px;
       color: white;
     }    
   }
-
+  .sns{
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    height:100px;
+    &__icons{
+      text-align: center;
+      padding: 30px 0;
+    }
+  }
+  .sns__icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    }
   .page{
     height: 30px;
     margin: 5px auto 0;
@@ -196,10 +207,8 @@ header{
       float: right;
     }
   }
-
   .posts{
     padding: 15px 0;
-
     &__title{
       color: rgba(0, 183, 255, 0.863);
       font-size: 20px;
@@ -233,6 +242,17 @@ header{
     background-color: white;
     width: 100%;
     height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    &__name{
+      width: 100%;
+      height: 60%;
+    }
+    &__price{
+      width: 100%;
+      height: 30%;
+      font-weight: bold;
+    }
   }  
 }
 
@@ -240,9 +260,18 @@ header{
   width: 100%;
   height: 40px;
   line-height: 40px;
+  .btn{
+    span{
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 5px;
+    }
+  }
   .home{
     float: left;
-    color: black;
-    font-weight: bold;
+    color:gray;
+    font-weight: 100;
+    padding-left: 200px;
+    font-size: 13px;
   }
 }
