@@ -1,6 +1,4 @@
-
 # README
-
 
 
 
@@ -28,7 +26,6 @@
 |lasrname|string|null: false|
 |firstname-kana|string|null: false|
 |lastname-kana|string|null: false|
-|prefecture|string|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null:false|
@@ -67,7 +64,7 @@ Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|details|string|null: false|
+|details|string||
 |condition|integer|null: false|
 |delivery_fee|integer|null:false|
 |delivery_method|integer|null:false|
@@ -116,7 +113,7 @@ Column|Type|Options|
 |category_id|refernces|null: false, foreign_key: true|
 
 ### Association
-- has_many :item
+- has_many :items
 
 ## imagesテーブル
 |Column|Type|Options|
