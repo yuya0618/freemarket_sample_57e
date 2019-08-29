@@ -37,6 +37,7 @@
 ### Association
 - belongs_to :user
 
+
 ## addressesテーブル
 Column|Type|Options|
 |------|----|-------|
