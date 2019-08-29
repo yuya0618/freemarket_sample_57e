@@ -3,7 +3,7 @@
   .swiper-container{
     width: 100%;
     height: 390px;
-    background-image:url("boyake.jpg");
+    background-image:url(asset_path("boyake.jpg"));
     background-size: cover;
     background-position: center;
     .swiper-slide{
