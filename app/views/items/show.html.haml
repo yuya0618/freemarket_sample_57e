@@ -6,37 +6,38 @@
     .item
       .item__detail
         .item__name
-          %p#item__name バック
+          %span#item__name
+          = @item.name
         .item__info
           .item__left
             .item__left__main
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__mainpic"
-
-              
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
+            
 
             / ミニ１段目
             .item__left__sub1
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
 
             / ミニ２段目
             .item__left__sub2
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
-              =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
+              =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
 
           .item__right
             %table
               %tr
                 %th 出品者
                 %td
-                  =link_to "ユーザー","#"
-                  %p
+                  =link_to "#" do
+                    %span  
+                    = @item.user.nickname
                   .ratings
                     .rating__good
                     .rating__okay
@@ -44,51 +45,68 @@
               %tr
                 %th カテゴリー
                 %td
-                  %div
-                    =link_to "category"
-                  %div
-                    =link_to "category"
-                  %div
-                    =link_to "category"
+                  -# %div
+                    -# =link_to "#"
+                      -# %span レディース
+                  -# %div
+                    -# =link_to "＃"
+                    -# %span 靴
+                  -# %div
+                    -# =link_to "#"
+                    -# %span ヒール
+
               %tr
                 %th ブランド
                 %td
+
               %tr
                 %th 商品のサイズ
                 %td
+
               %tr
                 %th 商品の状態
                 %td
+                  = @item.condition
+
               %tr
                 %th 配送料の負担
                 %td
+                  = @item.delivery_fee
+
               %tr
                 %th 配送の方法
                 %td
+                  = @item.delivery_method
+
               %tr
                 %th 配送元地域
                 %td
+                  = @item.delivery_location
+
               %tr
                 %th 発送日の目安
                 %td
-        / 金額から商品詳細まで
+                  = @item.delivery_term
+
         .price
           %span.price__one
-            金額
+            = @item.price
+
           %span.price__two
             （税込）
           %span.price__three
             送料込み
         .check
-          =link_to "購入画面に進む", "#", class: "checkout"
+          =link_to "購入画面に進む", "#", class: "to_checkout"
+
         .description
-          %p こちらの商品は、、、、
+          = @item.details
+
         .bottom
           =link_to "♡いいね！＃", "#", class: "bottom__content1"
           =link_to "不適切な商品の報告", "#", class: "bottom__content1"
           =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
 
-    / コメント(実装なし)↓
     .comment
       .caution
         %p#caution
@@ -97,37 +115,27 @@
         %textarea
       .action
         %button コメントする
-
-      =form for
-        =f.text_field :comment, class:"field"
-        =f.submit,  class: "action"
-
-    / コメント(実装なし)↑
-
-
-    / 前後ページリンク
     .page
       = link_to '＜ back', '#', class:"page__btn1"
       = link_to 'forward ＞', '#', class:"page__btn2"
 
-    / SNS
     .sns
+      .sns__icons
 
-      =link_to "#" do
-        =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg"
-      =link_to "#" do
-        =image_tag "https://image.flaticon.com/icons/svg/124/124021.svg"
-      =link_to "#" do
-        =image_tag "https://image.flaticon.com/icons/svg/124/124027.svg"
-      =link_to "#" do
-        =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class:"sns__icon"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124021.svg", class:"sns__icon"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124027.svg", class:"sns__icon"
+        =link_to "#" do
+          =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg", class:"sns__icon"
 
 
-    / 商品一覧
+
     .posts
       = link_to '？？さんの投稿', '#', class:"posts__title"
 
-    / ユーザーその他の商品表示 １段落目
     .posts__items
       .posts__item1
         = render partial: 'shared/show-items'
@@ -136,7 +144,6 @@
       .posts__item1
         = render partial: 'shared/show-items'
 
-    / ユーザーその他の商品表示 ２段落目
     .posts__items
       .posts__item2
         = render partial: 'shared/show-items'
@@ -149,7 +156,6 @@
     .posts
       = link_to 'その他の商品', '#', class:"posts__title"
       
-    / その他オススメ商品表示 １段落目
     .posts__items
       .posts__item1
         = render partial: 'shared/show-items'
@@ -158,7 +164,6 @@
       .posts__item1
         = render partial: 'shared/show-items'
         
-    / その他オススメ商品表示 ２段落目
     .posts__items
       .posts__item2
         = render partial: 'shared/show-items'
@@ -167,16 +172,13 @@
       .posts__item2
         = render partial: 'shared/show-items'
 
-        
-  / 下部ホームリンク
   .bottom_pagination
     .btn
-      = link_to "メルカリ ＞", "#", class:"home"
-      
-= render partial: 'shared/bottom-banner'
+    = link_to "メルカリ ＞", "#", class:"home"
+    %span.btn__right
+      = @item.name
 
-  / フッターリンク （リンク貼ってません！）
-  
+= render partial: 'shared/bottom-banner'  
 = render partial: 'shared/footer-black'
 
 
