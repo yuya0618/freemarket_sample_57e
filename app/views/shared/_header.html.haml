@@ -2,7 +2,8 @@
   .header-inner
     .header-top
       .header-top__logo-box
-      = image_tag "logo.svg", size: "134x36", alt: "ロゴ"
+        = link_to items_path do
+          = image_tag "logo.svg", size: "134x36", alt: "ロゴ"
       .header-top__search-form-box
         = form_with model: @item, class: 'header-top__search-form' do |f|
           = f.text_field :id, {class: 'header-top__input-field', placeholder: '何かお探しですか？'}

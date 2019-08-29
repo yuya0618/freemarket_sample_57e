@@ -21,7 +21,7 @@
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string||
+|text|text||
 |firstname|string|null: false|
 |lasrname|string|null: false|
 |firstname_kana|string|null: false|
@@ -35,13 +35,13 @@
 ### Association
 - belongs_to :user
 
-## adressesテーブル
+## addressesテーブル
 Column|Type|Options|
 |------|----|-------|
 |zip_code|integer|null:false|
-|adress_pref|integer|null: false|
-|adress_city|string|null:false|
-|adress_number|string|null:false|
+|address_pref|integer|null: false|
+|address_city|string|null:false|
+|address_number|string|null:false|
 |building|string||
 |user_id|references|null:false, foreign_key: true|
 
@@ -92,21 +92,24 @@ Column|Type|Options|
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|parent_id|references|null: false, foreign_key: true|
+|parent_id|references|foreign_key: true|
 
 ### Association
 - has_many :items
-- has_many :category_sizes
-- has_many :sizes, through: :category_size
-- belongs_to :parent, class_name: :Category
-- has_many :children, class_name: :Category, foreign_key: :parent_id
+- has_many :categories_sizes
+- has_many :sizes, through: :categories_sizes
+- belongs_to :parent, class_name: 'Category', optional: true
+- has_many :children, class_name: 'Category', foreign_key: 'parent_id'
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string||
 
-## category_sizeテーブル
+### Association
+- has_many :items
+
+## categories_sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |size_id|references|null: false, foreign_key: true|
@@ -119,7 +122,7 @@ Column|Type|Options|
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|image|string|null: false|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -132,8 +135,8 @@ Column|Type|Options|
 
 ### Association
 - has_many :items
-- has_many :category_size
-- has_many :categores, through: :category_size
+- has_many :categories_sizes
+- has_many :categories, through: :categories_sizes
 
 ## likesテーブル
 |Column|Type|Options|
@@ -161,6 +164,10 @@ Column|Type|Options|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|refernces|null: false, foreign_key: :true|
 
+### Association
+- belongs_to :item
+- belongs_to :seller
+- belongs_to :buyer
 
 ## buyersテーブル
 |Column|Type|Options|
@@ -175,12 +182,10 @@ Column|Type|Options|
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-
 ### Association
 - belongs_to :user
 - has_many :reviews
 - has_many :orders
-
 
 ## reviewsテーブル
 |Column|Type|Options|
