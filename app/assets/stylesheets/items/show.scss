@@ -7,7 +7,11 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #F1EEED;
+  // background-color:  rgb(245, 245, 245);
+
+}
+.wrapper{
+  background-color: white;
 
 }
 
@@ -18,12 +22,12 @@ header{
 }
 
 .container{
-  background-color: #F1EEED;
+  // background-color:  rgb(245, 245, 245);
   padding-top: 40px;
   box-sizing: border-box;
   height: 100%;
-  width: 50%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 20px auto;
   .item{
     background-color: white;
     box-sizing: border-box;
@@ -50,12 +54,12 @@ header{
       &__sub1{
         width: 100%;
         height: 20%;
-        background-color: pink;
+        // background-color: pink;
       }
       &__sub2{
         width: 100%;
         height: 20%;
-        background-color:red;
+        // background-color:red;
       }
       &__subpic{
         width: 18%;
@@ -109,11 +113,12 @@ header{
 
   .price{
     text-align: center;
-    height: 50px;
+    height: 70px;
     padding: 10px 0;
     box-sizing: border-box;
+
     &__one{
-      font-size: 25px;
+      font-size: 45px;
       font-weight: bold;
     }
     &__two{
@@ -125,8 +130,10 @@ header{
   }
 
   .check{
+    text-align: center;
 
-    .checkout{
+
+    .to_checkout{
       text-align: center;
       box-sizing: border-box;
       font-size: 20px;
@@ -137,6 +144,35 @@ header{
       font-weight: bold;
     }  
   }
+
+  .choice{
+    text-align: center;
+
+    .to_checkout{
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 20px;
+      height:45px;
+      background-color: red;
+      padding: 10px 200px;
+      color: white;
+      margin-top: 5px;
+
+
+    }
+
+    .to_edit .to_delete{
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 20px;
+      height:45px;
+      background-color:lightgray;
+      padding: 10px 200px;
+      color: white;
+
+      
+    }
+  }
   
   .description{
     height: 300px;
@@ -144,30 +180,42 @@ header{
     margin: 20px;
   }
 
+  .bottom{
+    padding: 25px 0;
+    &__content1{
+      color: black;
+      font-size: 13px;
+      margin-right: 5px;
+      background-color: lightgray;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+
+    }
+
+    &__content2{
+      color: rgba(0, 183, 255, 0.863);
+      float: right;
+      font-size: 13px;
+
+    }
+  }
+
 
   .comment{
     background-color: white;
     margin: 15px auto 0px;
     box-sizing: border-box;
-    padding: 30px 35px 0 35px;
+    padding: 20px 35px 20px 35px;
     height: 220px;
   
-    .sns{
-      text-align: center;
-      padding-top: 70px;
-      box-sizing: border-box;
-      img{
-      height: 40px;
-      width: 40px;
-      border-radius: 5px;
-      }
-    }
     #caution{
       padding: 5px 5px;
       box-sizing: border-box;
-      background-color: #F9F2B4;
+      background-color: #fff6de;
       width: 100%;
       margin-bottom: 5px;
+      font-size: 14px;
     }
     
     textarea{
@@ -177,12 +225,30 @@ header{
     
     button{
       width: 100%;
-      background: gray;
+      background: #aaa;
       height: 40px;
-      font-size: 15px;
+      font-size: 14px;
       color: white;
     }    
   }
+  .sns{
+    // padding-top: 70px;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    height:100px;
+    &__icons{
+      text-align: center;
+      padding: 30px 0;
+    }
+
+  }
+
+  .sns__icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    }
 
   .page{
     height: 30px;
@@ -240,9 +306,12 @@ header{
   width: 100%;
   height: 40px;
   line-height: 40px;
+  // border-top: 1px solid lightgray;
   .home{
     float: left;
-    color: black;
-    font-weight: bold;
+    color:gray;
+    font-weight: 100;
+    padding-left: 200px;
+
   }
 }
