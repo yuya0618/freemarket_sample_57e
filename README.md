@@ -181,6 +181,7 @@ Column|Type|Options|
 - has_many :reviews
 - has_many :orders
 
+
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
