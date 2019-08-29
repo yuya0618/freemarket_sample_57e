@@ -1,7 +1,7 @@
 .mypage-user-info {
   height: 200px;
   width: 100%;
-  background-image: url(user-bg.jpg);
+  background-image: url(asset_path("user-bg.jpg"));
   vertical-align: middle;
   display: table-cell;
   &__link {
