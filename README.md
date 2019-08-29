@@ -169,6 +169,7 @@ Column|Type|Options|
 ### Association
 - belongs_to :user
 - has_many : reviews
+- has_many :orders
 ## sellersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -176,7 +177,8 @@ Column|Type|Options|
 
 ### Association
 - belongs_to :user
-- has_many : reviews
+- has_many :reviews
+- has_many :orders
 
 ## reviewsテーブル
 |Column|Type|Options|

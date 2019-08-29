@@ -27,31 +27,18 @@
         %form.l-single-inner.registration-form
           .l-single-content
             .form-group
-              %label{for:"nickname"} 名前
+              %label{for:"zip_code"} 郵便番号
               %span.form-require 必須
-              %input.input-default{ name: "nickname", placeholder: "例) メルカリ", type: "text", value: ""}/
-              %input.input-default{ name: "nickname", placeholder: "例) 太郎", type: "text", value: ""}/
-            .form-group
-              %label{for:"nickname"} お名前カナ
-              %span.form-require 必須
-              %input.input-default{ name: "nickname", placeholder: "例) メルカリ", type: "text", value: ""}/
-              %input.input-default{ name: "nickname", placeholder: "例) タロウ", type: "text", value: ""}/
-            .form-group
-              %label{for:"nickname"} 郵便番号
-              %span.form-require 必須
-              %input.input-default{ name: "nickname", placeholder: "例) 123-4567", type: "text", value: ""}/
-            .form-group
-              %label{for:"nickname"} 郵便番号
-              %span.form-require 必須
-              %input.input-default{ name: "nickname", placeholder: "例) メルカリ", type: "text", value: ""}/
+              %input.input-default{ name: "zip_code", placeholder: "例) 123-4567", type: "text", value: ""}/
+              -# = f.text_field :zip_code, placeholder: "例）メルカリ太郎"
             .form-group
               %label{for: "birthday"} 都道府県
               %span.form-require 必須
-              %br/
               .prefecture-btn
                 .prefecture-wrap
                   %i.icon-arrow-bottom
                   %select.select-default{:name => "year"}
+                  -#= f.select :adress_pref, class:"select.default"
                     %option{value: ""} --
                     %option{value: "北海道"} 北海道
                     %option{value: "青森県"} 青森県
@@ -101,21 +88,20 @@
                     %option{value: "鹿児島県"} 鹿児島県
                     %option{value: "沖縄県"} 沖縄県
             .form-group
-              %label{for: "birthday"} 市区町村
+              %label{for: "adress_city"} 市区町村
               %span.form-require 必須
               %input.input-default{ name: "nickname", placeholder: "例) 横浜市緑区", type: "text", value: ""}/
+              -# = f.text_field :adress_city, placeholder: "例）横浜市緑区", class: "input-default"
             .form-group
-              %label{for: "birthday"} 番地
+              %label{for: "adress_number"} 番地
               %span.form-require 必須
-              %input.input-default{ name: "nickname", placeholder: "例) 横浜市緑区", type: "text", value: ""}/
+              %input.input-default{ name: "adress_number", placeholder: "例) 横浜市緑区", type: "text", value: ""}/
+              -# = f.text_field :adress_number, placeholder: "例）123-456", class: "input-default"
             .form-group
-              %label{for: "birthday"} 建物名
+              %label{for: "building"} 建物名
               %span.form-more 任意
               %input.input-default{ name: "nickname", placeholder: "例) 柳ビル103", type: "text", value: ""}/
-            .form-group
-              %label{for: "birthday"} 電話番号
-              %span.form-more 任意
-              %input.input-default{ name: "nickname", placeholder: "例) 09012345678", type: "text", value: ""}/
+              -# = f.text_field :building, placeholder: "例）柳ビル103", class: "input-default"
             %button.btn-default.btn-red
               = link_to '次へ'
     .footer.single-footer

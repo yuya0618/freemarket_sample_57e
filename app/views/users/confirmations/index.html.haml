@@ -2,7 +2,7 @@
   .single-container
     %header.single-header
       %h1
-        = link_to "https://www.mercari.com/jp/" do
+        = link_to "#" do
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",alt:"mercari"
       %nav.progress-bar.signup-bar
         %ol.clearfix
@@ -29,7 +29,8 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 電話番号認証
-        %form.l-single-inner.registration-form{action:"#", method:"POST", novalidate: "novalidate"}
+        %form.l-single-inner.registration-
+          = form_for(resource, url: signup_adress_path) do |f|
           %input{name:"after_save_callback", type:"hidden", value:""}/
           .l-single-content
             .form-group
@@ -45,7 +46,7 @@
           .l-single-content
             %h3.l-chapter-sub-head 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
             %p
-              %a{:href => "/jp/signup/sms_confirmation/"} 電話番号を再度入力する
+              %a{:href => "#"} 電話番号を再度入力する
             %p.l-single-text
               ※SMSが届かない場合は
               %a{:href => "/jp/help_center/article/248/", :target => "_blank"}> SMS受信設定
