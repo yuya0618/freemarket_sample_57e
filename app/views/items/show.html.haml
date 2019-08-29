@@ -76,14 +76,18 @@
               %tr
                 %th 配送の方法
                 %td
+                  = @item.delivery_method
 
               %tr
                 %th 配送元地域
                 %td
+                  = @item.delivery_location
 
               %tr
                 %th 発送日の目安
                 %td
+
+                  = @item.delivery_term
 
         .price
           %span.price__one
@@ -99,12 +103,10 @@
         .description
           = @item.details
 
-
         .bottom
           =link_to "♡いいね！＃", "#", class: "bottom__content1"
           =link_to "不適切な商品の報告", "#", class: "bottom__content1"
           =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
-
 
     .comment
       .caution
@@ -174,6 +176,8 @@
 .bottom_pagination
   .btn
     = link_to "メルカリ ＞", "#", class:"home"
+    %span
+      = @item.name
       
 = render partial: 'shared/bottom-banner'  
 = render partial: 'shared/footer-black'

@@ -7,22 +7,9 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
-  // background-color:  rgb(245, 245, 245);
-
-}
-.wrapper{
-  background-color: white;
-
-}
-
-header{
-  width: 100%;
-  height: 100px;
-
 }
 
 .container{
-  // background-color:  rgb(245, 245, 245);
   padding-top: 40px;
   box-sizing: border-box;
   height: 100%;
@@ -54,11 +41,14 @@ header{
       &__sub1{
         width: 100%;
         height: 20%;
+        padding-left: 10px;
         // background-color: pink;
       }
       &__sub2{
         width: 100%;
         height: 20%;
+        padding-left: 10px;
+
         // background-color:red;
       }
       &__subpic{
@@ -176,8 +166,8 @@ header{
   
   .description{
     height: 300px;
+    margin: 30px;
 
-    margin: 20px;
   }
 
   .bottom{
@@ -299,6 +289,17 @@ header{
     background-color: white;
     width: 100%;
     height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    &__name{
+      width: 100%;
+      height: 60%;
+    }
+    &__price{
+      width: 100%;
+      height: 30%;
+      font-weight: bold;
+    }
   }  
 }
 
@@ -306,12 +307,18 @@ header{
   width: 100%;
   height: 40px;
   line-height: 40px;
-  // border-top: 1px solid lightgray;
+  .btn{
+    span{
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 5px;
+    }
+  }
   .home{
     float: left;
     color:gray;
     font-weight: 100;
     padding-left: 200px;
-
+    font-size: 13px;
   }
 }
