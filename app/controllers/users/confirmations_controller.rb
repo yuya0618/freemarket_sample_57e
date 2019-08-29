@@ -1,10 +1,5 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
-  def index
-  end
-
-  def new
-  end
   # POST /resource/confirmation
   # def create
   #   super

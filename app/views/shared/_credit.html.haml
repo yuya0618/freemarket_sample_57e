@@ -1,31 +1,34 @@
 .l-single-content
   .form-group
-    %label{for:"nickname"} カード番号
+    -# = form_for(resource, url: signup_registration_create) do |f|
+    %label{for:"card_number"} カード番号
     %span.form-require 必須
     %input.input-default{ name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
+    -# = f.text_field :security_code, placeholder: "半角数字のみ"
     %ul.signup-card-list
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", :width => "49"}/
+        %img{alt:"", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", width: "49"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?3951034907", :width => "34"}/
+        %img{alt: "", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?3951034907", width: "34"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?3951034907", :width => "30"}/
+        %img{alt: "", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?3951034907", width: "30"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?3951034907", :width => "32"}/
+        %img{alt: "", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?3951034907", width: "32"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?3951034907", :width => "21"}/
+        %img{alt: "", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?3951034907", width: "21"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?3951034907", :width => "32"}/
+        %img{alt: "", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?3951034907", width: "32"}/
       %li
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?3951034907", :width => "32"}/
+        %img{alt:"", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?3951034907", width: "32"}/
   .form-group
-    %label{for: "birthday"} 生年月日
+    %label{for: ""} 有効期限
     %span.form-require 必須
     %br/
     .birthday-select-wrap
       .select-wrap
         %i.icon-arrow-bottom
         %select.select-default.half{:name => "year"}
+        -# = f.select :expiration_month, class:"select.default.half"
           %option{value: ""} --
           %option{value: "1"} 1
           %option{value: "2"} 2
@@ -41,6 +44,7 @@
           %option{value: "12"} 12
         %span 月
         %select.select-default.half{:name => "year"}
+        -#  = f.select :expiration_year, class:"select.default.half"
           %option{value: ""} --
           %option{value: "19"} 19
           %option{value: "20"} 20
@@ -55,12 +59,12 @@
           %option{value: "29"} 29
         %span 年
   .form-group
-    %label{for:"nickname"} セキュリティコード
+    %label{for:"security_code"} セキュリティコード
     %span.form-require 必須
     %input.input-default{ name: "nickname", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", value: ""}/
+    -# = f.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号",class: "input.input-default"
   .form-group.text-right
     .form-text
       %span.question ?
       %p.question カード裏面の番号とは?
-  %button.btn-default.btn-red
-    = link_to '次へ進む'
+  -#  = f.submit "次へ進む", class: "button.btn-default.btn-red"
