@@ -26,13 +26,13 @@
             完了
             .progress-status
             .progress-status2
-            
+
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 会員情報入力
-        %form.l-single-inner.registration-form
-        = form_for(resource, url: signup_sms_confirmation_path, html: { class: 'devise-main__registration__form' }) do |f|
-          .l-single-content
+        %form.l-single-inner.registration-form   
+          .l-single-content     
+          = form_for @user, url: signup_sms_confirmation_path,  method: :get do |f|
             .form-group
               %label{:for => "nickname"} ニックネーム
               %span.form-require 必須
@@ -262,11 +262,10 @@
                 「次へ進む」のボタンを押すことにより、
                 = link_to' 利用規約','#'
                 に同意したものとみなします
-            = f.submit "次へ進む", class: "button.btn-default.btn-red"
+            - f.submit "次へ進む", class: "button.btn-default.btn-red"
             .form-group.text-right
               %p
                 = link_to '#' do
-                  本人情報の登録について
-                  %i.icon-arrow-right
     .footer.single-footer
       = render 'shared/loginfooter'
+
