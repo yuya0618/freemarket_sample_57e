@@ -113,7 +113,8 @@ Column|Type|Options|
 |category_id|refernces|null: false, foreign_key: true|
 
 ### Association
-- has_many :items
+- belongs_to :size
+- belongs_to :category
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -168,7 +169,7 @@ Column|Type|Options|
 
 ### Association
 - belongs_to :user
-- has_many : reviews
+- has_many :reviews
 - has_many :orders
 ## sellersテーブル
 |Column|Type|Options|
