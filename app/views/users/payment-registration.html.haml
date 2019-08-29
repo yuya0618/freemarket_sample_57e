@@ -7,14 +7,12 @@
       = render 'shared/main-side'
 
     .main__right
-      = render "partial/payment-registration"
+      = render "shared/payment-registration"
         
 
-.bottom__banner
-  = render partial: 'partial/bottom-banner'
+= render partial: 'shared/bottom-banner'
 
 / フッターリンク （リンク貼ってません！）
-%footer
-  = render partial: 'partial/footer-black'
+= render partial: 'shared/footer-black'
 
 = render "shared/sell-btn" 
