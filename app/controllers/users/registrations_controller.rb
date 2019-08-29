@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def user_params
     params.require(:user).permit(:nickname, :email, :lastname,:lastnmae_kana, :firstname, :first_name_kana,
-    :birth_year,:birth_month,)
+    :birth_year, :birth_month, :birth_day, :phone_number)
   end
 
 
