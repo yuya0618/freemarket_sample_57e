@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  def index
+
+    # GET /resource/sign_up
+  def step1
+    @user = User.new
   end
 
-  def new
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :lastname,:lastnmae_kana, :firstname, :first_name_kana,
+    :birth_year,:birth_month,)
   end
 
-  # GET /resource/sign_up
 
   # POST /resource
   # def create

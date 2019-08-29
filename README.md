@@ -1,6 +1,4 @@
-
 # README
-
 
 
 
@@ -67,7 +65,7 @@ Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|details|string|null: false|
+|details|string||
 |condition|integer|null: false|
 |delivery_fee|integer|null:false|
 |delivery_method|integer|null:false|
@@ -181,12 +179,10 @@ Column|Type|Options|
 - belongs_to :user
 - has_many :reviews
 - has_many :orders
-
 ## sellersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-
 ### Association
 - belongs_to :user
 - has_many :reviews
