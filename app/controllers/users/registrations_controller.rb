@@ -7,11 +7,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
-  private
+  def step2
+    # session[:nickname] = user_params[:nickname]
+    # session[:email] = user_params[:email]
+    # session[:password] = user_params[:password]
+    # session[:password_confirmation] = user_params[:password_confirmation]
+    # session[:firstname] = user_params[:firstname]
+    # session[:firstname_kana] = user_params[:firstname_kana]
+    # session[:lastname] = user_params[:lastname]
+    # session[:lastname_kana] = user_params[:lastname_kana]
+    # session[:birthdate] = user_params[:birthdate]
+    @user = User.new
+  end
 
+  def step3
+  end
+
+  def step4
+  end
+  private
   def user_params
-    params.require(:user).permit(:nickname, :email, :lastname,:lastnmae_kana, :firstname, :first_name_kana,
-    :birth_year, :birth_month, :birth_day, :phone_number)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname,:lastnmae_kana, :firstname, :first_name_kana, :birthdate, :phone_number)
   end
 
 

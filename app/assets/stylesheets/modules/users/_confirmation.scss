@@ -77,7 +77,7 @@
         font-weight: bold;
         border-bottom: 1px solid #f5f5f5;
       }
-      form.l-single-inner.registration-form{
+      .forming{
         padding: 40px 40px 64px;
         max-width: 343px;
         margin:0 auto;
@@ -94,7 +94,7 @@
               float:left;
               font-weight: bold;
             }
-            input.input-default{
+            .form-text{
               margin: 8px 0 0;
               height: 48px;
               padding: 10px 16px 8px;
@@ -111,7 +111,7 @@
             line-height: 1.5;
             float:left;
           }
-          button.btn-default.btn-red{
+          .btn-default{
             background: #ea352d;
             border: 1px solid #ea352d;
             color: #fff;
