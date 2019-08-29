@@ -88,7 +88,7 @@
           =link_to "不適切な商品の報告", "#", class: "bottom__content1"
           =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
 
-    / コメント
+    / コメント(実装なし)↓
     .comment
       .caution
         %p#caution
@@ -101,6 +101,8 @@
       =form for
         =f.text_field :comment, class:"field"
         =f.submit,  class: "action"
+
+    / コメント(実装なし)↑
 
 
     / 前後ページリンク
@@ -128,20 +130,20 @@
     / ユーザーその他の商品表示 １段落目
     .posts__items
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
 
     / ユーザーその他の商品表示 ２段落目
     .posts__items
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
 
 
     .posts
@@ -150,20 +152,20 @@
     / その他オススメ商品表示 １段落目
     .posts__items
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item1
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
         
     / その他オススメ商品表示 ２段落目
     .posts__items
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
       .posts__item2
-        = render partial: 'partial/show-items'
+        = render partial: 'shared/show-items'
 
         
   / 下部ホームリンク
@@ -171,10 +173,10 @@
     .btn
       = link_to "メルカリ ＞", "#", class:"home"
       
-= render partial: 'partial/bottom-banner'
+= render partial: 'shared/bottom-banner'
 
   / フッターリンク （リンク貼ってません！）
   
-= render partial: 'partial/footer-black'
+= render partial: 'shared/footer-black'
 
 
