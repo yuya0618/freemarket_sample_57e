@@ -78,3 +78,4 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'byebug', platform: :mri
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'active_hash'
