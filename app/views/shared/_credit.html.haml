@@ -1,10 +1,8 @@
 .l-single-content
   .form-group
-    -# = form_for(resource, url: signup_registration_create) do |f|
     %label{for:"card_number"} カード番号
     %span.form-require 必須
-    %input.input-default{ name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
-    -# = f.text_field :security_code, placeholder: "半角数字のみ"
+    = f.text_field :security_code, placeholder: "半角数字のみ"
     %ul.signup-card-list
       %li
         %img{alt:"", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", width: "49"}/
@@ -27,8 +25,7 @@
     .birthday-select-wrap
       .select-wrap
         %i.icon-arrow-bottom
-        %select.select-default.half{:name => "year"}
-        -# = f.select :expiration_month, class:"select.default.half"
+        = f.collection_select :expiration_month, class:"select.default.half"
           %option{value: ""} --
           %option{value: "1"} 1
           %option{value: "2"} 2

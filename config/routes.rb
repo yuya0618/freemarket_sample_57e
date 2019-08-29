@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     get    'signup/sms_confirmation',      to: 'users/registrations#step2'
     get    'users/sign_out',        to: 'users#to_destroy'
     get    'signup/sms_confirmation/sms',      to: 'users/registrations#step3'
-    get    'signup/adress',               to: 'users/registrations#step4'
-    get    'signup/credit',         to: 'users/redistrations#step5'
+    get    'signup/address',               to: 'users/registrations#step4'
+    get    'signup/credit',         to: 'users/registrations#step5'
     get    'signup/registration/create',         to: 'users/registrations#create'
 
   end

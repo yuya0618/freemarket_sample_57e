@@ -29,7 +29,7 @@
     %main.sms_body
       %section.l-single-container
         %h2.l-chapter-head.registration 電話番号の確認
-        = form_for @user, url: signup_adress_path,  method: :get, :html => {:class => "forming"} do |f|
+        = form_for @user, url: signup_address_path,  method: :get, :html => {:class => "forming"} do |f|
           .l-single-content
             .form-group
               %label{for: "phone_number"} 携帯電話の番号

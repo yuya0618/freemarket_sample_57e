@@ -29,7 +29,7 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 支払い方法
-        %form.l-single-inner.registration-form
+        = form_for @user, url: signup_sms_confirmation_path,  method: :get, :html => {:class => "forming"} do |f|
           = render 'shared/credit'
     .footer.single-footer
       = render 'shared/loginfooter'

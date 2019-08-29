@@ -1,6 +1,8 @@
-class Users::AdressesController < Devise::RegistrationsController
+class Users::AddressesController < Devise::RegistrationsController
   # GET /resource/confirmation/new
-  def index
+  def step4
+    # session[:phone_number] = user_params[:phone_number]
+    @address = Address.new
   end
   def new
   end
