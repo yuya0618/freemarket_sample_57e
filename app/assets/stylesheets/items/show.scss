@@ -89,7 +89,7 @@
     padding: 10px 0;
     box-sizing: border-box;
     &__one{
-      font-size: 45px;
+      font-size: 40px;
       font-weight: bold;
     }
     &__two{
@@ -144,7 +144,7 @@
       color: black;
       font-size: 13px;
       margin-right: 5px;
-      background-color: lightgray;
+      background-color: whitesmoke;
       padding: 5px 10px;
       box-sizing: border-box;
       border-radius: 10px;
@@ -281,6 +281,8 @@
   }
 }
 
+// 以下条件分岐CSS
+//売れた時のSOLD
 .triangle{
   height:0;
   width: 0;
@@ -300,4 +302,28 @@
   position: absolute;
   top: 23px;
   left: 7px;
+}
+//売れた時のボタン変更
+.sold_out{
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 20px;
+  height:45px;
+  width: 100%;
+  color: white;
+  background-color:gray;
+  font-weight: bold;
+
+}
+
+//売れた時のコメント欄変更
+
+.no_comment{
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  height:45px;
+  width: 100%;
+  color: white;
+  background-color:gray;
 }

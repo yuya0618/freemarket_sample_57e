@@ -12,10 +12,15 @@
             
         .item__info
           .item__left
-            .triangle
-            .sold SOLD
-
             /order_statusがsoldoutの際に表示
+            -# -if order_status == "売り切れ"
+            -# .triangle
+            -# .sold SOLD
+            -# .item__left__main
+            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
+              -# --else
+              通常↓
+
 
             .item__left__main
               =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
@@ -51,9 +56,9 @@
               %tr
                 %th カテゴリー
                 %td
-                  -# %div
-                    =link_to "#"
-                      %span レディース
+                  %div
+                    -# =link_to "#"
+                    -#   = @item.category.name
                   -# %div
                     =link_to "＃"
                     %span 靴
@@ -63,11 +68,14 @@
               %tr
                 %th ブランド
                 %td
+                  -# = link_to "#" do
+                  -#   = @item.brand.name
 
               %tr
                 %th 商品のサイズ
                 %td
-
+                  -# = link_to "#" do
+                  -#   =@item.size.name
               %tr
                 %th 商品の状態
                 %td
@@ -86,7 +94,8 @@
               %tr
                 %th 配送元地域
                 %td
-                  = @item.delivery_location
+                  = link_to "#" do
+                    = @item.delivery_location
 
               %tr
                 %th 発送日の目安
@@ -96,7 +105,7 @@
 
         .price
           %span.price__one
-            = @item.price
+            = insert_price(@item.price)
 
           %span.price__two
             （税込）
@@ -106,6 +115,10 @@
 
         .check
           =link_to "購入画面に進む", "#", class: "to_checkout"
+        -# -if order_status == "売り切れ"
+        -#   %p.sold_out 売り切れました
+        -#   -else
+        -#     通常
 
 
         .description
@@ -113,8 +126,13 @@
 
         .bottom
           =link_to "♡いいね！＃", "#", class: "bottom__content1"
-          =link_to "不適切な商品の報告", "#", class: "bottom__content1"
-          =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
+          =link_to "#", class: "bottom__content1" do
+            %i.fa.fa-flag
+            %span 不適切な商品の報告
+
+          =link_to "#", class: "bottom__content2" do
+            %i.fa.fa-lock
+            %span あんしん・あんぜんへの取り組み
 
     .comment
       .caution
@@ -124,6 +142,11 @@
         %textarea
       .action
         %button コメントする
+
+        -# -if order_status == "売り切れ"
+        -#   %p.no_comment 売り切れのためコメントできません
+        -#   -else
+        -#     通常
 
     .page
       = link_to item_path(@previous), class:"page__btn1" do
@@ -150,7 +173,8 @@
           =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg", class:"sns__icon"
 
     .posts
-      = link_to '？？さんの投稿', '#', class:"posts__title"
+      = link_to '#', class:"posts__title" do
+        = insert_name(@item.user.nickname)
 
     .posts__items
       .posts__item1
