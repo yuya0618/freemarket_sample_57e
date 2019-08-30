@@ -8,6 +8,15 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|text|text||
+|firstname|string|null: false|
+|lasrname|string|null: false|
+|firstname_kana|string|null: false|
+|lastname_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null:false|
+|phone_number|integer||
 
 ### Association
 - has_one :profile
