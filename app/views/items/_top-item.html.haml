@@ -1,0 +1,14 @@
+.item-box
+  = link_to root_path do
+    .item-box-photo
+      = image_tag item.images.first.image_url, class:"item-box-photo-pic"
+    .item-box-body
+      %h3.item-box-body-name
+        = item.name
+      .item-box-body-num
+        .item-box-body-num-price
+          %span¥
+          =item.price.to_s(:delimited)
+        .item-box-body-num-like
+          %i.item-box-body-num-like-icon ♡
+          %span 18
