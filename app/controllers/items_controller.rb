@@ -10,8 +10,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    # @next = Item.where("id > ?", id).order("id DESC")
-    # @previous = Item.where("id < ?", id).order("id ASC")
+    # @next = Item.where("id > ?", id).order("id DESC").first
+    # @previous = Item.where("id < ?", id).order("id ASC").first
   end
 
   # GET /items/new

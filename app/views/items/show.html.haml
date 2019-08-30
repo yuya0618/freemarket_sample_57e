@@ -1,5 +1,4 @@
-%header
-  =render "shared/header"
+=render "shared/header"
   
 .wrapper
   .container
@@ -101,6 +100,9 @@
             送料込み
         .check
           =link_to "購入画面に進む", "#", class: "to_checkout"
+
+          -# -if user_signed_in?
+          -# .soldout 売り切れました
 
         .description
           = @item.details
