@@ -1,6 +1,6 @@
 .wrapper
   .container
-    %header
+    .top__banner
       = link_to "https://www.mercari.com/jp/" do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517/",class: "header__icon"
     
@@ -53,16 +53,15 @@
                 クレジット・振込
                 %span
           =link_to "変更する ＞", "#", class: "edit__btn"
-    %footer
-      .link
-        =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
-        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-        
-      .icon
-        =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?575670517"
-      .year
-        %p ©️2019 Mercari
-        %div
+  .gray__footer
+    .link
+      =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+      
+    .icon
+      =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?575670517"
+    .year
+      %p ©️2019 Mercari
 
-    = render "shared/sell-btn" 
+  = render "shared/sell-btn" 
