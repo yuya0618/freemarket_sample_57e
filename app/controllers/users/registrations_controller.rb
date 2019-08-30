@@ -1,18 +1,52 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-
+  
     # GET /resource/sign_up
   def step1
     @user = User.new
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:nickname, :email, :lastname,:lastnmae_kana, :firstname, :first_name_kana,
-    :birth_year,:birth_month,)
+  def step2
+    # session[:nickname] = user_params[:nickname]
+    # session[:email] = user_params[:email]
+    # session[:password] = user_params[:password]
+    # session[:password_confirmation] = user_params[:password_confirmation]
+    # session[:firstname] = user_params[:firstname]
+    # session[:firstname_kana] = user_params[:firstname_kana]
+    # session[:lastname] = user_params[:lastname]
+    # session[:lastname_kana] = user_params[:lastname_kana]
+    # session[:birthdate] = user_params[:birthdate]
+    @user = User.new
   end
+
+  def step3
+  end
+
+  def step4
+    # session[:phone_number] = user_params[:phone_number]
+    @user = User.new
+  end
+
+  def step5
+    # session[:zipcode] = addres_params[:zipcode]
+    @user = User.new
+  end
+  private
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname,:lastnmae_kana, :firstname, :first_name_kana, :birthdate, :phone_number)
+  end
+
+  def get_payjp_info
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    end
+  end
+  # def address_params
+  #   params.require(:addres).permit(:zipcode, :prefecture_id, :address_city, :address_number, :building, { :user_ids => []})
+  # end
 
 
   # POST /resource

@@ -29,15 +29,13 @@
     %main.sms_body
       %section.l-single-container
         %h2.l-chapter-head.registration 電話番号の確認
-        %form.l-single-inner.registration-form
-          = form_for(resource, url: signup_sms_confirmation_sms_path) do |f|
+        = form_for @user, url: signup_address_path,  method: :get, :html => {:class => "forming"} do |f|
           .l-single-content
             .form-group
               %label{for: "phone_number"} 携帯電話の番号
-              %input.input-default{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
-              -# = f.text_field :phone_number, placeholder: "09012345678"
+              = f.text_field :phone_number, placeholder: "09012345678",class: "form-text"
             %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-             = f.submit "SMSを送信する", class: "button.btn-default.btn-red"
+            = f.submit "SMSを送信する", class: "btn-default"
             %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             .form-group.text-right
               = link_to '#' do
