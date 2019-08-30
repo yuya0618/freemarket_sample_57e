@@ -95,7 +95,7 @@
             }
           }
         }
-        form.l-single-inner.registration-form{
+        .forming{
           .l-single-content{
             border-bottom: 1px solid #f5f5f5;
             width:343px;
@@ -125,7 +125,7 @@
                 width:30px;
                 margin: 0 0 0 8px;
               }
-              input.input-default{
+              .form-text{
                 margin: 8px 0 0;
                 height: 48px;
                 padding: 10px 16px 8px;
@@ -143,24 +143,36 @@
                   margin: 0 0 0 8px;
                 }
               }
-              input.input-default.half{
+              .form-text-half{
                 width: calc(50% - 6px);
+                height: 48px;
+                margin: 8px 0 0;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
               }
               .birthday-select-wrap{
                 .select-wrap{
                   display:flex;
                   margin: 8px 0 0;
+                  width: calc(34% - 17px);
+                  height: 48px;
+                  background-color:white;
+                  display: flex;
                   i.icon-arrow-bottom{
                     display:inline-block;
                     font-size: 8px;
                   }
-                  select.select-default{
+                  .form-text-three{
                     width: calc(34% - 17px);
                     height: 48px;
                     background-color:white;
                     display: flex;
                   }
-                  select.select-default.half{
+                  .form-texting{
                     width: calc(100% - 38px);
                     height: 48px;
                     background-color:white;
@@ -199,7 +211,7 @@
                 }
               }
             }
-            button.btn-default.btn-red{
+            .btn-default{
               margin: 24px 0 50px;
               background: #ea352d;
               border: 1px solid #ea352d;
@@ -213,7 +225,7 @@
               }
             }
             .form-group.text-right{
-              .form-text{
+              .form-body{
                 display: flex;
                 justify-content: flex-end;
                 span.question{
