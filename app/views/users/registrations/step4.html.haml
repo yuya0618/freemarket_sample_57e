@@ -24,7 +24,7 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 発送元・お届け先住所入力
-        = form_with model: @adress, url: "",  :html => {:class => "forming"}do |f|
+        = form_with model: @address, url: "",  :html => {:class => "forming"}do |f|
           .l-single-content
             .form-group
               %label{for:"zip_code"} 郵便番号
@@ -36,7 +36,7 @@
               .prefecture-btn
                 .prefecture-wrap
                   %i.icon-arrow-bottom
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
             .form-group
               %label{for: "adress_city"} 市区町村
               %span.form-require 必須

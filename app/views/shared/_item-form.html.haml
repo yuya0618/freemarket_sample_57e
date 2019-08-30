@@ -54,7 +54,7 @@
             %span.item-registration__form__group__box__necessary 必須
           .select-box
             -# collection_selectにする
-            = f.collection_select :condition, Item.conditions.keys, 
+            = f.select :condition, Item.conditions.keys, {}, {class: 'select-box__body'}
             -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
       -# 配送について
@@ -67,13 +67,23 @@
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', class: 'select-box__body'
+            =f.select :delivery_fee, Item.delivery_fees.keys, {}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
           -# 配送方法
           %span.item-delivery__box__label 配送方法
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', class: 'select-box__body'
+            =f.select :delivery_method, Item.delivery_methods.keys, {}, {class: 'select-box__body'}
+
+
+          -# 発送元の地域
+          %span.item-delivery__box__label 配送元の地域
+          %span.item-delivery__box__necessary 必須
+          .select-box.select-box-top
+            -# collection_selectにする
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
           -# 発送までの日数
           %span.item-delivery__box__label 配送までの日数
