@@ -12,15 +12,17 @@
             
         .item__info
           .item__left
+          
             /order_statusがsoldoutの際に表示
-            -# -if order_status == "売り切れ"
-            -# .triangle
-            -# .sold SOLD
-            -# .item__left__main
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
-              -# --else
-              通常↓
+            /enumの設定が完了していないため一旦コメントアウト
 
+            -# -if order_status == "soldout"
+            -#   .triangle
+            -#   .sold SOLD
+            -#   .item__left__main
+            -#     =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
+            -# -else
+              -# 通常↓
 
             .item__left__main
               =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
@@ -56,26 +58,19 @@
               %tr
                 %th カテゴリー
                 %td
-                  %div
-                    -# =link_to "#"
-                    -#   = @item.category.name
-                  -# %div
-                    =link_to "＃"
-                    %span 靴
-                  -# %div
-                    =link_to "#"
-                    %span ヒール
+                  =link_to "#" do
+                    = @item.category
               %tr
                 %th ブランド
                 %td
-                  -# = link_to "#" do
-                  -#   = @item.brand.name
+                  = link_to "#" do
+                    = @item.brand
 
               %tr
                 %th 商品のサイズ
                 %td
-                  -# = link_to "#" do
-                  -#   =@item.size.name
+                  = link_to "#" do
+                    =@item.size
               %tr
                 %th 商品の状態
                 %td
@@ -112,9 +107,11 @@
           %span.price__three
             送料込み
 
-
         .check
           =link_to "購入画面に進む", "#", class: "to_checkout"
+        /一旦コメントアウト
+
+        /enumの設定が完了していないため一旦コメントアウト
         -# -if order_status == "売り切れ"
         -#   %p.sold_out 売り切れました
         -#   -else
@@ -143,6 +140,7 @@
       .action
         %button コメントする
 
+        /enumの設定が完了していないため一旦コメントアウト
         -# -if order_status == "売り切れ"
         -#   %p.no_comment 売り切れのためコメントできません
         -#   -else
@@ -156,9 +154,6 @@
       = link_to item_path(@next), class:"page__btn2" do
         = @next.name
         %i.fa.fa-chevron-right
-
-
-
 
     .sns
       .sns__icons
@@ -212,7 +207,7 @@
       .posts__item2
         = render partial: 'shared/show-items'
 
-        
+
 .bottom_pagination
   .btn
     = link_to "メルカリ ＞", "/", class:"home"
@@ -221,3 +216,4 @@
       
 = render partial: 'shared/bottom-banner'  
 = render partial: 'shared/footer-black'
+
