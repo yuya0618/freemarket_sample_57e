@@ -13,7 +13,10 @@
         .item__info
           .item__left
             .triangle
-              .sold SOLD
+            .sold SOLD
+
+            /order_statusがsoldoutの際に表示
+
             .item__left__main
               =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
 
@@ -99,11 +102,11 @@
             （税込）
           %span.price__three
             送料込み
+
+
         .check
           =link_to "購入画面に進む", "#", class: "to_checkout"
 
-          -# -if user_signed_in?
-          -# .soldout 売り切れました
 
         .description
           = @item.details
@@ -123,12 +126,10 @@
         %button コメントする
 
     .page
-      -# = link_to '< back', '#', class:"page__btn1"
       = link_to item_path(@previous), class:"page__btn1" do
         %i.fa.fa-chevron-left
         = @previous.name
         
-      -# = link_to 'forward ＞', '#', class:"page__btn2"
       = link_to item_path(@next), class:"page__btn2" do
         = @next.name
         %i.fa.fa-chevron-right
