@@ -123,17 +123,16 @@
         %button コメントする
 
     .page
-      = link_to '< back', '#', class:"page__btn1"
-      -# = link_to item_path(@previous), class:"page__btn1"
-      -# %span
-      -# =fa-icon "chevron-left"
-      -#   = @item.name
+      -# = link_to '< back', '#', class:"page__btn1"
+      = link_to item_path(@previous), class:"page__btn1" do
+        %i.fa.fa-chevron-left
+        = @previous.name
         
-      = link_to 'forward ＞', '#', class:"page__btn2"
-      -# = link_to item_path(@next), class:"page__btn2"
-      -# %span
-      -#   = @item.name
-      -# =fa-icon "chevron-right"
+      -# = link_to 'forward ＞', '#', class:"page__btn2"
+      = link_to item_path(@next), class:"page__btn2" do
+        = @next.name
+        %i.fa.fa-chevron-right
+
 
 
 
