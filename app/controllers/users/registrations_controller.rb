@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-
+  
     # GET /resource/sign_up
   def step1
     @user = User.new
@@ -30,7 +30,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def step5
     # session[:zipcode] = addres_params[:zipcode]
-
     @user = User.new
   end
   private
@@ -38,6 +37,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname,:lastnmae_kana, :firstname, :first_name_kana, :birthdate, :phone_number)
   end
 
+  def get_payjp_info
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    end
+  end
   # def address_params
   #   params.require(:addres).permit(:zipcode, :prefecture_id, :address_city, :address_number, :building, { :user_ids => []})
   # end
