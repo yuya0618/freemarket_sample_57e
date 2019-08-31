@@ -25,12 +25,13 @@
       width: 48%;
       height: 100%;
       float: left;
-      background-color: #F8F5F4;
+      background-color: white;
       align-items: center;
       position: relative;
       &__main{
         width: 100%;
         height: 60%;
+        display: flex;
       }   
       &__mainpic{
         height: 100%;
@@ -333,4 +334,9 @@
   width: 100%;
   color: white;
   background-color:gray;
+}
+
+.slick-slider{
+  width: 100%;
+  height: 150px;
 }
