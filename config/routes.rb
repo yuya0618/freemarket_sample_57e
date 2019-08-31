@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get    'signup/sms_confirmation/sms',      to: 'users/registrations#step3'
     get    'signup/address',               to: 'users/registrations#step4'
     get    'signup/credit',         to: 'users/registrations#step5'
-    get    'signup/registration/create',         to: 'users/registrations#create'
+    post    'signup/registration/create',         to: 'users/registrations#create'
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

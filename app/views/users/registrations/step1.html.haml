@@ -68,7 +68,13 @@
               %span.form-require 必須
               %br/
               .birthday-select-wrap
-                = f.date_select :birthdate, use_month_numbers: true,start_year: 1900
+                = f.select :birth_year, [["2000", "2000"], ["1999", "1999"], ["1998", "1998"], ["1997", "1997"], ["1996", "1996"], ["1995", "1995"]], {prompt: "---"}, class: "select-default select-text-default"
+                %span 年
+                = f.select :birth_month, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]],  {prompt: "---"}, class: "select-default select-text-default"
+                %span 月
+                = f.select :birth_day, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"], ["18", "18"], ["19", "19"], ["20", "20"], ["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]], {prompt: "---"}, class: "select-default select-text-default"
+                %span 日
+
             .form-group
               .g-recaptcha.signup-recaptcha
                 %div{style: "width: 304px; height: 78px;"}
