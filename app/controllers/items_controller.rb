@@ -12,6 +12,9 @@ class ItemsController < ApplicationController
   def show
     @next = Item.where("id > ?", @item.id).order("id DESC").first
     @previous = Item.where("id < ?", @item.id).order("id ASC").first
+
+    @items = Item.order("created_at DESC").limit(3)
+
   end
 
   # GET /items/new

@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def insert_price(price)
-    price = "¥" + price.to_s + "円"
+    price = "¥" + price.to_s
   end
 
   def insert_name(name)
