@@ -1,6 +1,6 @@
 %section.l-single-container
   %h2.l-single-head.registration 支払い方法
-  .forming
+  = form_tag(signup_registration_create_path, method: :post, id: 'charge-form',  name: "inputForm",class:"forming") do
     .l-single-content
       .form-group
         %label カード番号
