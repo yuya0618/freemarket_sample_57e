@@ -30,7 +30,7 @@
       %section.l-single-container
         %h2.l-single-head.registration 電話番号認証
         %form.l-single-inner.registration-
-          = form_for resource, url: signup_address_path) do |f|
+          = form_for @user, url: signup_address_path, method: :get do |f|
           %input{name:"after_save_callback", type:"hidden", value:""}/
           .l-single-content
             .form-group
