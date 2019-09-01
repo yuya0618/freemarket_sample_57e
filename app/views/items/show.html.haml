@@ -265,8 +265,21 @@
     .posts__items
       =render "shared/show-items", collection: @items, as:"item"
 
-    .posts__items
-      =render "shared/show-items", collection: @items, as:"item"
+    -# .posts__items
+    -#   =render "shared/show-items", collection: @items, as:"item"
+    //TODO 他の商品
+    -# -@item.user.items.last(3).each do |user_item|
+    -# .posts_item
+    -#   =link_to "#" do
+    -#   .image
+    -#     = image_tag user_item.image_url, class:"other_item"
+    -#   .explaination
+    -#     .explaination__name
+    -#       = user_item.name
+    -#     .explaination__price
+    -#       = insert_price(user_item.price)
+    -#       %span.heart ♡
+  
 
     .posts
       = link_to 'その他の商品', '#', class:"posts__title"
@@ -275,8 +288,24 @@
     .posts__items
       =render "shared/show-items", collection: @items, as:"item"
 
-    .posts__items
-      =render "shared/show-items", collection: @items, as:"item"
+    -# .posts__items
+    -#   =render "shared/show-items", collection: @items, as:"item"
+
+    //TODO 同じカテゴリーの商品
+    -@item.category.items.last(3).each do |category_item|
+        -# .posts_item
+    -#   =link_to "#" do
+    -#   .image
+    -#     = image_tag category_item.image_url, class:"other_item"
+    -#   .explaination
+    -#     .explaination__name
+    -#       = category_item.name
+    -#     .explaination__price
+    -#       = insert_price(category_item.price)
+    -#       %span.heart ♡
+
+
+
 
 
 .bottom_pagination
