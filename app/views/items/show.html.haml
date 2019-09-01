@@ -12,13 +12,13 @@
             
         .item__info
           .item__left
-
+            //TODO 条件分岐
             -# -if order_status == "soldout"
             -#   .triangle
             -#   .sold SOLD
             -#   .item__left__main
             -#     =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
-            -# -else 条件分岐コメントアウト
+            -# -else
 
             .item__left__main
               -@images.each do |image|
@@ -105,7 +105,7 @@
           %span.price__three
             送料込み
 
-        //条件分岐始まり         /条件分岐コメントアウト
+        //TODO 条件分岐
 
         -# -if current_user.id == user.id
         -#   = render "shared/mypage-choice"
@@ -263,20 +263,20 @@
 
     
     .posts__items
-      =render "shared/show-items"
+      =render "shared/show-items", collection: @items, as:"item"
 
     .posts__items
-      =render "shared/show-items"
+      =render "shared/show-items", collection: @items, as:"item"
 
     .posts
       = link_to 'その他の商品', '#', class:"posts__title"
 
 
     .posts__items
-      =render "shared/show-items"
+      =render "shared/show-items", collection: @items, as:"item"
 
     .posts__items
-      =render "shared/show-items"
+      =render "shared/show-items", collection: @items, as:"item"
 
 
 .bottom_pagination
