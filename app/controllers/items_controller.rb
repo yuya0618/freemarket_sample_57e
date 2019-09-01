@@ -42,11 +42,9 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # TODO 1をcurrent_user.idにする
+    @item.destroy if @item.user_id == 1
+    redirect_to list_users_path
   end
 
   private

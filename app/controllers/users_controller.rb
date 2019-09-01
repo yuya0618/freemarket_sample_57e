@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def to_destroy
+    
   end
 
 end
