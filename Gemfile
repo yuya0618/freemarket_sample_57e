@@ -81,3 +81,6 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'active_hash'
 gem 'payjp'
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'`
