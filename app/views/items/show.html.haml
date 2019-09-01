@@ -13,7 +13,6 @@
         .item__info
           .item__left
           
-
             -# -if order_status == "soldout"
             -#   .triangle
             -#   .sold SOLD
@@ -22,37 +21,14 @@
             -# -else
 
             .item__left__main
-              -# %div
-              =image_tag @item.images.first.image_url, class: "item__left__mainpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_1.jpg?1563162918", class: "item__left__mainpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_2.jpg?1563162918", class: "item__left__mainpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_3.jpg?1563162918", class: "item__left__mainpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_4.jpg?1563162918", class: "item__left__mainpic"
-
-
+              -@images.each do |image|
+                =image_tag image.image_url, class: "item__left__mainpic"              
 
             .item__left__sub1
-              -# %div
-              =image_tag @item.images.first.image_url, class: "item__left__subpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_1.jpg?1563162918", class: "item__left__subpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_2.jpg?1563162918", class: "item__left__subpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_3.jpg?1563162918", class: "item__left__subpic"
-              -# %div
-              =image_tag "https://static.mercdn.net/item/detail/orig/photos/m63584045523_4.jpg?1563162918", class: "item__left__subpic"
+              -@images.each do |image|
+                =image_tag image.image_url, class: "item__left__subpic"
 
             .item__left__sub2
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
-            -#   =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__subpic"
 
           .item__right
             %table
@@ -65,7 +41,7 @@
                   %p
                   .ratings
                     .rating__good
-                      %i.fas.fa-grin
+                      %i.fas.fa-laugh-beam
                     .rating__okay
                       %i.fas.fa-meh
                     .rating__soso

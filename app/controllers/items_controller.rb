@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     @previous = Item.where("id < ?", @item.id).order("id ASC").first
 
     @items = Item.order("created_at DESC").limit(3)
+    @images = @item.images.order("created_at DESC").limit(5)
 
   end
 
