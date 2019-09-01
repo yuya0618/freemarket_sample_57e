@@ -1,0 +1,5 @@
+= link_to item_path(item.id), class:"mypage-tabs-dealed-items2__item--found-list" do
+  %li.mypage-tabs-dealed-items2__item--found
+    = image_tag item.images.first.image_url, class:"mypage-tabs-dealed-items2__item--found-list-pic"
+    %p
+      = item.name

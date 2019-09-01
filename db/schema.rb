@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(version: 2019_08_30_015211) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "card_number", null: false
+    t.integer "expiration_month", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "card_id", null: false
-    t.integer "customer_id", null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
@@ -77,6 +77,22 @@ ActiveRecord::Schema.define(version: 2019_08_30_015211) do
     t.integer "delivery_term", default: 0, null: false
     t.bigint "user_id", default: 0, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text"
+    t.string "firstname", null: false
+    t.string "lastname", null: false
+    t.string "firstname_kana", null: false
+    t.string "lastname_kana", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.integer "phone_number"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -111,4 +127,5 @@ ActiveRecord::Schema.define(version: 2019_08_30_015211) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
+  add_foreign_key "profiles", "users"
 end
