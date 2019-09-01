@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @next = Item.where("id > ?", @item.id).order("id DESC").first
+    @previous = Item.where("id < ?", @item.id).order("id ASC").first
+
+    @items = Item.order("created_at DESC").limit(3)
+    @images = @item.images.order("created_at DESC").limit(5)
+
   end
 
   # GET /items/new

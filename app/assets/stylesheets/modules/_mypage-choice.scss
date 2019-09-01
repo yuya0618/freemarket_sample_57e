@@ -1,0 +1,39 @@
+//自身のページで商品を表示した時
+
+.mypage{
+  background-color: white;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  &__edit__page{
+    background-color: red;
+    padding: 10px 200px;
+    height: 40px;
+    box-sizing: border-box;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  &__stop__page{
+    background-color: gray;
+    padding: 10px 200px;
+    color: white;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 10px 0;
+
+
+  }
+  &__delete__page{
+    background-color: gray;
+    padding: 10px 200px;
+    color: white;
+    height: 40px;
+    box-sizing: border-box;
+
+  }
+  .mypage__btn{
+    color:white;
+  }
+
+}

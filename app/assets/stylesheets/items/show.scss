@@ -1,4 +1,5 @@
 .container{
+  background-color: whitesmoke;
   padding-top: 40px;
   box-sizing: border-box;
   width: 70%;
@@ -10,34 +11,55 @@
     margin: 0 auto 0;
     &__name{
       padding: 15px 0 15px 0;
+      text-align: center;
+      width: 100%;
+      height: 60px;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 40px;
+      box-sizing: border-box;
+      margin: 0;
+  
     }  
     &__left{
       width: 48%;
       height: 100%;
       float: left;
-      background-color: #F8F5F4;
+      background-color: white;
       align-items: center;
+      position: relative;
       &__main{
         width: 100%;
         height: 60%;
+        display: flex;
       }   
       &__mainpic{
-        height: 100%;
+        height: 300px;
         width: 100%;
+        background-size: cover;
+        
       }
+
       &__sub1{
         width: 100%;
         height: 20%;
         padding-left: 10px;
+        background-color: white;
+        display: flex;
+
       }
-      &__sub2{
-        width: 100%;
-        height: 20%;
-        padding-left: 10px;
-      }
+      // &__sub2{
+      //   width: 100%;
+      //   height: 20%;
+      //   padding-left: 10px;
+      //   background-color: white;
+
+      // }
       &__subpic{
-        width: 18%;
-        height: 100%;
+        width: 20%;
+        background-color: white;
+        margin-right: 5px;
+        outline: none;
       }
     }
     &__right{
@@ -71,23 +93,13 @@
       height: 450px;
     }
   }  
-  #item__name{
-    text-align: center;
-    width: 100%;
-    height: 40px;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 40px;
-    box-sizing: border-box;
-    margin: 0;
-  }
   .price{
     text-align: center;
     height: 70px;
     padding: 10px 0;
     box-sizing: border-box;
     &__one{
-      font-size: 45px;
+      font-size: 40px;
       font-weight: bold;
     }
     &__two{
@@ -142,7 +154,7 @@
       color: black;
       font-size: 13px;
       margin-right: 5px;
-      background-color: lightgray;
+      background-color: whitesmoke;
       padding: 5px 10px;
       box-sizing: border-box;
       border-radius: 10px;
@@ -151,7 +163,6 @@
       color: rgba(0, 183, 255, 0.863);
       float: right;
       font-size: 13px;
-
     }
   }
   .comment{
@@ -201,10 +212,12 @@
     &__btn1{
       color: rgba(0, 183, 255, 0.863);
       float: left;
+      font-size: 13px;
     }
     &__btn2{
       color: rgba(0, 183, 255, 0.863);
       float: right;
+      font-size: 13px;
     }
   }
   .posts{
@@ -219,25 +232,22 @@
     &__items{
       margin: 5px auto 0;
       display: flex;
-      height: 400px;
+      height: 350px;
     }
-    &__item1{
+    &__item{
       width: 33%;
       height: 300px;
       margin: 0px 10px 20px 0px;
-    }
-    &__item2{
-      width: 33%;
-      height: 300px;
-      margin: 0px 10px 20px 0px;
+      .image{
+        width: 100%;
+        height: 200px;
+        .other_item{
+          height: 200px;
+          width: 100%;
+        }
+      }  
     }
   }
-
-  .image{
-    width: 100%;
-    height: 100%;
-  }
-  
   .explaination{
     background-color: white;
     width: 100%;
@@ -247,11 +257,17 @@
     &__name{
       width: 100%;
       height: 60%;
+      color: black;
     }
     &__price{
       width: 100%;
       height: 30%;
       font-weight: bold;
+      color: black;
+      .heart{
+        float: right;
+      }
+
     }
   }  
 }
@@ -274,4 +290,49 @@
     padding-left: 200px;
     font-size: 13px;
   }
+}
+
+// 以下条件分岐CSS
+//売れた時のSOLD
+.triangle{
+  height:0;
+  width: 0;
+  border-top: 100px solid red;
+  border-right: 100px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sold{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transform: rotate(-40deg);
+  position: absolute;
+  top: 23px;
+  left: 7px;
+}
+
+//売れた時のボタン変更
+.sold_out{
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 20px;
+  height:45px;
+  width: 100%;
+  color: white;
+  background-color:gray;
+  font-weight: bold;
+}
+
+//売れた時のコメント欄変更
+
+.no_comment{
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  height:45px;
+  width: 100%;
+  color: white;
+  background-color:gray;
 }
