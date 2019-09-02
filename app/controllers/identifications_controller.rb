@@ -3,6 +3,8 @@ class IdentificationsController < ApplicationController
 
   def edit
     add_breadcrumb '本人確認'
+
+    # TODO ログイン機能実装後使用予定
     # @profile = current_user.profile
   end
 
