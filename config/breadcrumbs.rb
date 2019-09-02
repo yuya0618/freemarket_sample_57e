@@ -2,14 +2,21 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-# crumb :projects do
-#   link "Projects", projects_path
-# end
+crumb :items do
+  link "商品一覧", items_path
+end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+
+crumb :item do |item|
+  link "@#{item.name}", item_path(item)
+end
+
+crumb :user do |user|
+  link "@#{user.nickname}", users_path(user)
+  parent :projects
+end
+
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)

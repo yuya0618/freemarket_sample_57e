@@ -290,38 +290,38 @@
       .posts__items
         .posts__item1
           = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
 
       .posts__items
         .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
 
 
       .posts
         = link_to 'その他の商品', '#', class:"posts__title"
         
       .posts__items
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
           
       .posts__items
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
 
   -# .bottom_pagination
   -#   .btn
@@ -400,9 +400,7 @@
 
 .bottom_pagination
   .btn
-    = link_to "メルカリ ＞", "/", class:"home"
-    %span
-      = @item.name
+    = breadcrumbs pretext: "You are here: ", separator: " &rsaquo; ", class:"breadcrumb"
 
 
 = render partial: 'shared/bottom-banner'
