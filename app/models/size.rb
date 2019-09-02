@@ -5,7 +5,7 @@ class Size < ApplicationRecord
 
 end
 
-class Category < ActiveHash::Base
+class Size < ActiveHash::Base
 
   self.data = [
     {id: '', name: '---'},
