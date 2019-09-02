@@ -296,7 +296,7 @@
         -#   = render partial: 'shared/show-items'
 
       .posts__items
-        .posts__item2
+      -#   .posts__item2
         -#   = render partial: 'shared/show-items'
         -# .posts__item2
         -#   = render partial: 'shared/show-items'
@@ -358,6 +358,7 @@
 
     -# .posts__items
     -#   =render "shared/show-items", collection: @items, as:"item"
+
     //TODO 他の商品
     -# -@item.user.items.last(3).each do |user_item|
     -# .posts_item
@@ -399,7 +400,9 @@
 
 
 -# .bottom_pagination
-= render partial: 'shared/breadcrumbs'
+-# = render partial: 'shared/breadcrumbs'
+.bread
+  = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
 
