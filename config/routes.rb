@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
-  resources :items
-  resources :users, only: [:index, :edit, :update, :create, :to_destroy]
+  resources :items do
+    resources :images, only: [:index, :create]
+  end
+  resources :users, only: [:index, :edit, :update, :create]
   devise_scope :user do
     get    'signup',                to: 'users/registrations#index'
     get    'signup/registration',   to: 'users/registrations#step1'

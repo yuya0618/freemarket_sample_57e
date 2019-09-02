@@ -11,13 +11,14 @@
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        =f.label :name do
-          .item-registration__form__group__image
-            .nest-form
-              .nest-form__head
-                = f.file_field :name, style:"display:none;"
-                %p ドラッグアンドドロップ
-                %p またはクリックしてファイルをアップロード
+        = f.fields_for :images do |fin|
+          =fin.label :image do
+            .item-registration__form__group__image
+              .nest-form
+                .nest-form__head
+                  = fin.file_field :image, style:"display:none;"
+                  %p ドラッグアンドドロップ
+                  %p またはクリックしてファイルをアップロード
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名
@@ -31,11 +32,11 @@
         -# 商品の説明
         %span.item-registration__form__group__box__label 商品の説明
         %span.item-registration__form__group__box__necessary 必須
-        - if @item.errors.messages[:description].present?
-          - @item.errors.messages[:description].each do |message|
+        - if @item.errors.messages[:details].present?
+          - @item.errors.messages[:details].each do |message|
             %p.error= message
         .item-registration__form__group__box__select
-          = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          = f.text_area :details, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
 
       -# 商品の詳細
       .item-registration__form__detail
@@ -82,7 +83,7 @@
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: 'select-box__body'}
+            = f.collection_select :delivery_location, Prefecture.all, :id, :name, {}, {class: 'select-box__body'}
             -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
           -# 発送までの日数
@@ -90,7 +91,7 @@
           %span.item-delivery__box__necessary 必須
           .select-box
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', class: 'select-box__body'
+            =f.select :delivery_term, Item.delivery_terms.keys, {}, {class: 'select-box__body'}
 
       -# 販売価格
       .item-price
@@ -103,7 +104,7 @@
               %span.item-price__box__necessary 必須
             .price-box
               %span ¥
-              = f.text_field :price, placeholder: "例）300", class:"price-box__body"
+              = f.text_field :price, placeholder: "例）300", value: '', class:"price-box__body"
           .item-price__box__list
             .item-price__box__list--left
               %p 販売手数料(10%)
@@ -119,7 +120,7 @@
       .item-registration__form__group
         %div
           = link_to '禁止されている出品', '#'
-          %p 、
+          %p 
           = link_to '行為', '#'
           %p を必ずご確認ください。
         %div

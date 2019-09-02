@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @item.images.build
     @categories = Item.new
   end
 
@@ -25,7 +26,9 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.create
+    binding.pry
+    @item = Item.create!(item_params)
+    redirect_to root_path
   end
 
   # PATCH/PUT /items/1
@@ -51,6 +54,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.fetch(:item, {})
+      params.require(:item).permit(:name, :price, :details, :condition, :delivery_fee, :delivery_method, :delivery_location, :delivery_term, images_attributes: :image).merge(user_id: 1)
     end
 end
