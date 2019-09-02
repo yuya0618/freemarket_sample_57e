@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+    get 'identifications', to: 'identifications#edit', as: :identification
+
 end

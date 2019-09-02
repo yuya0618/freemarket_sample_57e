@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb 'メルカリ', '/'
+
   # GET /items
   # GET /items.json
   def index
@@ -10,22 +12,27 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @next = Item.where("id > ?", @item.id).order("id DESC").first
-    @previous = Item.where("id < ?", @item.id).order("id ASC").first
 
-    @items = Item.order("created_at DESC").limit(3)
-    @images = @item.images.order("created_at DESC").limit(5)
+  add_breadcrumb @item.name
+
+  @next = Item.where("id > ?", @item.id).order("id DESC").first
+  @previous = Item.where("id < ?", @item.id).order("id ASC").first
+
+  @items = Item.order("created_at DESC").limit(3)
+  @images = @item.images.order("created_at DESC").limit(5)
 
   end
 
   # GET /items/new
   def new
+    add_breadcrumb '商品出品'
     @item = Item.new
     @categories = Item.new
   end
 
   # GET /items/1/edit
   def edit
+    add_breadcrumb '商品情報編集'
   end
 
   # POST /items
