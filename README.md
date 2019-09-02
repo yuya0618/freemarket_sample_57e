@@ -82,7 +82,7 @@ Column|Type|Options|
 |delivery_term|integer|null:false|
 |user_id|refernces|null: false, foreign_key: true|
 |category_id|refernces|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
 |size_id|references||
 
 ### Association

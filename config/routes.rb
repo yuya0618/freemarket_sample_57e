@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     resources :images, only: [:index, :create]
-  end
+  end 
   resources :users, only: [:index, :edit, :update, :create] do
     collection do
       get 'list'
