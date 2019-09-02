@@ -4,17 +4,25 @@ end
 
 crumb :items do
   link "商品一覧", items_path
+  parent :root
+end
+
+crumb :item_show do |item|
+  link item.name, item_path
+  parent :root
+end
+
+crumb :mypage do
+  link "マイページ", users_path
+  parent :root
+end
+
+crumb :logout do
+  link "ログアウト", users_sign_out_path
 end
 
 
-crumb :item do |item|
-  link "@#{item.name}", item_path(item)
-end
 
-crumb :user do |user|
-  link "@#{user.nickname}", users_path(user)
-  parent :projects
-end
 
 
 
