@@ -1,0 +1,9 @@
+    .mypage
+      .mypage__edit__page
+        = link_to "商品の編集", " edit_item_path", class: "mypage__btn"
+      %p or
+      .mypage__stop__page
+        = link_to "出品を一旦停止する", "#", class: "mypage__btn"
+      .mypage__delete__page
+        = link_to "この商品を削除する", "item_path", class: "mypage__btn", method: :delete
+

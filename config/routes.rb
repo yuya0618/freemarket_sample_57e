@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :items do
     resources :images, only: [:index, :create]
   end
-  resources :users, only: [:index, :edit, :update, :create]
+  resources :users, only: [:index, :edit, :update, :create] do
+    collection do
+      get 'list'
+    end
+  end
   devise_scope :user do
     get    'signup',                to: 'users/registrations#index'
     get    'signup/registration',   to: 'users/registrations#step1'
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
     get    'signup/sms_confirmation/sms',      to: 'users/registrations#step3'
     get    'signup/address',               to: 'users/registrations#step4'
     get    'signup/credit',         to: 'users/registrations#step5'
-    get    'signup/registration/create',         to: 'users/registrations#create'
+    post    'signup/registration/create',         to: 'users/registrations#create'
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

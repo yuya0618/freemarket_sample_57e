@@ -1,5 +1,11 @@
-.image
-  %img.image{:src => "https://static.mercdn.net/thumb/photos/m34363578232_1.jpg?1566519883"}/
-.explaination
-  .explaination__name 花柄
-  .explaination__price ¥1,000
+-@items.each do |item|
+  .posts__item
+    =link_to "#" do
+      .image
+        = image_tag item.images.first.image_url, class:"other_item"
+      .explaination
+        .explaination__name
+          = item.name
+        .explaination__price
+          = insert_price(item.price)
+          %span.heart ♡

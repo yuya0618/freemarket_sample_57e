@@ -4,12 +4,18 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.order("created_at DESC").limit(4)
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @next = Item.where("id > ?", @item.id).order("id DESC").first
+    @previous = Item.where("id < ?", @item.id).order("id ASC").first
+
+    @items = Item.order("created_at DESC").limit(3)
+    @images = @item.images.order("created_at DESC").limit(5)
+
   end
 
   # GET /items/new
@@ -39,11 +45,9 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # TODO 1をcurrent_user.idにする
+    @item.destroy if @item.user_id == 1
+    redirect_to list_users_path
   end
 
   private

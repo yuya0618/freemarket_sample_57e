@@ -1,0 +1,41 @@
+= render 'shared/header'
+
+%nav.breadcrumb
+  %ul.breadcrumb__list
+    %li.breadcrumb__item
+      = link_to "メルカリ", "#", class: "breadcrumb__link"
+      = fa_icon 'angle-right', class: 'icon'
+    %li.breadcrumb__item
+      = link_to "マイページ", "#", class: "breadcrumb__link"
+      = fa_icon 'angle-right', class: 'icon'
+    %li.breadcrumb__item
+      = link_to "出品した商品 - 出品中", "#", class: "breadcrumb__link"
+
+%main.main-container
+  = render 'users/shared/main-side2'
+  .main-content
+    .mypage-tabs-dealed-items2
+      .mypage-tabs-dealed-items2__head
+        %h2.mypage-tabs-dealed-items2__head-text 出品した商品
+      %ul.mypage-tabs
+        %li.mypage-tabs__head
+          %h3
+            = link_to "出品中", "#", class: "mypage-tabs__link active"
+        %li.mypage-tabs__head
+          %h3
+            = link_to "取引中", "#", class: "mypage-tabs__link"
+        %li.mypage-tabs__head
+          %h3
+            = link_to "売却済み", "#", class: "mypage-tabs__link"
+      .mypage-tabs-dealed-items2__detail
+        %ul.mypage-tabs-dealed-items2__list
+        - unless @items
+          %li.mypage-tabs-dealed-items2__item--notfound
+            取引中の商品がありません
+        - else
+          - @items.each do |item|
+            = render partial:'users/shared/mypage-tabs-dealed-items2', locals:{ item:item }
+
+= render 'shared/bottom-banner'
+= render 'shared/footer-black'
+= render 'shared/sell-btn'

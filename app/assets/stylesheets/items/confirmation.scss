@@ -1,23 +1,23 @@
-body{
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
 .wrapper{
-  background-color:  #F1EEED;
   height: 100%;
-  header{
-    width: 100%;
-    height: 80px;
-    padding: 25px 600px 0 600px;    
-    .header__icon{
-      width: 15%;
-    }
-    .header__icon:hover{
-      opacity: 0.7;
-    }
+  background-color: whitesmoke;
+
+  .header__icon:hover{
+    opacity: 0.7;
   }
+.top__banner{
+  width: 100%;
+  height: 80px;
+  padding: 25px 600px 0 600px;    
+  .header__icon{
+    width: 15%;
+  }
+}
+
+.container{
+  background-color: whitesmoke;
+
 }
 
 
@@ -39,7 +39,7 @@ body{
     }
   }
   &__two{
-    padding: 15px 175px 15px 175px;
+    padding: 15px 100px 15px 100px;
     border-bottom: solid 1px lightgray;
     &__detail{
       display: flex;
@@ -61,6 +61,8 @@ body{
     &__point{
       background: lightgray;
       height: 40px;
+      margin: 15px 0;
+
       p{
         line-height: 40px;
         font-weight: 100;
@@ -77,9 +79,12 @@ body{
         color: red;
         font-weight: 100;
         font-size: 14px;
+        padding-top: 5px;
       }
     }
     &__purchase{
+
+      margin: 15px 0;
       .purchase__btn{
         color: white;
         background: gray;
@@ -94,7 +99,7 @@ body{
   &__three{
     height: 150px;
     border-bottom: solid 1px lightgray;
-    padding: 15px 175px 15px 175px;
+    padding: 15px 100px 15px 100px;
     position: relative;
     &__address{
       float: left;
@@ -102,6 +107,7 @@ body{
     p{
       margin: 3px 0;
       text-align: left;
+      font-size: 14px;
     }
     span{
       font-weight: 100;
@@ -113,7 +119,7 @@ body{
   }
   &__four{
     height: 150px;
-    padding: 15px 175px 15px 175px;
+    padding: 15px 100px 15px 100px;
     position: relative;
     &__payment{
       float: left;
@@ -121,13 +127,18 @@ body{
     a p{
       color: rgba(0, 183, 255, 0.863);
       margin-bottom: 10px;
+
     }
     p{
       margin: 3px 0 15px 0;
       text-align: left;
+      font-size: 14px;
+
     }
     span{
       font-weight: 100;
+      font-size: 14px;
+
     }
   }
 }
@@ -147,12 +158,13 @@ body{
   float: right;
 }
 
-footer{
+.gray__footer{
   height: 200px;
   text-align: center;
   padding: 30px 0;
   text-decoration: none;
   font-weight: 100;
+  
   a{
     text-decoration: none;
     font-weight: 100;
@@ -165,9 +177,11 @@ footer{
     margin: 0 auto;
     padding: 40px 0 0 0;
   }
-  .year p{
-    font-size: 11px;
-    margin: 0;
+  .year{
+    p{
+      font-size: 11px;
+      margin: 35px 0;
+    }
   }
 }
 
@@ -179,6 +193,6 @@ footer{
   bottom: 0;
   color: rgba(0, 183, 255, 0.863);
   padding-bottom: 5px;
-  font-size: 15px;
 }
 
+}

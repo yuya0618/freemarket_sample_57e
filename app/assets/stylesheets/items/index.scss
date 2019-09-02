@@ -78,6 +78,7 @@
       .items-box{
         width: auto;
         display: flex;
+        padding-left:33px;
         .item-box{
           background-color: white;
           width: 213px;
@@ -132,7 +133,7 @@
       .more-items{
         padding: 20px 0 30px;
         text-align: right;
-        width:93%;
+        width:96%;
         &-text{
           color: #0099e8;
           font-size: 14px;

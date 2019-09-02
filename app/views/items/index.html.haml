@@ -1,4 +1,4 @@
-= render 'shared/header'
+= render partial: 'shared/header'
 
 .item-toppage
   .swiper-container
@@ -25,30 +25,19 @@
   .pickup
     %h2.pickup-top ピックアップカテゴリー
 
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    -# 今後の部分テンプレート用
-    -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
-    -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
-    -# = render partial: 'partial/item-top', locals: { items: @kids_items, word: 'ベビー・キッズ' }
-    -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'レディース' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'メンズ' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'ベビー・キッズ' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'インテリア・住まい・小物' }
 
-
-    .pickup
+  .pickup
     %h2.pickup-top ピックアップブランド
 
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    = render 'shared/item-top'
-    -# 今後の部分テンプレート用
-    -# = render partial: 'partial/item-top', locals: { items: @ladies_items, word: 'レディース' }
-    -# = render partial: 'partial/item-top', locals: { items: @mens_items, word: 'メンズ' }
-    -# = render partial: 'partial/item-top', locals: { items: @kids_items, word: 'ベビー・キッズ' }
-    -# = render partial: 'partial/item-top', locals: { items: @cosme_items, word: 'コスメ・香水・美容' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'シャネル' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'ナイキ' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'ルイヴィトン' }
+    = render partial: 'items/top-items', locals:{items:@items, word: 'シュプリーム' }
 
-    = render 'shared/sell-btn'
-    = render 'shared/bottom-banner'
-    = render 'shared/footer-black'
+    = render partial: 'shared/sell-btn'
+    = render partial: 'shared/bottom-banner'
+    = render partial: 'shared/footer-black'
