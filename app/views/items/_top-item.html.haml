@@ -1,5 +1,5 @@
 .item-box
-  = link_to root_path do
+  = link_to item_path(item) do
     .item-box-photo
       = image_tag item.images.first.image_url, class:"item-box-photo-pic"
     .item-box-body

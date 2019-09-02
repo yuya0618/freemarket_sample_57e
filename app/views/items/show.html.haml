@@ -127,7 +127,7 @@
     - if @item.user_id == 1
       .edit
         .edit-edit
-          = link_to "商品の編集",root_path, class:"edit-edit_btn"
+          = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
         %p or
         .edit-delete
           = link_to "出品を一旦中止する",root_path, class:"edit-delete_btn"
