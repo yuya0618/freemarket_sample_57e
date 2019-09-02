@@ -25,14 +25,13 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    add_breadcrumb '商品出品'
     @item = Item.new
     @categories = Item.new
   end
 
   # GET /items/1/edit
   def edit
-    add_breadcrumb '商品情報編集'
+    # add_breadcrumb '出品した商品、出品中', :edit_item_path
   end
 
   # POST /items
