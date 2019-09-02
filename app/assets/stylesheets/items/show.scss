@@ -274,11 +274,14 @@
   }
     &__items{
       margin: 5px auto 0;
-      display: flex;
+      // display: flex;
       height: 350px;
     }
+    &__item1{
+      display: flex;
+    }
     &__item{
-      width: 33%;
+      width: 30%;
       height: 300px;
       margin: 0px 10px 20px 0px;
       .image{
