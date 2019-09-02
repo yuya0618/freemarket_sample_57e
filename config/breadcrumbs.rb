@@ -8,7 +8,7 @@ crumb :items do
 end
 
 crumb :item_show do |item|
-  link item.name, item_path
+  link "A", item_path
   parent :root
 end
 
