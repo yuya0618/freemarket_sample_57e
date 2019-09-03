@@ -111,4 +111,8 @@ if Rails.env == "development"
     Brand.create(name: brand[0])
   end
 
+  CSV.foreach('db/sizes/category_size.csv') do |category_size|
+    Category_size.create(name: category_size[0])
+  end
+
 end
