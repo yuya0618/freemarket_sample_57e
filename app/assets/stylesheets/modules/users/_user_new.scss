@@ -84,6 +84,267 @@
       }
     }
   }
+  .single-container-session{
+    width: 456px;
+    background: white;
+    margin:0 auto;
+    line-height: inherit;
+    display:block;
+    padding: 40px 64px;
+
+    &__top{
+    margin:0 auto;
+    line-height: 1.5;
+    font-size:14px;
+    height: 97px;
+    margin-top:20px;
+    margin-bottom: 16px;
+    border-bottom: solid 1px #f5f5f5;
+      .new-registration{
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        line-height: 40px;
+        &__link{
+          color:white;
+        }
+      }
+    }
+    &__link{
+      margin:0 auto;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      display: flex;
+      flex-direction: column;
+      font-size:14px;
+      line-height: 50px;
+      width:100%;
+      &__facebook{
+        background-color:#385185;
+        color:white;
+        text-decoration: none;
+        margin-bottom: 16px;
+        img{
+          float:left;
+          margin-top:10px;
+          margin-left:10px;
+          width:25px;
+          height:25px;
+        }
+      }
+      &__google{
+        background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+        border: #979797 solid 1px;
+        color: #333;
+        text-decoration: none;
+        margin-bottom: 16px;
+        width: 100%;
+        img{
+          float:left;
+          margin-top:10px;
+          margin-left:10px;
+          width:25px;
+          height:25px;
+        }
+      }
+    }
+    main.single-main{
+      section.l-single-container{
+        margin: 0 auto;
+        h2.l-single-head.registration{
+        }
+        h2.creating-text{
+          font-size:22px;
+          button.btn-default.btn-red{
+            margin: 24px 0 50px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            height:50px;
+            font-size: 14px;
+            a{
+              color:white;
+              text-decoration: none;
+            }
+          }
+        }
+        .forming{
+          .l-single-content{
+            border-bottom: 1px solid #f5f5f5;
+            width:343px;
+            margin:0 auto;
+            .form-group{
+              margin: 24px 0 0;
+              label{
+                display: flex;
+                flex-direction: column;
+                float:left;
+                font-weight: bold;
+              }
+              span.form-require{
+                background-color:#EA352D;
+                color:white;
+                display: flex;
+                padding: 2px 4px;
+                width:32px;
+                border-radius: 2px;
+                font-size: 12px;
+                vertical-align: top;
+              }
+              span.form-more{
+                background-color:#f5f5f5;
+                color:white;
+                padding: 2px 4px;
+                width:30px;
+                margin: 0 0 0 8px;
+              }
+              .form-text{
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                width: 100%;
+              }
+              ul.signup-card-list{
+                display:flex;
+                margin: 8px 0 0;
+                li{
+                  margin: 0 0 0 8px;
+                }
+              }
+              .form-text-half{
+                width: calc(50% - 6px);
+                height: 48px;
+                margin: 8px 0 0;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .birthday-select-wrap{
+                .select-wrap{
+                  display:flex;
+                  margin: 8px 0 0;
+                  width: calc(34% - 17px);
+                  height: 48px;
+                  background-color:white;
+                  display: flex;
+                  i.icon-arrow-bottom{
+                    display:inline-block;
+                    font-size: 8px;
+                  }
+                  .form-text-three{
+                    width: calc(34% - 17px);
+                    height: 48px;
+                    background-color:white;
+                    display: flex;
+                  }
+                  .form-texting{
+                    width: calc(100% - 38px);
+                    height: 48px;
+                    background-color:white;
+                    display:flex;
+                  }
+                }
+              }
+              .prefecture-btn{
+                .prefecture-wrap{
+                  margin: 8px 0 0;
+                  i.icon-arrow-bottom{
+                    display:inline-block;
+                    font-size: 8px;
+                  }
+                  select.select-default{
+                    display: inline-block;
+                    width:100%;
+                    height: 48px;
+                    background-color:white;
+                  }
+                }
+              }
+              span{
+              }
+              p.form-info-text{
+              }
+            }
+            .l-single-content{
+              .form-group{
+                .g-recaptcha.signup-recaptcha{
+                }
+                p.l-single-text.text-center{
+                  a{
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            .btn-default{
+              margin: 24px 0 50px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              width: 100%;
+              height:50px;
+              font-size: 14px;
+              a{
+                color:white;
+                text-decoration: none;
+              }
+            }
+            .form-group.text-right{
+              .form-body{
+                display: flex;
+                justify-content: flex-end;
+                span.question{
+                  display: inline-block;
+                  width: 14px;
+                  height: 14px;
+                  border-radius: 50%;
+                  background: #0099e8;
+                  color: #fff;
+                  line-height: 14px;
+                  font-size: 12px;
+                  text-align: center;
+                }
+                p.question{
+                  text-decoration: none;
+                  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+                  color: #0099e8;
+                }
+              }
+            }
+            h3.text-left.l-chapter-sub-head{
+              display:flex;
+            }
+            h3.l-chapter-sub-head{
+              flex-direction: column;
+              font-weight: bold;
+              margin: 8px 0 0;
+            }
+            p{
+              a{
+                color: #0099e8;
+              }
+            }
+            p.l-single-text{
+            background-color:white;
+            margin: 8px 0 0;
+              a{
+                color: #0099e8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .footer.single-footer{
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     position: absolute;
