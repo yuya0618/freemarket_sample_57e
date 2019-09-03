@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
-  resources :items
-  resources :users, only: [:index, :edit, :update, :create, :to_destroy] do
+  resources :items do
+    resources :images, only: [:index, :create]
+  end 
+  resources :users, only: [:index, :edit, :update, :create] do
     collection do
       get 'list'
     end
