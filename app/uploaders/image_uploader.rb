@@ -4,7 +4,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  #本番環境の時はstorage :fog
+
+  #保存先、本番環境の時はS3
   if Rails.env.development? || Rails.env.test?
     storage :file
   else
@@ -26,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   include CarrierWave::MiniMagick
-  process resize_to_fit: [1500, 1500]
+  process resize_to_fit: [800, 800]
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
@@ -34,8 +35,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
-  process resize_to_fit: [200, 200]
 
   # Create different versions of your uploaded files:
   # version :thumb do

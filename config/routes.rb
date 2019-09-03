@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
   resources :items do
+    member do
+      get 'buy'
+      post 'purchase'
+      get 'complete'
+    end
     resources :images, only: [:index, :create]
-  end 
+  end
   resources :users, only: [:index, :edit, :update, :create] do
     collection do
       get 'list'

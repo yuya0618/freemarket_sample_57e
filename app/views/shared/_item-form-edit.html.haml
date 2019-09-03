@@ -5,19 +5,21 @@
 
   .item-registration
     %h2.item-registration__head 商品の情報を入力
-    = form_with model: @item, url: "", class:'item-registration__form' do |f|
+    = form_with model: @item, method: :patch,class:'item-registration__form', local: true do |f|
       -# 画像
       .item-registration__form__group
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        =f.label :name do
-          .item-registration__form__group__image
-            .nest-form
-              .nest-form__head
-                = f.file_field :name,style:"display:none;"
-                %p ドラッグアンドドロップ
-                %p またはクリックしてファイルをアップロード
+        = image_tag item.images.first.image_url,class:"２"
+        -# = f.fields_for :images do |fin|
+        -#   =fin.label :image do
+        -#     .item-registration__form__group__image
+        -#       .nest-form
+        -#         .nest-form__head
+        -#           = fin.file_field :image, style:"display:none;"
+        -#           %p ドラッグアンドドロップ
+        -#           %p またはクリックしてファイルをアップロード
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名
@@ -27,15 +29,15 @@
           - @item.errors.messages[:name].each do |message|
             %p.error= message
         .item-registration__form__group__box__select
-          = f.text_field :name, autofocus: true, value: item.name
+          = f.text_field :name, value: item.name
         -# 商品の説明
         %span.item-registration__form__group__box__label 商品の説明
         %span.item-registration__form__group__box__necessary 必須
-        - if @item.errors.messages[:description].present?
-          - @item.errors.messages[:description].each do |message|
+        - if @item.errors.messages[:details].present?
+          - @item.errors.messages[:details].each do |message|
             %p.error= message
         .item-registration__form__group__box__select
-          = f.text_area :description, autofocus: true, value: item.details
+          = f.text_area :details, value:item.details
 
       -# 商品の詳細
       .item-registration__form__detail
@@ -47,14 +49,15 @@
             %span.item-registration__form__detail__box__category__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', autofocus: true, class: 'select-box__body'
+            = f.text_field :category_id, value:'---', class: 'select-box__body'
           -# 商品の状態
           .item-registration__form__detail__box__category
             %span.item-registration__form__group__box__label 商品の状態
             %span.item-registration__form__group__box__necessary 必須
           .select-box
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', autofocus: true, class: 'select-box__body'
+            = f.select :condition, Item.conditions.keys, {}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
       -# 配送について
       .item-delivery
@@ -66,20 +69,30 @@
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', autofocus: true, class: 'select-box__body'
+            =f.select :delivery_fee, Item.delivery_fees.keys, {}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
           -# 配送方法
           %span.item-delivery__box__label 配送方法
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', autofocus: true, class: 'select-box__body'
+            =f.select :delivery_method, Item.delivery_methods.keys, {}, {class: 'select-box__body'}
+
+
+          -# 発送元の地域
+          %span.item-delivery__box__label 配送元の地域
+          %span.item-delivery__box__necessary 必須
+          .select-box.select-box-top
+            -# collection_selectにする
+            = f.collection_select :delivery_location, Prefecture.all, :id, :name, {}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
           -# 発送までの日数
           %span.item-delivery__box__label 配送までの日数
           %span.item-delivery__box__necessary 必須
           .select-box
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', autofocus: true, class: 'select-box__body'
+            =f.select :delivery_term, Item.delivery_terms.keys, {}, {class: 'select-box__body'}
 
       -# 販売価格
       .item-price
@@ -92,13 +105,12 @@
               %span.item-price__box__necessary 必須
             .price-box
               %span ¥
-              = f.text_field :price, autofocus: true, placeholder: "例）300", class:"price-box__body",value:item.price.to_s(:delimited)
+              = f.text_field :price, value: item.price, class:"price-box__body"
           .item-price__box__list
             .item-price__box__list--left
               %p 販売手数料(10%)
             .item-price__box__list--right
-              %p
-                = "#{item.price.to_i / 10}"
+              %p -
           .item-price__box__list
             .item-price__box__list--left
               %h3 販売利益
@@ -109,7 +121,7 @@
       .item-registration__form__group
         %div
           = link_to '禁止されている出品', '#'
-          %p 、
+          %p
           = link_to '行為', '#'
           %p を必ずご確認ください。
         %div
