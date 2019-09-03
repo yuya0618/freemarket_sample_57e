@@ -44,6 +44,7 @@
 ### Association
 - belongs_to :user
 
+
 ## addressesテーブル
 Column|Type|Options|
 |------|----|-------|
@@ -81,7 +82,7 @@ Column|Type|Options|
 |delivery_term|integer|null:false|
 |user_id|refernces|null: false, foreign_key: true|
 |category_id|refernces|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
 |size_id|references||
 
 ### Association
@@ -107,8 +108,10 @@ Column|Type|Options|
 - has_many :items
 - has_many :categories_sizes
 - has_many :sizes, through: :categories_sizes
-- belongs_to :parent, class_name: 'Category', optional: true
-- has_many :children, class_name: 'Category', foreign_key: 'parent_id'
+<!-- 自己結合でなく'ancestry'gemを使うことにした -->
+<!-- - belongs_to :parent, class_name: 'Category', optional: true
+- has_many :children, class_name: 'Category', foreign_key: 'parent_id' -->
+has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
