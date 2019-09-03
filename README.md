@@ -108,8 +108,10 @@ Column|Type|Options|
 - has_many :items
 - has_many :categories_sizes
 - has_many :sizes, through: :categories_sizes
-- belongs_to :parent, class_name: 'Category', optional: true
-- has_many :children, class_name: 'Category', foreign_key: 'parent_id'
+<!-- 自己結合でなく'ancestry'gemを使うことにした -->
+<!-- - belongs_to :parent, class_name: 'Category', optional: true
+- has_many :children, class_name: 'Category', foreign_key: 'parent_id' -->
+has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
