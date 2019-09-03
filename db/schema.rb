@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2019_09_02_101454) do
 
+ActiveRecord::Schema.define(version: 2019_09_02_113423) do
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
     t.string "address_city", null: false
@@ -81,27 +83,37 @@ ActiveRecord::Schema.define(version: 2019_09_02_101454) do
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "firstname", null: false
     t.string "firstname_kana", null: false
     t.string "lastname_kana", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
     t.integer "phone_number", null: false
     t.string "lastname", null: false
     t.text "text"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "encrypted_password"
   end
 
   add_foreign_key "addresses", "users"
@@ -110,4 +122,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_101454) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
+
+  add_foreign_key "sns_credentials", "users"
+
 end

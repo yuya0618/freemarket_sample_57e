@@ -5,6 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # before_action :step1, only:[:step2,:step4,:step5]
     # before_action :step2, only: [:step4,:step5]
     # before_action :step4, only: [:step5]
+  def new
+  end
+
   def step1
     @user = User.new
     # binding.pry
@@ -47,7 +50,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], lastname: session[:lastname],lastname_kana: session[:lastname_kana], firstname: session[:firstname], firstname_kana: session[:firstname_kana], birth_year: session[:birth_year], birth_month: session[:birth_month], birth_day: session[:birth_day], phone_number: session[:phone_number], address_attributes: session[:address_attributes])
     if @user.save
       # ログインするための情報を保管
-      session[:id] = @user.id
+      session[:user_id] = @user.id
+      redirect_to root_path
     end
   end
   private

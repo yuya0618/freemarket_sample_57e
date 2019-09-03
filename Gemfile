@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rails-env-credentials'
 end
 
 group :development do
@@ -53,6 +54,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails-env-credentials'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -86,3 +89,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'breadcrumbs_on_rails'
 gem 'ancestry'
+gem 'dotenv-rails'

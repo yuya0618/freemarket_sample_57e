@@ -11,12 +11,9 @@
       = link_to signup_registration_path, class: 'single-container-registration__link__e-mail' do
         = fa_icon 'envelope', class: 'icon'
         メールアドレスで登録する
-      = link_to edit_user_registration_path, class: 'single-container-registration__link__facebook' do
+      = link_to user_facebook_omniauth_authorize_path, class: 'single-container-registration__link__facebook' do
         = image_tag "facebook_logo.png", size: "25×25" 
         Facebookで登録する
-      = link_to edit_user_registration_path, class: 'single-container-registration__link__google' do
+      = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-registration__link__google' do
         = image_tag "google_logo.png", size: "25×25" 
         Googleで登録する
-
-    .footer.single-footer
-      = render 'shared/loginfooter'
