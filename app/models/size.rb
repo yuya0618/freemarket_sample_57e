@@ -1,11 +1,9 @@
-class Size < ApplicationRecord
+class Size < ActiveHash::Base
+
   has_many :items
   has_many :categories_sizes
   has_many :categories, through: :categories_sizes
 
-end
-
-class Size < ActiveHash::Base
   self.data = [
     {id: '', name: '---'},
 
@@ -111,7 +109,15 @@ class Size < ActiveHash::Base
     {id: 111, name: 'フォーサーズマウント'},{id: 112, name: 'マイクロフォーサーズマウント'},
     {id: 113, name: 'a Aマウント'},{id: 114, name: 'a Eマウント'}, 
     {id: 115, name: 'ニコン１マウント'},{id: 116, name: 'キャノンEF-Mマウント'},
-    {id: 117, name: 'Xマウント'},{id: 118, name: 'シグマSAマウント},
+    {id: 117, name: 'Xマウント'},{id: 118, name: 'シグマSAマウント'},
+
+    # スノーボード
+
+    {id: 119, name: '135cm-140cm未満'},{id: 120, name: '140cm-145cm未満'},
+    {id: 121, name: '145cm-150cm未満'},{id: 122, name: '150cm-155cm未満'},
+    {id: 123, name: '155cm-160cm未満'},{id: 124, name: '160cm-165cm未満'}, 
+    {id: 125, name: '165cm-170cm未満'}, 
+
 
 
 ]
