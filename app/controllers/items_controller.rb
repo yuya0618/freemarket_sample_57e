@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @categories = Item.new
+    @category_parent = Category.all.limit(13)
   end
 
   # GET /items/1/edit
@@ -32,6 +33,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    binding.pry
     @item = Item.create!(item_params)
     redirect_to root_path
   end
