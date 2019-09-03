@@ -23,28 +23,28 @@ if Rails.env == "development"
 
   require 'csv'
 
-  # category_parents_array = CSV.read('db/categories/category_parents.csv')
-  # category_children_array = CSV.read('db/categories/category_children.csv')
-  # category_grandchildren_array = CSV.read('db/categories/category_grandchildren.csv')
+  category_parents_array = CSV.read('db/categories/category_parents.csv')
+  category_children_array = CSV.read('db/categories/category_children.csv')
+  category_grandchildren_array = CSV.read('db/categories/category_grandchildren.csv')
 
-  # parents_records = []
-  # children_records = []
+  parents_records = []
+  children_records = []
 
-  # category_parents_array.each do |parent|
-  #   parents_records << Category.create(name: parent[0])
-  # end
+  category_parents_array.each do |parent|
+    parents_records << Category.create(name: parent[0])
+  end
 
-  # parents_count = 0
+  parents_count = 0
 
-  # category_children_array.each do |child|
-  #   child != [] ? children_records << parents_records[parents_count].children.create(name: child[0]) : parents_count += 1
-  # end
+  category_children_array.each do |child|
+    child != [] ? children_records << parents_records[parents_count].children.create(name: child[0]) : parents_count += 1
+  end
 
-  # children_count = 0
+  children_count = 0
 
-  # category_grandchildren_array.each do |gchild|
-  #   gchild != [] ? children_records[children_count].children.create(name: gchild[0]) : children_count += 1
-  # end
+  category_grandchildren_array.each do |gchild|
+    gchild != [] ? children_records[children_count].children.create(name: gchild[0]) : children_count += 1
+  end
 
 
   CSV.foreach('db/brands/brand_ladies.csv') do |brand|
