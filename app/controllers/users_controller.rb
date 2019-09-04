@@ -1,14 +1,12 @@
 class UsersController < ApplicationController
   
-
-
   def index
   end
 
   def list
     add_breadcrumb '商品一覧'
     #1をcurrent_user.idにする
-    @items = Item.where(user_id: 1)
+    @items = Item.find(current_user.id)
   end
 
   def edit
@@ -17,6 +15,5 @@ class UsersController < ApplicationController
 
   def to_destroy
     add_breadcrumb 'ログアウト'
-    
   end
 end
