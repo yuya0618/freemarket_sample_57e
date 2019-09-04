@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   @items = Item.order("created_at DESC").limit(3)
   @images = @item.images.order("created_at DESC").limit(5)
 
+  
   end
 
   # GET /items/new

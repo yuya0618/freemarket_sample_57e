@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+    get 'transaction/buy/:id', to: 'transactions#buy', as: :transaction
     get 'identification', to: 'identifications#edit', as: :identification
-    get 'transaction/buy/:id', to: 'transactions#buy'
+
 end
