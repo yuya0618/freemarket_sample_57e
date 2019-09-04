@@ -41,13 +41,13 @@ class ItemsController < ApplicationController
 
 
   def update
-    @item.update(item_params)  if @item.user_id == current_user.id
+    @item.update(item_params)  if @item.user == current_user
     redirect_to item_path(@item)
   end
 
 
   def destroy
-    @item.destroy if @item.user_id == current_user.id
+    @item.destroy if @item.user == current_user
     redirect_to list_user_path(current_user.id)
   end
 

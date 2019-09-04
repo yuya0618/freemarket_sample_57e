@@ -3,7 +3,6 @@ class CreditCardsController < ApplicationController
   Payjp.api_key =  Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
 
   def create
-    binding.pry
     token = Payjp::Token.create(
       number:    params['number'],
       cvc:       params['cvc'],
