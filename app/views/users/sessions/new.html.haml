@@ -8,26 +8,25 @@
       %h2
       アカウントをお持ちでない方はこちら
       .new-registration
-        = link_to   signup_registration_path, class: 'new-registration__link' do
+        = link_to   signup_path, class: 'new-registration__link' do
           新規会員登録
-    .single-container-session__link
-      = link_to  user_facebook_omniauth_callback_path, class: 'single-container-session__link__facebook' do
-        = image_tag "facebook_logo.png", size: "25×25" 
-        Facebookでログイン
-      = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-session__link__google' do
-        = image_tag "google_logo.png", size: "25×25" 
-        Googleでログイン
-    %main.single-main
-      %section.l-single-container
-        %h2.l-single-head.registration
-        = form_for @user, url: session_path(resource_name),  method: :get, :html => {:class => "forming"} do |f|
-          .l-single-content
-            .form-group
-              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "form-text"
-            .form-group
-              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text"
-            .form-group
-            = f.submit "ログイン", class: "btn-default"
+      .single-container-session-sns
+        = link_to  user_facebook_omniauth_callback_path, class: 'single-container-session-sns__facebook' do
+          = image_tag "facebook_logo.png", size: "25×25" 
+          Facebookでログイン
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-session-sns__google' do
+          = image_tag "google_logo.png", size: "25×25" 
+          Googleでログイン
+      %main.single-main
+        %section.l-single-container
+          = form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => "forming"} ) do |f|
+            .l-single-content
+              .form-group
+                = f.email_field :email, placeholder: "メールアドレス", class: "form-text"
+              .form-group
+                = f.password_field :password, placeholder: "パスワード", class: "form-text"
+              .form-group
+              = f.submit "ログイン", class: "btn-default"
 
-    -# .footer.single-footer
-    -#   = render 'shared/loginfooter'
+  -# .footer.single-footer
+  -#   = render 'shared/loginfooter'

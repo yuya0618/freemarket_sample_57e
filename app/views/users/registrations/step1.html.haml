@@ -34,11 +34,11 @@
             .form-group
               %label{:for => "nickname"} ニックネーム
               %span.form-require 必須
-              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "form-text"
+              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "form-text",value: session[:nickname]
             .form-group
               %label{:for => "email"} メールアドレス
               %span.form-require 必須
-              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text"
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text",value: session[:email]
             .form-group
               %label{for: "password"} パスワード
               %span.form-require 必須
@@ -68,7 +68,7 @@
               %span.form-require 必須
               %br/
               .birthday-select-wrap
-                = f.select :birth_year, [["2000", "2000"], ["1999", "1999"], ["1998", "1998"], ["1997", "1997"], ["1996", "1996"], ["1995", "1995"]], {prompt: "---"}, class: "select-default select-text-default"
+                = f.select :birth_year, [["2000", "2000"], ["1999", "1999"], ["1998", "1998"], ["1997", "1997"], ["1996", "1996"], ["1995", "1995"]], {prompt: "---"}
                 %span 年
                 = f.select :birth_month, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]],  {prompt: "---"}, class: "select-default select-text-default"
                 %span 月

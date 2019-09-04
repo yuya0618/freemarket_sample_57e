@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2],:authentication_keys => [:user_id]
   def self.find_oauth(auth)
-  uid = auth.uid
-  provider = auth.provider
-  snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    uid = auth.uid
+    provider = auth.provider
+    snscredential = SnsCredential.where(uid: uid, provider: provider).first
     if snscredential.present?
       user = User.where(id: snscredential.user_id).first
     else
@@ -22,16 +22,16 @@ class User < ApplicationRecord
           nickname: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
-          phone_number: "000"
+          phone_number: "0800"
           )
         SnsCredential.create(
           uid: uid,
           provider: provider,
           user_id: user.id
           )
-          redirect_to signup_registration_path
       end
     end
+    return user
   end
   has_many :credit_cards, dependent: :destroy
   accepts_nested_attributes_for :credit_cards

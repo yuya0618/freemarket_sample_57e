@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: [:index, :list]
+
 
   def index
     @user = current_user
@@ -7,7 +9,9 @@ class UsersController < ApplicationController
 
   def list
     add_breadcrumb '商品一覧'
+
     @items = @user.items
+
   end
 
   def edit
@@ -16,6 +20,7 @@ class UsersController < ApplicationController
 
   def to_destroy
     add_breadcrumb 'ログアウト'
+
   end
 
   def credit
@@ -29,5 +34,8 @@ class UsersController < ApplicationController
     def set_user
       @user = current_user
     end
+
+
+  end
 
 end

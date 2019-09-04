@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("created_at DESC").limit(4)
+
   end
 
 
@@ -78,6 +79,7 @@ class ItemsController < ApplicationController
   private
     def set_item
       @item = Item.find(params[:id])
+
     end
 
     def item_params
