@@ -127,7 +127,7 @@
     - if @item.user_id == 1
       .edit
         .edit-edit
-          = link_to "商品の編集",root_path, class:"edit-edit_btn"
+          = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
         %p or
         .edit-delete
           = link_to "出品を一旦中止する",root_path, class:"edit-delete_btn"
@@ -292,36 +292,36 @@
           = render partial: 'shared/show-items'
         .posts__item1
           = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
 
       .posts__items
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
+      -#   .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
 
 
       .posts
         = link_to 'その他の商品', '#', class:"posts__title"
         
       .posts__items
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item1
+        -#   = render partial: 'shared/show-items'
           
       .posts__items
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
-        .posts__item2
-          = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
+        -# .posts__item2
+        -#   = render partial: 'shared/show-items'
 
   -# .bottom_pagination
   -#   .btn
@@ -358,6 +358,7 @@
 
     -# .posts__items
     -#   =render "shared/show-items", collection: @items, as:"item"
+
     //TODO 他の商品
     -# -@item.user.items.last(3).each do |user_item|
     -# .posts_item
@@ -398,13 +399,10 @@
 
 
 
-.bottom_pagination
-  .btn
-    = link_to "メルカリ ＞", "/", class:"home"
-    %span
-      = @item.name
-
-
+-# .bottom_pagination
+-# = render partial: 'shared/breadcrumbs'
+.bread
+  = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
 

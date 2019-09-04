@@ -7,17 +7,15 @@ header{
   height: 100px;
   width: 100%; 
 }
-.container{
-  background-color: #F1EEED;
-  padding: 0px 150px;
-}
 .main{
   display: flex;
   &__right{
     width: 70%;
     background-color: white;
-    margin-top: 20px;
     height: 100%;
+    &__container{
+      margin: 20px 0;
+    }
 
     &__top{
       height: 50px;
@@ -106,5 +104,8 @@ header{
     }
   }
 }
-
+.prefecture__select{
+  width: 100%;
+  height: 30px;
+}
 
