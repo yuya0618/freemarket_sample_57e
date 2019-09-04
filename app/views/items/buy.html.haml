@@ -1,0 +1,81 @@
+.item-form
+  .item-form-header
+    = link_to root_path do
+      = image_tag "logo.svg", alt: "ロゴ", class:"item-form-header-icon"
+.confirm-main
+  .confirm-main__container
+    %h2.confirm-head
+      購入内容の確認
+    .confirm-content
+      .confirm-item
+        = image_tag @item.images.first.image_url, class: 'confirm-item__image'
+        %p.confirm-item__name
+          - if @item.name.length > 39
+            = @item.name.slice(0..38)
+            %span<>…
+          - else
+            = @item.name
+        %p.confirm-item__price
+          %span<>¥
+          = @item.price.to_s(:delimited, delimiter: ',')
+          %span.confirm-item__shipment-fee
+            = @item.delivery_fee
+        .confirm-item__point
+          ポイントはありません
+        .confirm-item__total-price-label
+          支払い金額
+          %span.confirm-item__total-price<>
+            ¥
+            = @item.price.to_s(:delimited, delimiter: ',')
+        - if @cards.blank?
+          .confirm-item__error-message
+            配送先と支払い方法の入力を完了してください。
+          .confirm-purchase-btn.btn-disabled
+            購入する
+        - else
+          = link_to("購入する",purchase_item_path, method: :post, class: "confirm-purchase-btn")
+      .confirm-user
+        %h3.confirm-address__head
+          配送先
+        -# .confirm-address
+        -#   %span<>〒
+        -#   = current_user.address.zip_code
+        -#   %br
+        -#   = current_user.address.prefecture
+        -#   %br
+        -#   = current_user.address.address_city
+        -#   %br
+        -#   = current_user.address.address_number
+        -#   %br
+        -#   = current_user.address.building
+        -#   -# 本名にする
+        -#   %br
+        -#   = current_user.nickname
+        .confirm-link
+          = link_to("変更する＞","#")
+      .confirm-user.confirm-user--btm
+        %h3.confirm-address__head
+          支払い方法
+        .confirm-address
+          -# - if @cards.blank?
+          -#   %span /
+          -# - else
+          -#   ************
+          -#   %span<>
+          -#   = @cards[0]["last4"]
+          -#   %br
+          -#   = sprintf("%02d", @cards[0]["exp_month"])
+          -#   %span /
+          -#   = @cards[0]["exp_year"] % 100
+          -#   %br
+          -#   = render "cards/cards",
+          -#     brand: @cards[0]["brand"]
+          -# .confirm-link
+          -#   = link_to("変更する＞",
+          -#     root_path)
+
+
+
+
+.footer.single-footer
+  = render 'shared/loginfooter'

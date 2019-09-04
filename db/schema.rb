@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_09_04_063238) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -32,10 +34,10 @@ ActiveRecord::Schema.define(version: 2019_09_04_063238) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_categories_on_parent_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "categories_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,11 +50,11 @@ ActiveRecord::Schema.define(version: 2019_09_04_063238) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "card_number", null: false
-    t.integer "expiration_month", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer", null: false
+    t.string "card", null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
@@ -100,18 +102,24 @@ ActiveRecord::Schema.define(version: 2019_09_04_063238) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "firstname", null: false
     t.string "firstname_kana", null: false
     t.string "lastname_kana", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
     t.integer "phone_number", null: false
     t.string "lastname", null: false
     t.text "text"
+    t.integer "birth_year"
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
     t.string "encrypted_password"
     t.index ["email"], name: "index_users_on_email", unique: true
+
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
     t.index ["encrypted_password"], name: "index_users_on_encrypted_password", unique: true
+
   end
 
   add_foreign_key "addresses", "users"

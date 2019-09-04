@@ -4,7 +4,7 @@
   .main__right__middle__top
     %p.main__right__middle__card クレジットカード一覧
     %button
-      = link_to "クレジットカードを追加する", "#", class: "main__right__middle__btn"
+      = link_to "クレジットカードを追加する", credit_user_path(current_user.id), class: "main__right__middle__btn"
 
 .main__right__bottom
   =link_to "支払い方法について ＞", "#", class: "upload"
