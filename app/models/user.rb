@@ -33,11 +33,11 @@ class User < ApplicationRecord
       end
     end
   end
-  has_one :credit_card, dependent: :destroy
-  accepts_nested_attributes_for :credit_card
+  has_many :credit_cards, dependent: :destroy
+  accepts_nested_attributes_for :credit_cards
 
   has_one :address
   accepts_nested_attributes_for :address
-  
+
   has_many :items
 end

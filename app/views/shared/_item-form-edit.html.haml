@@ -11,7 +11,7 @@
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        = image_tag item.images.first.image_url,class:"２"
+        = image_tag item.images.first.image_url,class:"item-registration__form__group-image"
         -# = f.fields_for :images do |fin|
         -#   =fin.label :image do
         -#     .item-registration__form__group__image
