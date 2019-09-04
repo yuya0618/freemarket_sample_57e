@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_113423) do
+ActiveRecord::Schema.define(version: 2019_09_04_063238) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_113423) do
     t.string "lastname", null: false
     t.text "text"
     t.string "encrypted_password"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["encrypted_password"], name: "index_users_on_encrypted_password", unique: true
   end
 
   add_foreign_key "addresses", "users"

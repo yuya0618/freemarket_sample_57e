@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.order("created_at DESC").limit(4)unless user_signed_in?
+    @items = Item.order("created_at DESC").limit(4)
+    # binding.pry
   end
 
   # GET /items/1
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
-      
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

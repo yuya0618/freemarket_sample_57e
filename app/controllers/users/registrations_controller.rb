@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
     # GET /resource/sign_up
     # before_action :step1, only:[:step2,:step4,:step5]
@@ -14,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def step2
+    # binding.pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -26,7 +25,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
     @user = User.new
-
     # binding.pry
   end
 
@@ -37,6 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
     @user.build_address
+    # binding.pry
   end
 
   def step5
@@ -48,10 +47,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   def create
     @user = User.new(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], lastname: session[:lastname],lastname_kana: session[:lastname_kana], firstname: session[:firstname], firstname_kana: session[:firstname_kana], birth_year: session[:birth_year], birth_month: session[:birth_month], birth_day: session[:birth_day], phone_number: session[:phone_number], address_attributes: session[:address_attributes])
+    # if session[:sns].present?
+    #   @user.sns_credentials.build(
+    #     uid:             session[:sns]["uid"],
+    #     provider:        session[:sns]["provider"],
+    #     user_id:         @user.id)
+    # end
     if @user.save
       # ログインするための情報を保管
-      session[:user_id] = @user.id
-      redirect_to root_path
+      sign_in @user
     end
   end
   private
