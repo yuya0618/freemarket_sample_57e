@@ -53,12 +53,14 @@
                   =link_to "#" do
                     -# -parent=@item.category.path_ids[0].to_i
                     -# = @category.find(parent).name
-                    =@parent.name
+                    -# =@item.category.parent.parent.name
+
                   %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
                     -# -child=@item.category.path_ids[1].to_i
                     -# = @category.find(child).name
+                    -# =@item.category.parent.name
                   %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
@@ -76,6 +78,7 @@
                 %th 商品のサイズ
                 %td
                   = link_to "#" do
+                    -# =Size.find(@item.size)name
                     =@item.size
               %tr
                 %th 商品の状態
@@ -86,7 +89,6 @@
                 %th 配送料の負担
                 %td
                   = @item.delivery_fee
-
               %tr
                 %th 配送の方法
                 %td
@@ -96,9 +98,7 @@
                 %th 配送元地域
                 %td
                   = link_to "#" do
-                    =@item.delivery_location
-
-
+                    = Prefecture.find(@item.delivery_location).name
               %tr
                 %th 発送日の目安
                 %td

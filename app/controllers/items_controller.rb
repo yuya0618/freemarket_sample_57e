@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
       @images = @item.images.order("created_at DESC").limit(5)
       # @parent = Category.all.order("id ASC").limit(13)
       @parent = Category.where(ancestry:nil)
+
   end
 
 
@@ -36,7 +37,6 @@ class ItemsController < ApplicationController
 
 
   def create
-    binding.pry
     @item = Item.create!(item_params)
     @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
@@ -111,4 +111,5 @@ class ItemsController < ApplicationController
         @cards << user.cards.retrieve(card.card_number)
       end
     end
+
 end
