@@ -20,11 +20,11 @@
 
             .item__left__main
               -@images.each do |image|
-                =image_tag image.image_url, class: "item__left__mainpic"
+                =image_tag image.image[0].url, class: "item__left__mainpic"
 
             .item__left__sub1
               -@images.each do |image|
-                =image_tag image.image_url, class: "item__left__subpic"
+                =image_tag image.image[0].url, class: "item__left__subpic"
 
             .item__left__sub2
 
@@ -34,39 +34,67 @@
                 %th 出品者
                 %td
                   =link_to "#" do
-                    %span  
+                    %span
                     = @item.user.nickname
                   %p
                   .ratings
-                    .rating__good
-                      %i.fas.fa-laugh-beam
-                    .rating__okay
-                      %i.fas.fa-meh
-                    .rating__soso
-                      %i.fas.fa-frown
+                    .good
+                      %i.fa.fa-smile-o
+                      %span  11
+                    .okay
+                      %i.fa.fa-meh-o
+                      %span  5
+                    .soso
+                      %i.fa.fa-frown-o
+                      %span  2
               %tr
                 %th カテゴリー
                 %td
                   =link_to "#" do
-                    -# = @item.category
+
+                    %i.fa.fa-chevron-left
+                      -# = @item.category.name
+
+                  -# カテゴリー子要素
+                  -# =link_to "#" do
+                  -#   %i.fa.fa-chevron-left
+                  -#     -# = @item.category.name
+
+                    -# -parent=@item.category.path_ids[0].to_i
+                    -# = @category.find(parent).name
+                    -# =@item.category.parent.parent.name
+
+                 -# %br
                   =link_to "#" do
-                    %i.fa.fa-chevron-left レディース
+                    %i.fa.fa-chevron-left
+                    -# -child=@item.category.path_ids[1].to_i
+                    -# = @category.find(child).name
+                    -# =@item.category.parent.name
                   %br
                   =link_to "#" do
-                    %i.fa.fa-chevron-left ジーンズ
+                    %i.fa.fa-chevron-left
+                    -# -grandchild=@item.category.path_ids[2].to_i
+                    -# = @category.find(grandchild).name
+                    -# =@item.category.name
 
-            
+
               %tr
                 %th ブランド
                 %td
                   = link_to "#" do
-                    -# = @item.brand
+                    %i.fa.fa-chevron-left
+                    -# = @item.brand.name
 
-              %tr
-                %th 商品のサイズ
-                %td
-                  = link_to "#" do
-                    -# =@item.size
+              -# サイズ追加したら・・・
+              -# %tr
+              -#   %th 商品のサイズ
+              -#   %td
+              -#     = link_to "#" do
+              -#       -# =@item.size
+
+                   -# =Size.find(@item.size)name
+                    =@item.size
+
               %tr
                 %th 商品の状態
                 %td
@@ -76,7 +104,6 @@
                 %th 配送料の負担
                 %td
                   = @item.delivery_fee
-
               %tr
                 %th 配送の方法
                 %td
@@ -86,7 +113,7 @@
                 %th 配送元地域
                 %td
                   = link_to "#" do
-                    = @item.delivery_location
+                    = Prefecture.find(@item.delivery_location).name
 
               %tr
                 %th 発送日の目安
@@ -105,7 +132,8 @@
           %span.price__three
             送料込み
 
-        - if @item.user_id == current_user.id
+        - if @item.user_id == current_user&.id
+
           .description
             = @item.details
         - else
@@ -116,11 +144,13 @@
             = @item.details
 
           .bottom
+
             =link_to "♡いいね！＃", "#", class: "bottom__content1"
             =link_to "不適切な商品の報告", "#", class: "bottom__content1"
             =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
 
-    - if @item.user_id == current_user.id
+    - if @item.user_id == current_user&.id
+
       .edit
         .edit-edit
           = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
@@ -131,125 +161,10 @@
           = link_to "この商品を削除する",item_path(@item), method: :delete, class:"edit-delete_btn"
 
 
-          //TODO 条件分岐
-
-          -# -if current_user.id == user.id
-          -#   = render "shared/mypage-choice"
-          -#   -else
-          -#     .check
-          -#       -if user_signed_in?
-          -#         =link_to "購入画面に進む", "#", class: "to_checkout"
-          -#       -else
-          -#         =link_to "売り切れました", "#", class: "sold_out"
-
-          -#     .description
-          -#       = @item.details
-
-          -#     .bottom
-          -#       =link_to "♡いいね！＃", "#", class: "bottom__content1"
-          -#       =link_to "#", class: "bottom__content1" do
-          -#         %i.fa.fa-flag
-          -#         %span 不適切な商品の報告
-
-          -#       =link_to "#", class: "bottom__content2" do
-          -#         %i.fa.fa-lock
-          -#         %span あんしん・あんぜんへの取り組み
-
-          -# .comment
-          -#   .caution
-          -#     %p#caution
-          -#       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -#   .field
-          -#     %textarea
-          -#   .action
-          -#     %button コメントする
-
-          -# .page
-          -#   = link_to item_path(@previous), class:"page__btn1" do
-          -#     %i.fa.fa-chevron-left
-          -#     = @previous.name
-              
-          -#   = link_to item_path(@next), class:"page__btn2" do
-          -#     = @next.name
-          -#     %i.fa.fa-chevron-right
-
-          -# .sns
-          -#   .sns__icons
-
-          -#     =link_to "#" do
-          -#       =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class:"sns__icon"
-          -#     =link_to "#" do
-          -#       =image_tag "https://image.flaticon.com/icons/svg/124/124021.svg", class:"sns__icon"
-          -#     =link_to "#" do
-          -#       =image_tag "https://image.flaticon.com/icons/svg/124/124027.svg", class:"sns__icon"
-          -#     =link_to "#" do
-          -#       =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg", class:"sns__icon"
-
-          -# .posts
-          -#   = link_to '#', class:"posts__title" do
-          -#     = insert_name(@item.user.nickname)
-
-          -# .posts__items
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-
-          -# .posts__items
-          -#   .posts__item2
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item2
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item2
-          -#     = render partial: 'shared/show-items'
-
-
-          -# .posts
-          -#   = link_to 'その他の商品', '#', class:"posts__title"
-            
-          -# .posts__items
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-          -#   .posts__item1
-          -#     = render partial: 'shared/show-items'
-              
-      -#     .posts__items
-      -#       .posts__item2
-      -#         = render partial: 'shared/show-items'
-      -#       .posts__item2
-      -#         = render partial: 'shared/show-items'
-      -#       .posts__item2
-      -#         = render partial: 'shared/show-items'
-
-
-      -# .bottom_pagination
-      -#   .btn
-      -#     = link_to "メルカリ ＞", "/", class:"home"
-      -#     %span
-      -#       = @item.name
-
-
-        //条件分岐終わり
-
         .check
           =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
 
-        .description
-          = @item.details
-
-        .bottom
-          =link_to "♡いいね！＃", "#", class: "bottom__content1"
-          =link_to "#", class: "bottom__content1" do
-            %i.fa.fa-flag
-            %span 不適切な商品の報告
-
-          =link_to "#", class: "bottom__content2" do
-            %i.fa.fa-lock
-            %span あんしん・あんぜんへの取り組み
+      //コメント実装なし
 
     .comment
       .caution
@@ -259,12 +174,15 @@
         %textarea
       .action
         %button コメントする
-
+      -# コメント部分実装なし
 
     -# TODO １をcurrent_user.idにする
-    - unless @item.user_id == current_user.id
+
+    - unless @item.user_id == current_user&.id
+
 
       .page
+
         = link_to '＜ back', '#', class:"page__btn1"
         = link_to 'forward ＞', '#', class:"page__btn2"
 
@@ -281,124 +199,23 @@
             =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg", class:"sns__icon"
 
       .posts
-        = link_to '？？さんの投稿', '#', class:"posts__title"
+      = link_to '#', class:"posts__title" do
+        = insert_name(@item.user.nickname)
 
-      .posts__items
-        .posts__item1
-          = render partial: 'shared/show-items'
-        .posts__item1
-          = render partial: 'shared/show-items'
-        -# .posts__item1
-        -#   = render partial: 'shared/show-items'
-
-      .posts__items
-      -#   .posts__item2
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item2
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item2
-        -#   = render partial: 'shared/show-items'
+        .posts__items
+          .posts__item1
+            = render partial: 'shared/show-items'
 
 
       .posts
         = link_to 'その他の商品', '#', class:"posts__title"
-        
-      .posts__items
-        -# .posts__item1
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item1
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item1
-        -#   = render partial: 'shared/show-items'
-          
-      .posts__items
-        -# .posts__item2
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item2
-        -#   = render partial: 'shared/show-items'
-        -# .posts__item2
-        -#   = render partial: 'shared/show-items'
 
-  -# .bottom_pagination
-  -#   .btn
-  -#     = link_to "メルカリ ＞", "#", class:"home"
-  -#     %span
-  -#       = @item.name
-
-  -#   .page
-  -#     = link_to item_path(@previous), class:"page__btn1" do
-  -#       %i.fa.fa-chevron-left
-  -#       = @previous.name
-  -#     = link_to item_path(@next), class:"page__btn2" do
-  -#       = @next.name
-  -#       %i.fa.fa-chevron-right
-
-  -#   .sns
-  -#     .sns__icons
-
-  -#       =link_to "#" do
-  -#         =image_tag "https://image.flaticon.com/icons/svg/124/124010.svg", class:"sns__icon"
-  -#       =link_to "#" do
-  -#         =image_tag "https://image.flaticon.com/icons/svg/124/124021.svg", class:"sns__icon"
-  -#       =link_to "#" do
-  -#         =image_tag "https://image.flaticon.com/icons/svg/124/124027.svg", class:"sns__icon"
-  -#       =link_to "#" do
-  -#         =image_tag "https://image.flaticon.com/icons/svg/124/124039.svg", class:"sns__icon"
-
-  -#   .posts
-  -#     = link_to '#', class:"posts__title" do
-  -#       = insert_name(@item.user.nickname)
-
-  -#   .posts__items
-  -#     =render "shared/show-items", collection: @items, as:"item"
-
-    -# .posts__items
-    -#   =render "shared/show-items", collection: @items, as:"item"
-
-    //TODO 他の商品
-    -# -@item.user.items.last(3).each do |user_item|
-    -# .posts_item
-    -#   =link_to "#" do
-    -#   .image
-    -#     = image_tag user_item.image_url, class:"other_item"
-    -#   .explaination
-    -#     .explaination__name
-    -#       = user_item.name
-    -#     .explaination__price
-    -#       = insert_price(user_item.price)
-    -#       %span.heart ♡
-
-    .posts
-      = link_to 'その他の商品', '#', class:"posts__title"
+        .posts__items
+          .posts__item1
+            = render partial: 'shared/show-items'
 
 
-    .posts__items
-      =render "shared/show-items", collection: @items, as:"item"
-
-    -# .posts__items
-    -#   =render "shared/show-items", collection: @items, as:"item"
-
-    //TODO 同じカテゴリーの商品
-    -# -@item.category.items.last(3).each do |category_item|
-    -# .posts_item
-    -#   =link_to "#" do
-    -#   .image
-    -#     = image_tag category_item.image_url, class:"other_item"
-    -#   .explaination
-    -#     .explaination__name
-    -#       = category_item.name
-    -#     .explaination__price
-    -#       = insert_price(category_item.price)
-    -#       %span.heart ♡
-
-
-
-
-
--# .bottom_pagination
--# = render partial: 'shared/breadcrumbs'
 .bread
   = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
-

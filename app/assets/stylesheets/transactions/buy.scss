@@ -11,19 +11,17 @@
   height: 80px;
   padding: 25px 600px 0 600px;    
   .header__icon{
-    width: 15%;
+    width: 60%;
   }
 }
 
-.container{
+.contain{
   background-color: whitesmoke;
 
 }
-
-
 .main{
   margin: 0 auto;
-  width: 50%;
+  width: 45%;
   background-color: white;
   &__content1{
     font-weight: bold;
@@ -39,19 +37,19 @@
     }
   }
   &__two{
-    padding: 15px 100px 15px 100px;
+    padding: 15px 160px 15px 160px;
     border-bottom: solid 1px lightgray;
     &__detail{
       display: flex;
       &__right{
         p{
-          font-size: 15px;
+          font-size: 20px;
         }
       }
     }
     &__price{
       p{
-        font-size: 15px;
+        font-size: 25px;
         span{
           font-weight: 100;
           font-size: 10px;
@@ -72,6 +70,9 @@
       p{
         font-size: 20px;
       }
+      &__right{
+        font-size: 25px;
+      }
     }
     &__caution{
       clear: both;
@@ -89,7 +90,7 @@
         color: white;
         background: gray;
         height: 40px;
-        padding: 10px 150px;
+        padding: 10px 130px;
         text-decoration: none;
   
       }
@@ -99,7 +100,7 @@
   &__three{
     height: 150px;
     border-bottom: solid 1px lightgray;
-    padding: 15px 100px 15px 100px;
+    padding: 15px 150px 15px 150px;
     position: relative;
     &__address{
       float: left;
@@ -119,7 +120,7 @@
   }
   &__four{
     height: 150px;
-    padding: 15px 100px 15px 100px;
+    padding: 15px 150px 15px 150px;
     position: relative;
     &__payment{
       float: left;
@@ -195,4 +196,8 @@
   padding-bottom: 5px;
 }
 
+}
+
+.price_one{
+  font-size: 20px;
 }

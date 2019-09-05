@@ -48,13 +48,6 @@
         display: flex;
 
       }
-      // &__sub2{
-      //   width: 100%;
-      //   height: 20%;
-      //   padding-left: 10px;
-      //   background-color: white;
-
-      // }
       &__subpic{
         width: 20%;
         background-color: white;
@@ -398,3 +391,31 @@
   }
 }
 
+.ratings{
+  display: flex;
+  .good{
+    padding-right: 5px;
+
+  }
+  .fa.fa-smile-o{
+    color:#EE11A1;
+    font-size: 20px;
+  }
+  .okay{
+    padding-right: 5px;
+
+  }
+  .fa.fa-meh-o{
+    color: #F6E628;
+    font-size: 20px;
+    padding-right: 5px;
+
+  }
+  .fa.fa-frown-o{
+    color: #2BE2F3;
+    font-size: 20px;
+    padding-right: 5px;
+
+
+  }
+}

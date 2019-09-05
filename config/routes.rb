@@ -15,14 +15,19 @@ Rails.application.routes.draw do
     member do
       get 'list'
       get 'payment'
-      get 'credit'
     end
-    resources :credit_cards, only: [:create, :delete]
+    resources :credit_cards, only: [:new, :show, :delete] do
+      collection do
+        post 'show', to: 'credit_cards#show'
+        post 'pay', to: 'credit_cards#pay'
+        post 'delete', to: 'credit_cards#delete'
+      end
+    end
   end
 
 
   devise_scope :user do
-    get    'signup',                to: 'users/registrations#new'
+    get 'signup',                  to: 'users/registrations#new'
     get    'signup/registration',   to: 'users/registrations#step1'
     get    'signup/sms_confirmation',      to: 'users/registrations#step2'
     get    'users/sign_out',        to: 'users#to_destroy'
@@ -32,7 +37,6 @@ Rails.application.routes.draw do
     post    'signup/registration/create',         to: 'users/registrations#create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-    get 'identifications', to: 'identifications#edit', as: :identification
+    get 'identification', to: 'identifications#edit', as: :identification
 
 end

@@ -1,5 +1,5 @@
 .wrapper
-  .container
+  .contain
     .top__banner
       = link_to "https://www.mercari.com/jp/" do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?575670517/",class: "header__icon"
@@ -13,10 +13,11 @@
             .main__two__detail__left
               =image_tag "https://static.mercdn.net/thumb/photos/m34363578232_1.jpg?1566519883", id: "main__two__detail"
             .main__two__detail__right
-              %p 商品名
+              %p
+                =@item.name
           .main__two__price
             %p
-              金額
+              = insert_price(@item.price)
               %span 送料込み
           .main__two__point
             %p ポイントはありません
@@ -24,7 +25,8 @@
             .main__two__total__left
               %p 支払い金額
             .main__two__total__right
-              %p ¥〇〇円
+              %p
+              = insert_price(@item.price)
           .main__two__caution
             %p 配送先と支払い方法の入力を完了してください。
           .main__two__purchase
@@ -35,15 +37,14 @@
             %p
               %span
                 郵便番号
-                %span
             %p
               %span
                 都道府県
-                %span
             %p
               %span
-                名前
-                %span
+                =@user.lastname
+                =@user.firstname
+                
           =link_to "変更する ＞", "#", class: "edit__btn"
         .main__four
           .main__four__payment
