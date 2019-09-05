@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2],:authentication_keys => [:user_id]
   def self.find_oauth(auth)
@@ -15,8 +13,7 @@ class User < ApplicationRecord
         SnsCredential.create(
           uid: uid,
           provider: provider,
-          user_id: user.id
-          )
+          user_id: user.id)
       else
         user = User.new(
           nickname: auth.info.name,
@@ -27,17 +24,15 @@ class User < ApplicationRecord
         SnsCredential.create(
           uid: uid,
           provider: provider,
-          user_id: user.id
-          )
+          user_id: user.id)
       end
     end
     return user
   end
   has_many :credit_cards, dependent: :destroy
   accepts_nested_attributes_for :credit_cards
-
+  has_many :sns_credentials
   has_one :address
   accepts_nested_attributes_for :address
-
   has_many :items
 end
