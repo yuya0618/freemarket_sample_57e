@@ -6,7 +6,7 @@
           = image_tag asset_path("logo.svg"), size: "134x36", alt: "ロゴ"
       .header-top__search-form-box
         = form_with model: @item, class: 'header-top__search-form' do |f|
-          = f.text_field :id, {class: 'header-top__input-field', placeholder: '何かお探しですか？'}
+          = f.text_field :id, {class: 'header-top__input-field', placeholder: '何かお探しですか？',value:""}
           .header-top__send
             = f.label :id, class: 'header-top__search-icon' do
               = fa_icon 'search', class: 'header-top__fa'

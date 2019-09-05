@@ -20,11 +20,11 @@
 
             .item__left__main
               -@images.each do |image|
-                =image_tag image.image_url, class: "item__left__mainpic"
+                =image_tag image.image[0].url, class: "item__left__mainpic"
 
             .item__left__sub1
               -@images.each do |image|
-                =image_tag image.image_url, class: "item__left__subpic"
+                =image_tag image.image[0].url, class: "item__left__subpic"
 
             .item__left__sub2
 
@@ -51,11 +51,20 @@
                 %th カテゴリー
                 %td
                   =link_to "#" do
+
+                    %i.fa.fa-chevron-left
+                      -# = @item.category.name
+
+                  -# カテゴリー子要素
+                  -# =link_to "#" do
+                  -#   %i.fa.fa-chevron-left
+                  -#     -# = @item.category.name
+
                     -# -parent=@item.category.path_ids[0].to_i
                     -# = @category.find(parent).name
                     -# =@item.category.parent.parent.name
 
-                  %br
+                 -# %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
                     -# -child=@item.category.path_ids[1].to_i
@@ -68,18 +77,24 @@
                     -# = @category.find(grandchild).name
                     -# =@item.category.name
 
+
               %tr
                 %th ブランド
                 %td
                   = link_to "#" do
-                    = @item.brand
+                    %i.fa.fa-chevron-left
+                    -# = @item.brand.name
 
-              %tr
-                %th 商品のサイズ
-                %td
-                  = link_to "#" do
-                    -# =Size.find(@item.size)name
+              -# サイズ追加したら・・・
+              -# %tr
+              -#   %th 商品のサイズ
+              -#   %td
+              -#     = link_to "#" do
+              -#       -# =@item.size
+
+                   -# =Size.find(@item.size)name
                     =@item.size
+
               %tr
                 %th 商品の状態
                 %td
@@ -99,6 +114,7 @@
                 %td
                   = link_to "#" do
                     = Prefecture.find(@item.delivery_location).name
+
               %tr
                 %th 発送日の目安
                 %td
