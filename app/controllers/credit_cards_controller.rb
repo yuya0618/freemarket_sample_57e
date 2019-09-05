@@ -2,7 +2,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def new
-    card = CreditCard.where(user_id: current_user.id)
+    card = current_user.credit_cards
     redirect_to action: "show" if card.exists?
   end
 
@@ -25,19 +25,10 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  # def create
-  #   token = Payjp::Token.create(
-  #     number:    params['number'],
-  #     cvc:       params['cvc'],
-  #     exp_year:  params['exp_year'],
-  #     exp_month: params['exp_month'],
-  #   )
-  #   # return token.id
-  # end
 
   #PayjpとCardデータベースを削除する
   def delete
-    card = CreditCard.where(user_id: current_user.id).first
+    card = current_user.credit_cards.first
     if card.blank?
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
@@ -50,7 +41,7 @@ class CreditCardsController < ApplicationController
 
   #Cardのデータpayjpに送り情報を取り出す
   def show
-    card = CreditCard.where(user_id: current_user.id).first
+    card = current_user.credit_cards.first
     if card.blank?
       redirect_to action: "new"
     else

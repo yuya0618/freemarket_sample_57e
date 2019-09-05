@@ -63,6 +63,7 @@ class ItemsController < ApplicationController
       customer: card.customer,
       currency: 'jpy'
     )
+      #TODO秋葉 db追加後、追記する
       # @item.update(order_status: true, buyer_id: current_user.id)
       redirect_to complete_item_path(@item)
   end
