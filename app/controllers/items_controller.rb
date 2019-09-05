@@ -26,7 +26,9 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @categories = Item.new
-    @category_parent = Category.all.limit(13)
+    @category_parent = Category.all.where(ancestry: nil)
+    @category_children = Category.all.where(ancestry: '1')
+    @category_gchildren = Category.all.where(ancestry: '1/14')
   end
 
 
@@ -95,7 +97,7 @@ class ItemsController < ApplicationController
         :delivery_method,
         :delivery_location,
         :delivery_term,
-        images_attributes: :image).merge(user_id: current_user.id)
+        images_attributes: :image).merge(user_id: 1) #current_user.idにする
     end
 
     def image_params

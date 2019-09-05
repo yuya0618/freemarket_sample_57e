@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# ActiveRecord::Schema.define(version: 2019_09_03_092635) do
-ActiveRecord::Schema.define(version: 2019_09_04_081941) do
+ActiveRecord::Schema.define(version: 2019_09_05_111453) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -77,6 +76,12 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
     t.integer "delivery_location", default: 0, null: false
     t.integer "delivery_term", default: 0, null: false
     t.bigint "user_id", default: 0, null: false
+    t.bigint "category_id", default: 0, null: false
+    t.bigint "size_id"
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["size_id"], name: "index_items_on_size_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -98,6 +103,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -112,9 +118,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
     t.integer "birth_year"
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.string "encrypted_password"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["encrypted_password"], name: "index_users_on_encrypted_password", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -123,6 +127,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
   add_foreign_key "categories_sizes", "sizes"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
   add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end

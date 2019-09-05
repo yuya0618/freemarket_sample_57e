@@ -87,5 +87,5 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'breadcrumbs_on_rails'
-
 gem 'ancestry'
+gem "dropzonejs-rails"
