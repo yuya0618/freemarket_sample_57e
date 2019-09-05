@@ -11,18 +11,19 @@ class ItemsController < ApplicationController
 
   end
 
-
   def show
-    add_breadcrumb @item.name
-    @next = Item.where("id > ?", @item.id).order("id DESC").first
-    @previous = Item.where("id < ?", @item.id).order("id ASC").first
-    @items = Item.order("created_at DESC").limit(3)
-    @images = @item.images.order("created_at DESC").limit(5)
+      add_breadcrumb @item.name
+      @next = Item.where("id > ?", @item.id).order("id DESC").first
+      @previous = Item.where("id < ?", @item.id).order("id ASC").first
+      @items = Item.order("created_at DESC").limit(3)
+      @images = @item.images.order("created_at DESC").limit(5)
+      # @parent = Category.all.order("id ASC").limit(13)
+      @parent = Category.where(ancestry:nil)
+
   end
 
 
   def new
-    add_breadcrumb '商品出品'
     @item = Item.new
     @item.images.build
     @categories = Item.new
@@ -31,12 +32,11 @@ class ItemsController < ApplicationController
 
 
   def edit
-    add_breadcrumb '商品情報編集'
+    # add_breadcrumb '出品した商品、出品中', :edit_item_path
   end
 
 
   def create
-    binding.pry
     @item = Item.create!(item_params)
     @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
@@ -108,4 +108,5 @@ class ItemsController < ApplicationController
         @cards << customer.cards.retrieve(card.card)
       end
     end
+
 end

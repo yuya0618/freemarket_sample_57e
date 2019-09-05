@@ -51,7 +51,7 @@
             -#   = f.label :area, "市区町村"
             -#   = f.span "任意", class: "logo"
             -#   = f.select :prefecture, class: "prefecture__select"
-                    //TODO selecterの要素を追加
+            -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name                    //TODO selecterの要素を追加
 
 
             -#   = f.label :address_number, "番地"
