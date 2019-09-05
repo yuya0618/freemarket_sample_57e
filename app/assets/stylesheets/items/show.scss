@@ -205,10 +205,13 @@
       color: #fff;
       width: 100%;
       height: 53px;
+      color: #F2F2ED;
+        line-height: 53px;
       &:hover{
         opacity: 0.7;
       }
       &_btn{
+        display: block;
         color: #F2F2ED;
         line-height: 53px;
       }
@@ -229,6 +232,7 @@
         opacity: 0.7;
       }
       &_btn{
+        display: block;
         color: #F2F2ED;
         line-height: 53px;
       }
@@ -274,8 +278,10 @@
   }
     &__items{
       margin: 5px auto 0;
-      display: flex;
       height: 350px;
+    }
+    &__item1{
+      display: flex;
     }
     &__item{
       width: 33%;
@@ -326,7 +332,7 @@
       padding-left: 5px;
     }
   }
-  .home{
+  .breadcrumb{
     float: left;
     color:gray;
     font-weight: 100;
@@ -379,3 +385,16 @@
   color: white;
   background-color:gray;
 }
+
+.bread{
+  width: 100%;
+  height: 45px;
+  padding: 0 200px;
+  border-top: 1px solid #E9E9E5;
+  a{
+    font-size: 14px;
+    color: gray;
+    line-height: 45px;
+  }
+}
+

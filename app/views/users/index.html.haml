@@ -4,7 +4,7 @@
 
 
 %main.main-container
-  = render 'users/shared/main-side'
+  = render partial:'users/shared/main-side', locals: { user:@user }
 
   .main-content
     .mypage-user-info

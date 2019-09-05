@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+.user_new
+  .header.single-header
+    %h1
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",alt:"mercari"
+  .single-container-session
+    .single-container-session__top
+      %h2
+      アカウントをお持ちでない方はこちら
+      .new-registration
+        = link_to   signup_path, class: 'new-registration__link' do
+          新規会員登録
+      .single-container-session-sns
+        = link_to  user_facebook_omniauth_callback_path, class: 'single-container-session-sns__facebook' do
+          = image_tag "facebook_logo.png", size: "25×25" 
+          Facebookでログイン
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-session-sns__google' do
+          = image_tag "google_logo.png", size: "25×25" 
+          Googleでログイン
+      %main.single-main
+        %section.l-single-container
+          = form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => "forming"} ) do |f|
+            .l-single-content
+              .form-group
+                = f.email_field :email, placeholder: "メールアドレス", class: "form-text"
+              .form-group
+                = f.password_field :password, placeholder: "パスワード", class: "form-text"
+              .form-group
+              = f.submit "ログイン", class: "btn-default"
+
+  -# .footer.single-footer
+  -#   = render 'shared/loginfooter'
