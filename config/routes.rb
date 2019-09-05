@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
 
   devise_scope :user do
-    get    'signup',                to: 'users/registrations#new'
+    get 'signup',                  to: 'users/registrations#new'
     get    'signup/registration',   to: 'users/registrations#step1'
     get    'signup/sms_confirmation',      to: 'users/registrations#step2'
     get    'users/sign_out',        to: 'users#to_destroy'
