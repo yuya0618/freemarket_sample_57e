@@ -29,8 +29,7 @@ class CreditCardsController < ApplicationController
   #PayjpとCardデータベースを削除する
   def delete
     card = current_user.credit_cards.first
-    if card.blank?
-    else
+    if card.present?
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(card.customer)
       customer.delete
