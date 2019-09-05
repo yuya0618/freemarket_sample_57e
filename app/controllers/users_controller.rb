@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    add_breadcrumb '編集ページ'
+    # add_breadcrumb '情報編集', :edit_user_path
   end
 
   def to_destroy
