@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
@@ -7,7 +5,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
-    # session[:sns] = callback_from :google
     callback_for(:google)
   end
 
@@ -25,7 +22,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to signup_registration_path
     end
   end
-
+  
   def failure
     redirect_to root_path && return
   end
