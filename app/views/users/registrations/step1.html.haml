@@ -34,11 +34,12 @@
             .form-group
               %label{:for => "nickname"} ニックネーム
               %span.form-require 必須
-              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "form-text",value: session[:nickname]
+              = f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "form-text", value: session[:nickname]
             .form-group
               %label{:for => "email"} メールアドレス
               %span.form-require 必須
-              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text",value: session[:email]
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text" , value: session[:email]
+             
             .form-group
               %label{for: "password"} パスワード
               %span.form-require 必須
@@ -88,4 +89,4 @@
             = f.submit "次へ進む", class: "btn-default"
       .footer.single-footer
         = render 'shared/loginfooter'
-      
+        

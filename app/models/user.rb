@@ -35,7 +35,7 @@ class User < ApplicationRecord
   end
   has_many :credit_cards, dependent: :destroy
   accepts_nested_attributes_for :credit_cards
-
+  has_many :sns_credentials
   has_one :address
   accepts_nested_attributes_for :address
 

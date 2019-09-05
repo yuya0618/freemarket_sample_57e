@@ -47,12 +47,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   def create
     @user = User.new(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], lastname: session[:lastname],lastname_kana: session[:lastname_kana], firstname: session[:firstname], firstname_kana: session[:firstname_kana], birth_year: session[:birth_year], birth_month: session[:birth_month], birth_day: session[:birth_day], phone_number: session[:phone_number], address_attributes: session[:address_attributes])
-    # if session[:sns].present?
-    #   @user.sns_credentials.build(
-    #     uid:             session[:sns]["uid"],
-    #     provider:        session[:sns]["provider"],
-    #     user_id:         @user.id)
-    # end
+    unless session[:provider_data] == {}
+    @user.sns_credentials.build(
+      uid: session[:provider_data]["uid"],
+      provider: session[:provider_data]["provider"])
+    end
+
     if @user.save
       # ログインするための情報を保管
       sign_in @user
