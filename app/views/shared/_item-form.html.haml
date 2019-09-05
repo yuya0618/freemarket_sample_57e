@@ -5,18 +5,18 @@
 
   .item-registration
     %h2.item-registration__head 商品の情報を入力
-    = form_with model: @item, class:'item-registration__form', local: true do |f|
+    = form_with model: @item, class:'item-registration__form', local: true, html: { multipart: true } do |f|
       -# 画像
       .item-registration__form__group
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        = f.fields_for :images do |fin|
-          =fin.label :image do
+        = f.fields_for :images, html: { multipart: true } do |fin|
+          =fin.label :image, multiple: true do
             .item-registration__form__group__image
               .nest-form
                 .nest-form__head
-                  = fin.file_field :image, style:"display:none;"
+                  = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
                   %p ドラッグアンドドロップ
                   %p またはクリックしてファイルをアップロード
       -# 商品名・説明
@@ -48,7 +48,8 @@
             %span.item-registration__form__detail__box__category__necessary 必須
           .select-box.select-box-top
             -# collection_selectにする
-            = f.text_field :category_id, value:'---', class: 'select-box__body'
+            = f.collection_select :category_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
           -# 商品の状態
           .item-registration__form__detail__box__category
             %span.item-registration__form__group__box__label 商品の状態
