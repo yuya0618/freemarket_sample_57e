@@ -36,7 +36,6 @@ class ItemsController < ApplicationController
 
 
   def create
-    binding.pry
     @item = Item.create!(item_params)
     @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
