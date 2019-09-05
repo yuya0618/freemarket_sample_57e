@@ -11,7 +11,7 @@
     %li
       = link_to "出品する", "#", class: "mypage-nav__item"
     %li
-      = link_to "出品した商品-出品中", list_users_path, class: "mypage-nav__item"
+      = link_to "出品した商品-出品中", list_user_path(current_user.id), class: "mypage-nav__item"
     %li
       = link_to "出品した商品-取引中", "#", class: "mypage-nav__item"
     %li
@@ -43,7 +43,7 @@
     %li
       = link_to "発送元・お届け先住所変更", "#", class: "mypage-nav__item"
     %li
-      = link_to "支払い方法", "#", class: "mypage-nav__item"
+      = link_to "支払い方法", payment_user_path(current_user.id), class: "mypage-nav__item"
     %li
       = link_to "メール/パスワード", "#", class: "mypage-nav__item"
     %li
@@ -51,4 +51,4 @@
     %li
       = link_to "電話番号の確認", "#", class: "mypage-nav__item"
     %li
-      = link_to "ログアウト", "#", class: "mypage-nav__item"
+      = link_to "ログアウト", users_sign_out_path, class: "mypage-nav__item"

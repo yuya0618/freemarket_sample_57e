@@ -34,8 +34,14 @@
 .mypage-nav-merpay li {
   background-color: rgb(255, 255, 255);
   border-top: 1px solid #eee;
+  &:hover{
+    opacity: 0.6;
+  }
 }
 .mypage-nav-config li {
   background-color: rgb(255, 255, 255);
   border-top: 1px solid #eee;
+  &:hover{
+    opacity: 0.6;
+  }
 }
