@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-  
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   belongs_to :category
 
   belongs_to :brand
-  belongs_to :size
+  belongs_to_active_hash :size
 
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images

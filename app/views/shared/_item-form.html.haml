@@ -57,13 +57,13 @@
             %span.item-registration__form__detail__box__category__label サイズ
             %span.item-registration__form__detail__box__category__necessary 必須
           .select-box.select-box-top
-            = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
           -# ブランド(仮)
           .item-registration__form__detail__box__category
             %span.item-registration__form__detail__box__category__label ブランド
             %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
           .select-box.select-box-top
-            = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
 
 
 
