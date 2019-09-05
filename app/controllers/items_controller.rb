@@ -12,14 +12,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    def show
       add_breadcrumb @item.name
       @next = Item.where("id > ?", @item.id).order("id DESC").first
       @previous = Item.where("id < ?", @item.id).order("id ASC").first
       @items = Item.order("created_at DESC").limit(3)
       @images = @item.images.order("created_at DESC").limit(5)
-      @category = Category.all
-
+      # @parent = Category.all.order("id ASC").limit(13)
+      @parent = Category.where(ancestry:nil)
   end
 
 

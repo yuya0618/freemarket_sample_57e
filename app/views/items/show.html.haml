@@ -51,29 +51,32 @@
                 %th カテゴリー
                 %td
                   =link_to "#" do
-                    -parent=@item.category.path_ids[0].to_i
-                    = @category.find(parent).name
-                  =link_to "#" do
-                    %i.fa.fa-chevron-left
-                    -child=@item.category.path_ids[1].to_i
-                    = @category.find(child).name
+                    -# -parent=@item.category.path_ids[0].to_i
+                    -# = @category.find(parent).name
+                    =@parent.name
                   %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
-                    -grandchild=@item.category.path_ids[2].to_i
-                    = @category.find(grandchild).name
+                    -# -child=@item.category.path_ids[1].to_i
+                    -# = @category.find(child).name
+                  %br
+                  =link_to "#" do
+                    %i.fa.fa-chevron-left
+                    -# -grandchild=@item.category.path_ids[2].to_i
+                    -# = @category.find(grandchild).name
+                    -# =@item.category.name
 
               %tr
                 %th ブランド
                 %td
                   = link_to "#" do
-                    -# = @item.brand
+                    = @item.brand
 
               %tr
                 %th 商品のサイズ
                 %td
                   = link_to "#" do
-                    -# =@item.size
+                    =@item.size
               %tr
                 %th 商品の状態
                 %td
@@ -93,7 +96,7 @@
                 %th 配送元地域
                 %td
                   = link_to "#" do
-                    -# =
+                    =@item.delivery_location
 
 
               %tr
@@ -113,7 +116,7 @@
           %span.price__three
             送料込み
 
-        - if @item.user_id == current_user.id
+        -# - if @item.user_id == current_user.id
           .description
             = @item.details
         - else
@@ -132,7 +135,7 @@
               %i.fa.fa-lock
               %span あんしん・あんぜんへの取り組み
 
-    - if @item.user_id == current_user.id
+    -# - if @item.user_id == current_user.id
       .edit
         .edit-edit
           = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
@@ -159,7 +162,7 @@
       -# コメント部分実装なし
 
     -# TODO １をcurrent_user.idにする
-    - unless @item.user_id == current_user.id
+    -# - unless @item.user_id == current_user.id
 
       .page
 
