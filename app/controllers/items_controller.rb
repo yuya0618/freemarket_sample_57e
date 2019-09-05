@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   def create
     binding.pry
     @item = Item.create!(item_params)
+    @item.images.create!(image_params)
     redirect_to root_path
   end
 
@@ -59,6 +60,10 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :price, :details, :condition, :delivery_fee, :delivery_method, :delivery_location, :delivery_term, images_attributes: :image).merge(user_id: 1)
+      params.require(:item).permit(:name, :price, :details, :condition, :delivery_fee, :delivery_method, :delivery_location, :delivery_term, images_attributes: {image: []}).merge(user_id: 1)
+    end
+
+    def image_params
+      params.require(:images).permit({image: []})
     end
 end
