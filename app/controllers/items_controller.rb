@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @categories = Item.new
+    @category_parent = Category.all.limit(13)
   end
 
 
@@ -35,7 +36,9 @@ class ItemsController < ApplicationController
 
 
   def create
+    binding.pry
     @item = Item.create!(item_params)
+    @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
   end
 
@@ -93,6 +96,10 @@ class ItemsController < ApplicationController
         :delivery_location,
         :delivery_term,
         images_attributes: :image).merge(user_id: current_user.id)
+    end
+
+    def image_params
+      params.require(:images).permit({image: []})
     end
 
     def set_card
