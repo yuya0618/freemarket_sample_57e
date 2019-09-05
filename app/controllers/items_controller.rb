@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
-
+  before_action :authenticate_user!,except:[:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :purchase]
   before_action :set_card, only: [:buy, :complete]
 
@@ -60,18 +60,15 @@ class ItemsController < ApplicationController
   def purchase
     cards = current_user.credit_cards
     card = cards[0]
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-    charge = Payjp::Charge.create(
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    Payjp::Charge.create(
       amount: @item.price,
-      customer: card.user,
+      customer: card.customer,
       currency: 'jpy'
     )
-    if charge["captured"]
-      @item.update(order_status: true, buyer_id: current_user.id)
+      #TODO秋葉 db追加後、追記する
+      # @item.update(order_status: true, buyer_id: current_user.id)
       redirect_to complete_item_path(@item)
-    else
-      render :buy
-    end
   end
 
 
@@ -103,12 +100,12 @@ class ItemsController < ApplicationController
     end
 
     def set_card
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       @cards = Array.new
       users_cards = current_user.credit_cards
       users_cards.each do |card|
-        customer = Payjp::Customer.retrieve(card.user)
-        @cards << user.cards.retrieve(card.card_number)
+        customer = Payjp::Customer.retrieve(card.customer)
+        @cards << customer.cards.retrieve(card.card)
       end
     end
 end

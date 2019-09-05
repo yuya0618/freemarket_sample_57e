@@ -1,29 +1,22 @@
 class CreditCardsController < ApplicationController
   require "payjp"
-  Payjp.api_key =  Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
 
-  def create
-    token = Payjp::Token.create(
-      number:    params['number'],
-      cvc:       params['cvc'],
-      exp_year:  params['exp_year'],
-      exp_month: params['exp_month'],
-    )
-    # return token.id
+  def new
+    card = current_user.credit_cards
+    redirect_to action: "show" if card.exists?
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  #payjpとCardのデータベース作成を実施する。
+  def pay
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
-      card: params['payjp-token'],
-      metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      # email: current_user.email,
+      card: params['payjp-token']
+      )
+      @card = CreditCard.new(user_id: current_user.id, customer: customer.id, card: customer.default_card)
       if @card.save
         redirect_to action: "show"
       else
@@ -32,28 +25,28 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  #PayjpとCardデータベースを削除します
+
+  #PayjpとCardデータベースを削除する
   def delete
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+    card = current_user.credit_cards.first
+    if card.present?
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      customer = Payjp::Customer.retrieve(card.customer)
       customer.delete
       card.delete
     end
-      redirect_to payment_user_path(current_user.id)
+    redirect_to action: "new"
   end
 
-  #Cardのデータpayjpに送り情報を取り出します
+  #Cardのデータpayjpに送り情報を取り出す
   def show
-    card = Card.where(user_id: current_user.id).first
+    card = current_user.credit_cards.first
     if card.blank?
-      redirect_to payment_user_path(current_user.id)
+      redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      customer = Payjp::Customer.retrieve(card.customer)
+      @default_card_information = customer.cards.retrieve(card.card)
     end
   end
 end
