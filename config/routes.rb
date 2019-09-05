@@ -15,14 +15,19 @@ Rails.application.routes.draw do
     member do
       get 'list'
       get 'payment'
-      get 'credit'
     end
-    resources :credit_cards, only: [:create, :delete]
+    resources :credit_cards, only: [:new, :show, :delete] do
+      collection do
+        post 'show', to: 'credit_cards#show'
+        post 'pay', to: 'credit_cards#pay'
+        post 'delete', to: 'credit_cards#delete'
+      end
+    end
   end
 
 
   devise_scope :user do
-    get    'signup',                to: 'users/registrations#new'
+    get 'signup',                  to: 'users/registrations#new'
     get    'signup/registration',   to: 'users/registrations#step1'
     get    'signup/sms_confirmation',      to: 'users/registrations#step2'
     get    'users/sign_out',        to: 'users#to_destroy'

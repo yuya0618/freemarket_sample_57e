@@ -116,7 +116,8 @@
           %span.price__three
             送料込み
 
-        -# - if @item.user_id == current_user.id
+        - if @item.user_id == current_user&.id
+
           .description
             = @item.details
         - else
@@ -127,15 +128,13 @@
             = @item.details
 
           .bottom
-            =link_to "♡いいね！", "#", class: "bottom__content1"
-            =link_to "#", class: "bottom__content1" do
-              %i.fa.fa-flag
-              %span 不適切な商品の報告
-            =link_to "#", class: "bottom__content2" do
-              %i.fa.fa-lock
-              %span あんしん・あんぜんへの取り組み
 
-    -# - if @item.user_id == current_user.id
+            =link_to "♡いいね！＃", "#", class: "bottom__content1"
+            =link_to "不適切な商品の報告", "#", class: "bottom__content1"
+            =link_to "あんしん：あんぜんへの取り組み", "#", class: "bottom__content2"
+
+    - if @item.user_id == current_user&.id
+
       .edit
         .edit-edit
           = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
@@ -162,7 +161,9 @@
       -# コメント部分実装なし
 
     -# TODO １をcurrent_user.idにする
-    -# - unless @item.user_id == current_user.id
+
+    - unless @item.user_id == current_user&.id
+
 
       .page
 

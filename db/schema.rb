@@ -101,8 +101,6 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "firstname", null: false
     t.string "firstname_kana", null: false
     t.string "lastname_kana", null: false
@@ -112,8 +110,12 @@ ActiveRecord::Schema.define(version: 2019_09_04_081941) do
     t.integer "phone_number", null: false
     t.string "lastname", null: false
     t.text "text"
+    t.string "encrypted_password"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["encrypted_password"], name: "index_users_on_encrypted_password", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  
   end
 
   add_foreign_key "addresses", "users"

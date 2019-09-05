@@ -60,7 +60,7 @@
       .form-group
         %label{for:"security_code"} セキュリティコード
         %span.form-require 必須
-        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        = text_field_tag "cvc", "", class: "form-text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
       .form-group.text-right
         .form-body
           %span.question ?

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
@@ -7,7 +5,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
-    session[:sns] = callback_from :google
     callback_for(:google)
   end
 
@@ -17,16 +14,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else
+      session[:provider_data] = request.env["omniauth.auth"].except("extra")
       session[:nickname] = request.env["omniauth.auth"].info.name
       session[:email] = request.env["omniauth.auth"].info.email
-      session[:uid] = request.env["omniauth.auth"].uid
-      session[:provider] = provider.to_s
-      # binding.pry
+      session[:provider_data]["uid"] = request.env["omniauth.auth"].uid
+      session[:provider_data]["provider"] = provider.to_s
       redirect_to signup_registration_path
     end
   end
-
+  
   def failure
-    redirect_to root_path
+    redirect_to root_path && return
   end
 end
