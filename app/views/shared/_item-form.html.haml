@@ -52,6 +52,7 @@
             = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
           .select-box.select-box-top
             = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            
           -# サイズ(仮)
           .item-registration__form__detail__box__category
             %span.item-registration__form__detail__box__category__label サイズ
