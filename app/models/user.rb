@@ -35,4 +35,10 @@ class User < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
   has_many :items
+
+  # 電話番号 固定電話と携帯番号（ハイフンなし10桁or11桁）
+  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
+  validates :phone_number, presence: true, format: { with: VALID_PHONE_REGEX }
+  
+
 end
