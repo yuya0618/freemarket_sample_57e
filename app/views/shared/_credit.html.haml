@@ -1,11 +1,11 @@
 %section.l-single-container
   %h2.l-single-head.registration 支払い方法
-  = form_tag(signup_registration_create_path, method: :post, id: 'charge-form',  name: "inputForm",class:"forming") do
+  = form_tag(signup_registration_create_path, method: :post, class:"forming") do
     .l-single-content
       .form-group
         %label カード番号
         %span.form-require 必須
-        = text_field_tag "number", "", class: "form-text", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        = text_field_tag "number", "", class: "form-text", placeholder: "半角数字のみ" ,maxlength: "16"
         %ul.signup-card-list
           %li
             %img{alt:"", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", width: "49"}/
@@ -43,7 +43,7 @@
             %option{value: "12"} 12
           %span 月
           .select-wrap
-          %select.select__default#exp_year{name: "exp_year", type: "text"}
+          %select.select__default#exp_year
             %option{value: ""} --
             %option{value: "19"} 19
             %option{value: "20"} 20
@@ -60,9 +60,9 @@
       .form-group
         %label{for:"security_code"} セキュリティコード
         %span.form-require 必須
-        = text_field_tag "cvc", "", class: "form-text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        = text_field_tag "cvc", "", class: "form-text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
       .form-group.text-right
         .form-body
           %span.question ?
           %p.question カード裏面の番号とは?
-      = submit_tag "次へ進む", id: "token_submit", class: "btn-default"
+      = submit_tag "次へ進む",class: "btn-default"
