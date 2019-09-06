@@ -88,4 +88,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'breadcrumbs_on_rails'
 gem 'ancestry'
-gem 'jquery-rails'
+gem "dropzonejs-rails"
