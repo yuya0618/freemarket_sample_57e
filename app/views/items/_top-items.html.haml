@@ -2,7 +2,7 @@
   %h3.items-head
     =link_to "#{word}新着アイテム",root_path, class:"items-top"
   .items-box
-    -@items.each do |item|
+    -items.each do |item|
       = render partial: 'items/top-item', locals:{item: item }
   .more-items
     =link_to 'すべての商品を見る',root_path, class:"more-items-text"
