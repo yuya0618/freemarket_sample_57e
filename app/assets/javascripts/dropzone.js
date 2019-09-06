@@ -1,0 +1,1 @@
+$("div#my-created-dropzone").dropzone({ url: "/file/post" });

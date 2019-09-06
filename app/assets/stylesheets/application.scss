@@ -1,3 +1,8 @@
+/*
+*= require_self
+*= require dropzone/dropzone
+*/
+
 @import "font-awesome";
 @import "config/reset";
 @import "config/variable";
@@ -28,3 +33,5 @@
 @import "modules/payment-registration";
 @import "modules/mypage-choice";
 @import "modules/credit-show";
+
+
