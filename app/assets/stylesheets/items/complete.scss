@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  .purchase{
+    margin: 50px 0;
+  }
+  .purchase-done{
+    margin-top: 50px;
+    width: 70%;
+    height: 200px;
+    background-color: white;
+    p{
+      font-size: 25px;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+    .small{
+      font-size: 15px;
+    }
+  }  
+} 
+  

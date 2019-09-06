@@ -1,7 +1,13 @@
 = render 'shared/header'
 
-%P 購入完了
+.container
+  .purchase
+    = render 'users/shared/main-side'
 
+  .purchase-done
+    %p 購入完了
+    %p.small ご購入ありがとうございました！
+    %p.small またのご利用をお待ちしております！
 
 = render 'shared/bottom-banner'
 = render 'shared/footer-black'
