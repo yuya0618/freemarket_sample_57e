@@ -51,9 +51,7 @@
                 %th カテゴリー
                 %td
                   =link_to "#" do
-
-                    %i.fa.fa-chevron-left
-                      = @item.category.parent.parent.name
+                    = @item.category.parent.parent.name
 
                   =link_to "#" do
                     %i.fa.fa-chevron-left
@@ -63,20 +61,15 @@
                     %i.fa.fa-chevron-left
                       = @item.category.name
 
-
-
               %tr
                 %th ブランド
                 %td
                   = link_to "#" do
                     = @item.brand.name
-
-
               %tr
                 %th 商品のサイズ
                 %td
                   = link_to "#" do
-                    %i.fa.fa-chevron-left
                     = Size.find(@item.size_id).name
 
               %tr
