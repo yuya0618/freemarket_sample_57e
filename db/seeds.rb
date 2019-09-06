@@ -1,4 +1,4 @@
-if Rails.env == "development"
+if Rails.env == "production"
 
   require 'csv'
 
