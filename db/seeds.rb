@@ -1,5 +1,5 @@
 # 開発環境の時に実行
-if Rails.env == "development"
+if Rails.env == "production"
   # Image.create!(
   #   [
   #     {
