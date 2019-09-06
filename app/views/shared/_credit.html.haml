@@ -1,6 +1,6 @@
 %section.l-single-container
   %h2.l-single-head.registration 支払い方法
-  = form_tag(signup_registration_create_path, method: :post, id: 'charge-form',  name: "inputForm",class:"forming") do
+  = form_tag(pay_user_credit_cards_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm",class:"forming") do
     .l-single-content
       .form-group
         %label カード番号
@@ -27,7 +27,7 @@
         %br/
         .birthday-select-wrap
           .select-wrap
-          %select.select__default#exp_month{name: "exp_month", type: "text"}
+          %select#exp_month{name: "exp_month", type: "text"}
             %option{value: ""} --
             %option{value: "1"} 1
             %option{value: "2"} 2
@@ -43,26 +43,27 @@
             %option{value: "12"} 12
           %span 月
           .select-wrap
-          %select.select__default#exp_year{name: "exp_year", type: "text"}
+          %select#exp_year{name: "exp_year", type: "text"}
             %option{value: ""} --
-            %option{value: "19"} 19
-            %option{value: "20"} 20
-            %option{value: "21"} 21
-            %option{value: "22"} 22
-            %option{value: "23"} 23
-            %option{value: "24"} 24
-            %option{value: "25"} 25
-            %option{value: "26"} 26
-            %option{value: "27"} 27
-            %option{value: "28"} 28
-            %option{value: "29"} 29
+            %option{value: "2019"} 19
+            %option{value: "2020"} 20
+            %option{value: "2021"} 21
+            %option{value: "2022"} 22
+            %option{value: "2023"} 23
+            %option{value: "2024"} 24
+            %option{value: "2025"} 25
+            %option{value: "2026"} 26
+            %option{value: "2027"} 27
+            %option{value: "2028"} 28
+            %option{value: "2029"} 29
           %span 年
       .form-group
         %label{for:"security_code"} セキュリティコード
         %span.form-require 必須
-        = text_field_tag "cvc", "", class: "form-text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
       .form-group.text-right
         .form-body
           %span.question ?
           %p.question カード裏面の番号とは?
+      #card_token
       = submit_tag "次へ進む", id: "token_submit", class: "btn-default"
