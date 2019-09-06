@@ -18,24 +18,29 @@
       .main__right__main
         .main__right__maincontainer
 
+
           .main__right__container
             %label お名前
             %p.main__right__container1
-              -# = @profile.lastname
-              -# = @profile.firstname
+            //TODO コメントアウトを外す
+            -#=current_user.name
 
           .main__right__container
             %label お名前カナ
             %p.main__right__container1
-              -# = @profile.lastname_kana
-              -# = @profile.firstname_kana
+            //TODO コメントアウトを外す
+            -# = current_user.lastname_kana
+            -# = current_user.firstname_kana
 
           .main__right__container
             %label 生年月日
             %p.main__right__container1
-              -# = @profile.birthyear
-
-
+            //TODO コメントアウトを外す
+            -# = current_user.birth_year
+            -# %span /
+            -# = current_user.birth_month
+            -# %span /
+            -# = current_user.birth_day
           .main__right__input
             -# DB未作成のためコメントアウト
             -# = form_with @address do |f|
