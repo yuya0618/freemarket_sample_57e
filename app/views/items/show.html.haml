@@ -64,7 +64,7 @@
                     -# = @category.find(parent).name
                     -# =@item.category.parent.parent.name
 
-                 -# %br
+                -# %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
                     -# -child=@item.category.path_ids[1].to_i
@@ -93,7 +93,7 @@
               -#       -# =@item.size
 
                    -# =Size.find(@item.size)name
-                    =@item.size
+                    -# =@item.size
 
               %tr
                 %th 商品の状態
@@ -219,3 +219,4 @@
   = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
+
