@@ -28,6 +28,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def step3
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:password_confirmation] = user_params[:password_confirmation]
+    session[:firstname] = user_params[:firstname]
+    session[:firstname_kana] = user_params[:firstname_kana]
+    session[:lastname] = user_params[:lastname]
+    session[:lastname_kana] = user_params[:lastname_kana]
+    session[:birth_year] = user_params[:birth_year]
+    session[:birth_month] = user_params[:birth_month]
+    session[:birth_day] = user_params[:birth_day]
+    session[:phone_number] = user_params[:phone_number]
+    @user = User.new
   end
 
   def step4

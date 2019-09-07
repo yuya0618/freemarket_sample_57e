@@ -118,7 +118,6 @@ Devise.setup do |config|
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
-
   # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
 
