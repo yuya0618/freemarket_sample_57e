@@ -3,11 +3,7 @@
     %header.single-header
       %h1
         = link_to root_path do
-
-          //= image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",alt:"mercari"
-
           = image_tag "logo.svg",alt:"mercari",alt:"mercari"
-
       %nav.progress-bar.signup-bar
         %ol.clearfix
           %li.active
@@ -43,7 +39,6 @@
               %label{:for => "email"} メールアドレス
               %span.form-require 必須
               = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "form-text" , value: session[:email]
-             
             .form-group
               %label{for: "password"} パスワード
               %span.form-require 必須
