@@ -1,13 +1,19 @@
-= render 'shared/header'
-
-.container
-  .purchase
-    = render 'users/shared/main-side'
-
-  .purchase-done
-    %p 購入完了
-    %p.small ご購入ありがとうございました！
-    %p.small またのご利用をお待ちしております！
-
-= render 'shared/bottom-banner'
-= render 'shared/footer-black'
+.user_registration
+  .single-container
+    %header.single-header
+      %h1
+        = link_to '#' do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",alt:"mercari"
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration 購入完了
+        %h2.creating-text
+          ご購入ありがとうございます。
+          %br
+          商品発送までしばらくお待ち下さい。
+          %button.btn-default.btn-red
+            = link_to 'トップページに戻る', '/'
+      %section.l-single-container
+        = render 'shared/bottom-banner'
+    .footer.single-footer
+      = render 'shared/loginfooter'
