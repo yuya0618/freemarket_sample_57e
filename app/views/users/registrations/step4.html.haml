@@ -9,47 +9,54 @@
           %li.active
             会員情報
             .progress-status
+            .progress-status2
           %li.active
             電話番号認証
             .progress-status
+            .progress-status2
           %li.active
             お届け先住所入力
             .progress-status
+            .progress-status2
           %li
             支払い方法
             .progress-status
+            .progress-status2
           %li
             完了
             .progress-status
+            .progress-status2
     %main.single-main
-      %section.l-single-container
-        %h2.l-single-head.registration 発送元・お届け先住所入力
-        = form_for @user, url: signup_credit_path, method: :get, :html => {:class => "forming"}do |f|
-          = f.fields_for :address do |a|
-            .form-group
-              %label{for:"zip_code"} 郵便番号
-              %span.form-require 必須
-              = a.text_field :zip_code, placeholder: "例）メルカリ太郎", class:"form-text"
-            .form-group
-              %label{for: "ad"} 都道府県
-              %span.form-require 必須
-              .prefecture-btn
-                .prefecture-wrap
-                  %i.icon-arrow-bottom
-                  = a.collection_select :prefecture_id, Prefecture.all, :id, :name
-            .form-group
-              %label{for: "adress_city"} 市区町村
-              %span.form-require 必須
-              = a.text_field :address_city, placeholder: "例）横浜市緑区", class:"form-text"
-            .form-group
-              %label{for: "adress_number"} 番地
-              %span.form-require 必須
-              = a.text_field :address_number, placeholder: "例）123-456", class:"form-text"
-            .form-group
-              %label{for: "building"} 建物名
-              %span.form-more 任意
-              = a.text_field :building, placeholder: "例）柳ビル103", class:"form-text"
-            = f.submit "次へ進む", class: "btn-default"
+      = form_for @user, url: signup_credit_path, method: :get do |f|
+        = f.fields_for :address do |a|
+          %section.l-single-container
+            %h2.l-single-head.registration 発送元・お届け先住所入力
+            .forming
+              .l-single-content
+                .form-group
+                  %label{for:"zip_code"} 郵便番号
+                  %span.form-require 必須
+                  = a.text_field :zip_code, placeholder: "例）123456", class:"form-text"
+                .form-group
+                  %label{for: "ad"} 都道府県
+                  %span.form-require 必須
+                  .prefecture-btn
+                    .prefecture-wrap
+                      %i.icon-arrow-bottom
+                      = a.collection_select :prefecture_id, Prefecture.all, :id, :name
+                .form-group
+                  %label{for: "adress_city"} 市区町村
+                  %span.form-require 必須
+                  = a.text_field :address_city, placeholder: "例）横浜市緑区", class:"form-text"
+                .form-group
+                  %label{for: "adress_number"} 番地
+                  %span.form-require 必須
+                  = a.text_field :address_number, placeholder: "例）123番地456号", class:"form-text"
+                .form-group
+                  %label{for: "building"} 建物名
+                  %span.form-more 任意
+                  = a.text_field :building, placeholder: "例）柳ビル103", class:"form-text"
+                = f.submit "次へ進む", class: "btn-default"
 
-    .footer.single-footer
-      = render 'shared/loginfooter'
+      .footer.single-footer
+        = render 'shared/loginfooter'

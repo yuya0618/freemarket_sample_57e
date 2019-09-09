@@ -24,18 +24,18 @@
   .pickup
     %h2.pickup-top ピックアップカテゴリー
 
-    = render partial: 'items/top-items', locals:{items:@items, word: 'レディース' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'メンズ' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'ベビー・キッズ' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'インテリア・住まい・小物' }
+    = render partial: 'items/top-items', locals:{items:@women_items, word: 'レディース' }
+    = render partial: 'items/top-items', locals:{items:@mens_items, word: 'メンズ' }
+    = render partial: 'items/top-items', locals:{items:@baby_items, word: 'ベビー・キッズ' }
+    = render partial: 'items/top-items', locals:{items:@interior_items, word: 'インテリア・住まい・小物' }
 
   .pickup
     %h2.pickup-top ピックアップブランド
 
-    = render partial: 'items/top-items', locals:{items:@items, word: 'シャネル' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'ナイキ' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'ルイヴィトン' }
-    = render partial: 'items/top-items', locals:{items:@items, word: 'シュプリーム' }
+    = render partial: 'items/top-items', locals:{items:@chanel_items, word: 'シャネル' }
+    = render partial: 'items/top-items', locals:{items:@nike_items, word: 'ナイキ' }
+    = render partial: 'items/top-items', locals:{items:@vuitton_items, word: 'ルイヴィトン' }
+    = render partial: 'items/top-items', locals:{items:@supureme_items, word: 'シュプリーム' }
 
     = render partial: 'shared/sell-btn'
     = render partial: 'shared/bottom-banner'

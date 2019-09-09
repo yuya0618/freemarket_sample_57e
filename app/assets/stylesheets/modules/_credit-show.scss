@@ -1,12 +1,15 @@
 .main-content{
   background-color: white;
-  height: 300px;
+  height: 250px;
   text-align: center;
   .credit-main{
     padding: 10px 0;
     label{
       font-weight: bold;
       font-size: 20px;
+    }
+    .space{
+      padding-bottom: 30px;
     }
     button{
       width: 70%;

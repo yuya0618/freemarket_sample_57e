@@ -51,49 +51,25 @@
                 %th カテゴリー
                 %td
                   =link_to "#" do
-
-                    %i.fa.fa-chevron-left
-                      -# = @item.category.name
-
-                  -# カテゴリー子要素
-                  -# =link_to "#" do
-                  -#   %i.fa.fa-chevron-left
-                  -#     -# = @item.category.name
-
-                    -# -parent=@item.category.path_ids[0].to_i
-                    -# = @category.find(parent).name
-                    -# =@item.category.parent.parent.name
-
-                -# %br
-                  =link_to "#" do
-                    %i.fa.fa-chevron-left
-                    -# -child=@item.category.path_ids[1].to_i
-                    -# = @category.find(child).name
-                    -# =@item.category.parent.name
+                    = @item.category.parent.parent.name
                   %br
                   =link_to "#" do
                     %i.fa.fa-chevron-left
-                    -# -grandchild=@item.category.path_ids[2].to_i
-                    -# = @category.find(grandchild).name
-                    -# =@item.category.name
+                      = @item.category.parent.name
 
+                  =link_to "#" do
+                    %i.fa.fa-chevron-left
+                      = @item.category.name
 
               %tr
                 %th ブランド
                 %td
                   = link_to "#" do
-                    %i.fa.fa-chevron-left
-                    -# = @item.brand.name
-
-              -# サイズ追加したら・・・
-              -# %tr
-              -#   %th 商品のサイズ
-              -#   %td
-              -#     = link_to "#" do
-              -#       -# =@item.size
-
-                   -# =Size.find(@item.size)name
-                    -# =@item.size
+                    = @item.brand.name
+              %tr
+                %th 商品のサイズ
+                %td
+                  = Size.find(@item.size_id).name
 
               %tr
                 %th 商品の状態
@@ -130,7 +106,7 @@
           %span.price__two
             （税込）
           %span.price__three
-            送料込み
+            = @item.delivery_fee
 
         - if @item.user_id == current_user&.id
 
@@ -160,9 +136,6 @@
         .edit-delete
           = link_to "この商品を削除する",item_path(@item), method: :delete, class:"edit-delete_btn"
 
-
-        .check
-          =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
 
       //コメント実装なし
 
@@ -219,4 +192,5 @@
   = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
+
 
