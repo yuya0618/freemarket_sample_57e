@@ -1,0 +1,16 @@
+ja:
+ activerecord:
+ models:
+ attributes:
+ user:
+ nicknamename: 名前
+ email: メールアドレス
+ password: パスワード
+ firstname: 名前（性）
+ firstname_kana: ナマエ
+ lastname: 名前（名）
+ lastname_kana: ナマエ
+ birth_year: 誕生日（年）
+ birth_month: 誕生日（月）
+ birth_day: 誕生日（日）
+ phone_number: 電話番号

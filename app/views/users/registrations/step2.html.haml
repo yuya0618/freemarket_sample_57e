@@ -3,30 +3,37 @@
     %header.single-header
       %h1
         = link_to root_path do
-          = image_tag "logo.svg",alt:"mercari"
+          = image_tag "logo.svg",alt:"mercari",alt:"mercari"
       %nav.progress-bar.signup-bar
         %ol.clearfix
           %li.active
             会員情報
-            .progress-status.active
-
-          %li.active
+            .progress-status
+            .progress-status2
+          %li
             電話番号認証
-            .progress-status.activve
+            .progress-status
+            .progress-status2
           %li
             お届け先住所入力
             .progress-status
+            .progress-status2
           %li
             支払い方法
             .progress-status
-
+            .progress-status2
           %li
             完了
             .progress-status
+            .progress-status2
     %main.sms_body
       %section.l-single-container
         %h2.l-chapter-head.registration 電話番号の確認
         = form_for @user, url: signup_address_path,  method: :get, :html => {:class => "forming"} do |f|
+          - if @user.errors.any?
+            "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+            - @user.errors.full_messages.each do |message|
+              %p= message
           .l-single-content
             .form-group
               %label{for: "phone_number"} 携帯電話の番号
@@ -41,6 +48,5 @@
               >
           %input{name: "__csrf_value", type: "hidden", value: "3da2a6ff03ec81c8a39fe8f5529d6fadf1bc37cb79421a62e453a1ac3fa389b2406738c8a42402eefc2fd6b0c1a63cf5ce711d5cfc95464347933ddbb04cc607d"}/
           %input{name: "id", type: "hidden", value: "297052499"}/
-
-    .footer.single-footer
-      = render 'shared/loginfooter'
+  .footer.single-footer
+    = render 'shared/loginfooter'

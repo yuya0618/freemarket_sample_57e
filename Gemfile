@@ -94,3 +94,4 @@ gem 'breadcrumbs_on_rails'
 gem 'ancestry'
 gem "dropzonejs-rails"
 gem 'turbolinks'
+gem 'rails-i18n'

@@ -25,6 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
     @user = User.new
+    # binding.pry
   end
 
   def step3
@@ -41,6 +42,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_day] = user_params[:birth_day]
     session[:phone_number] = user_params[:phone_number]
     @user = User.new
+    if @user.valid_phone_number?
+      render :step4
+    else
+      render :step3
+    end
   end
 
   def step4
@@ -57,11 +63,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   def create
     @user = User.new(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], lastname: session[:lastname],lastname_kana: session[:lastname_kana], firstname: session[:firstname], firstname_kana: session[:firstname_kana], birth_year: session[:birth_year], birth_month: session[:birth_month], birth_day: session[:birth_day], phone_number: session[:phone_number], address_attributes: session[:address_attributes])
-    # unless session[:provider_data] == {}
-    # @user.sns_credentials.build(
-    #   uid: session[:provider_data]["uid"],
-    #   provider: session[:provider_data]["provider"])
-    # end
+    unless session[:provider_data] == {}
+    @user.sns_credentials.build(
+      uid: session[:provider_data]["uid"],
+      provider: session[:provider_data]["provider"])
+    end
     if @user.save
       sign_in @user
     end
