@@ -26,6 +26,37 @@ describe Item do
         expect(item).to be_valid
       end
 
+      it "can save with user_id" do
+        item = build(:item, user_id: 1)
+        expect(item).to be_valid
+      end
+
+      it "can save with delivery_method" do
+        item = build(:item, delivery_method: 1)
+        expect(item).to be_valid
+      end
+
+      it "can save with delivery_term" do
+        item = build(:item, delivery_term: 1)
+        expect(item).to be_valid
+      end
+
+      it "can save with delivery_location" do
+        item = build(:item, delivery_location: 1)
+        expect(item).to be_valid
+      end
+
+      it "can save with delivery_fee" do
+        item = build(:item, delivery_fee: 1)
+        expect(item).to be_valid
+      end
+
+      it "can save with condition" do
+        item = build(:item, condition: 1)
+        expect(item).to be_valid
+      end
+
+
     end
 
 
