@@ -1,0 +1,3 @@
+$('#item_category_children_id').parent().remove();
+$('#item_category_id').parent().remove();
+$(".item-registration__form__detail__box__category").append("<%= j(render partial: 'items/categories', locals: { children: @children }) %>");

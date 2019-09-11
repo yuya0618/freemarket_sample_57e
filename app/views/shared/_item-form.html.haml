@@ -17,10 +17,9 @@
               .nest-form
                 .preview
                 .nest-form__head
-                  .fallback
-                    = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
-                    %p ドラッグアンドドロップ
-                    %p またはクリックしてファイルをアップロード
+                  = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
+                  %p ドラッグアンドドロップ
+                  %p またはクリックしてファイルをアップロード
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名
@@ -48,31 +47,33 @@
           .item-registration__form__detail__box__category
             %span.item-registration__form__detail__box__category__label カテゴリー
             %span.item-registration__form__detail__box__category__necessary 必須
-          .select-box.select-box-top
-            = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-          .select-box.select-box-top
-            = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-          .select-box.select-box-top
-            = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            .select-box.select-box-top
+              = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# = render partial: 'items/categories', locals: {f: f}
+            -# .select-box.select-box-top
+            -#   = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# .select-box.select-box-top
+            -#   = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
 
           -# サイズ(仮)
-          .item-registration__form__detail__box__category
-            %span.item-registration__form__detail__box__category__label サイズ
-            %span.item-registration__form__detail__box__category__necessary 必須
-          .select-box.select-box-top
-            = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
+          -# .item-registration__form__detail__box__size
+          -#   %span.item-registration__form__detail__box__category__label サイズ
+          -#   %span.item-registration__form__detail__box__category__necessary 必須
+          -# .select-box.select-box-top
+          -#   = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
           -# ブランド(仮)
-          .item-registration__form__detail__box__category
+          .item-registration__form__detail__box__brand
             %span.item-registration__form__detail__box__category__label ブランド
             %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
           .select-box.select-box-top
-            = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            = f.text_field :brand_id, placeholder:'例) シャネル', class: 'select-box__body'
 
 
 
 
           -# 商品の状態
-          .item-registration__form__detail__box__category
+          .item-registration__form__detail__box__condition
             %span.item-registration__form__group__box__label 商品の状態
             %span.item-registration__form__group__box__necessary 必須
           .select-box

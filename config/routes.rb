@@ -9,6 +9,11 @@ Rails.application.routes.draw do
       post 'purchase'
       get 'complete'
     end
+    collection do
+      get 'children'
+      get 'gchildren'
+      get 'size'
+    end
     resources :images, only: [:index, :create]
   end
 
