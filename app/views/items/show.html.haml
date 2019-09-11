@@ -159,6 +159,16 @@
         = link_to '＜ back', '#', class:"page__btn1"
         = link_to 'forward ＞', '#', class:"page__btn2"
 
+      -# .page
+      -#   = link_to item_path(@previous), class:"page__btn1" do
+      -#     %i.fa.fa-chevron-left
+      -#     = @previous.name
+          
+      -#   = link_to item_path(@next), class:"page__btn2" do
+      -#     = @next.name
+      -#     %i.fa.fa-chevron-right
+
+
       .sns
         .sns__icons
 
