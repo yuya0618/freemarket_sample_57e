@@ -1,4 +1,4 @@
-.item-form{
+.edit-form{
   &-header{
     text-align: center;
     &-icon{
@@ -57,6 +57,32 @@
           margin-top: 8px;
           color: black;
           font-size: 14px;
+        }
+        &-images{
+          display: flex;
+          &-image{
+            width: 20%;
+            margin-right: 5px;
+            &-pic{
+              width: 100%;
+            }
+            &-btn{
+              display: flex;
+              height: 35px;
+              border: 1px solid lightgray;
+              background-color: whitesmoke;
+              line-height: 35px;
+              &-edit{
+                width: 50%;
+                text-align: center;
+                border-right: 1px solid lightgray;
+              }
+              &-delete{
+                width:50%;
+                text-align: center;
+              }
+            }
+          }
         }
         &__image {
           width: 100%;
@@ -436,4 +462,7 @@
       }
     }
   }
+}
+.item-images{
+  display: flex;
 }
