@@ -64,9 +64,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], lastname: session[:lastname],lastname_kana: session[:lastname_kana], firstname: session[:firstname], firstname_kana: session[:firstname_kana], birth_year: session[:birth_year], birth_month: session[:birth_month], birth_day: session[:birth_day], phone_number: session[:phone_number], address_attributes: session[:address_attributes])
     unless session[:provider_data] == {}
-    @user.sns_credentials.build(
-      uid: session[:provider_data]["uid"],
-      provider: session[:provider_data]["provider"])
+    # @user.sns_credentials.build(
+    #   uid: session[:provider_data]["uid"],
+    #   provider: session[:provider_data]["provider"])
     end
     if @user.save
       sign_in @user
