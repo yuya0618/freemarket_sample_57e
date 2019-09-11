@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post 'purchase'
       get 'complete'
     end
-    resources :images, only: [:index, :create]
+    resources :images, only: [:index, :create, :delete]
   end
 
   resources :users, only: [:index, :edit, :update, :create] do

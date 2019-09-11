@@ -1,6 +1,6 @@
 class Size < ActiveHash::Base
   include ActiveHash::Associations
-  
+
 
   has_many :items
   has_many :categories_sizes
@@ -16,9 +16,9 @@ class Size < ActiveHash::Base
     {id: 5, name: 'L'}, {id: 6, name: 'XL(LL)'},
     {id: 7, name: '2XL(sL)'}, {id: 8, name: '3XL(4L)'}, 
     {id: 9, name: '4XL(5L以上)'},{id: 10, name: 'FREE SIZE'}, 
-    
-    
-    
+
+
+
     {id: 11, name: 'XSサイズ以下'}, {id: 12, name: 'Sサイズ'},
     {id: 13, name: 'Mサイズ'}, {id: 14, name: 'Lサイズ'}, 
     {id: 15, name: 'XLサイズ'},{id: 16, name: 'XXLサイズ'}, 
