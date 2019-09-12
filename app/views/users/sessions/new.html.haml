@@ -4,7 +4,7 @@
       = link_to root_path do
         = image_tag "logo.svg",alt:"mercari"
   .single-container-session
-    .single-container-session__top
+    .single-container-session-top
       %h2
       アカウントをお持ちでない方はこちら
       .new-registration
@@ -17,16 +17,15 @@
         = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-session-sns__google' do
           = image_tag "google_logo.png", size: "25×25" 
           Googleでログイン
-      %main.single-main
-        %section.l-single-container
-          = form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => "forming"} ) do |f|
-            .l-single-content
-              .form-group
-                = f.email_field :email, placeholder: "メールアドレス", class: "form-text"
-              .form-group
-                = f.password_field :password, placeholder: "パスワード", class: "form-text"
-              = f.submit "ログイン", class: "btn-default"
-              -# - binding.pry
+    .single-main
+      %section.l-single-container
+        = form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => "forming"} ) do |f|
+          .l-single-content
+            .form-group
+              = f.email_field :email, placeholder: "メールアドレス", class: "form-text"
+            .form-group
+              = f.password_field :password, placeholder: "パスワード", class: "form-text"
+            = f.submit "ログイン", class: "btn-default"
 
-  -# .footer.single-footer
-  -#   = render 'shared/loginfooter'
+  .footer.single-footer
+    = render 'shared/loginfooter'

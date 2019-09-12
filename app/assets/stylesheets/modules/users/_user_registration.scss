@@ -109,21 +109,22 @@
                 font-weight: bold;
               }
               span.form-require{
+                display:flex;
                 background-color:#EA352D;
                 color:white;
-                display: flex;
                 padding: 2px 4px;
                 width:32px;
                 border-radius: 2px;
                 font-size: 12px;
-                vertical-align: top;
+                margin-left: 8px;
               }
               span.form-more{
                 background-color:#f5f5f5;
                 color:white;
                 padding: 2px 4px;
                 width:30px;
-                margin: 0 0 0 8px;
+                margin-right: 40px;
+
               }
               .form-text{
                 margin: 8px 0 0;
@@ -136,6 +137,7 @@
                 font-size: 16px;
                 width: 100%;
               }
+
               ul.signup-card-list{
                 display:flex;
                 margin: 8px 0 0;
@@ -155,11 +157,43 @@
                 font-size: 16px;
               }
               .birthday-select-wrap{
-                .user_birth_year {
-                  width: calc(100% - 38px);
+                height:100px;
+                width: 100%;
+                display:flex;
+                justify-content: center;
+                select {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  box-sizing: border-box;
+                  width: calc(33% - 10px);
                   height: 48px;
-                  background-color:blue;
+                  background: #fff;
                 }
+              }
+              .card-select-wrap{
+                height:100px;
+                display:flex;
+                justify-content: center;
+                select {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  width: calc(50% - 6px);
+                  height: 48px;
+                  background: #fff;
+                }
+              }
+              input{
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                width: 100%;
               }
               .prefecture-btn{
                 .prefecture-wrap{
@@ -168,7 +202,10 @@
                     display:inline-block;
                     font-size: 8px;
                   }
-                  select.select-default{
+                  select{
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
                     display: inline-block;
                     width:100%;
                     height: 48px;
@@ -177,6 +214,17 @@
                 }
               }
               span{
+                padding-top:20px;
+              }
+              .select-icon{
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                z-index: 2;
+                color: #888;
+                font-size: 8px;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
               }
               p.form-info-text{
               }

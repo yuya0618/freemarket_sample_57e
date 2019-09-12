@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -62,8 +65,9 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-end
+  gem 'webdrivers', '~> 3.0'
+  gem 'faker'
+  end
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -90,3 +94,4 @@ gem 'omniauth-facebook'
 gem 'breadcrumbs_on_rails'
 gem 'ancestry'
 gem 'turbolinks'
+gem 'rails-i18n'

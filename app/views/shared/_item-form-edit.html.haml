@@ -1,25 +1,33 @@
-.item-form
-  .item-form-header
+.edit-form
+  .edit-form-header
     = link_to root_path do
-      = image_tag "logo.svg", alt: "ロゴ", class:"item-form-header-icon"
+      = image_tag "logo.svg", alt: "ロゴ", class:"edit-form-header-icon"
 
   .item-registration
     %h2.item-registration__head 商品の情報を入力
-    = form_with model: @item,　method: :patch, class:'item-registration__form', local: true, html: { multipart: true } do |f|
+    = form_with model: @item,method: :patch, class:'item-registration__form', local: true, html: { multipart: true } do |f|
       -# 画像
       .item-registration__form__group
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        = image_tag item.images.first.image[0].url,class:"item-registration__form__group-image"
-        -# = f.fields_for :images, class: 'dropzone', id: 'upload-dropzone' do |fin|
-        -#   =fin.label :image, multiple: true do
-        -#     .item-registration__form__group__image
-        -#       .nest-form
-        -#         .nest-form__head
-        -#           = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
-        -#           %p ドラッグアンドドロップ
-        -#           %p またはクリックしてファイルをアップロード
+        .item-registration__form__group-images
+          -item.images.each do |image|
+            .item-registration__form__group-images-image
+              = image_tag image.image[0].url,class:"item-registration__form__group-images-image-pic",style:"height:150px;"
+              .item-registration__form__group-images-image-btn
+                .item-registration__form__group-images-image-btn-edit
+                  = link_to "編集","#",class:"item-registration__form__group-images-image-btn-edit-btn"
+                .item-registration__form__group-images-image-btn-delete
+                  = link_to "削除","#", method: :delete, class:"item-registration__form__group-images-image-btn-delete-btn"
+        = f.fields_for :image, class: 'dropzone', id: 'upload-dropzone' do |fin|
+          =fin.label :image, multiple: true do
+            .item-registration__form__group__image
+              .nest-form
+                .nest-form__head
+                  = fin.file_field :image, multiple: true, name: 'images[image][]',style:"display:none;"
+                  %p ドラッグアンドドロップ
+                  %p またはクリックしてファイルをアップロード
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名

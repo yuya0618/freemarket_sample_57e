@@ -5,7 +5,7 @@
       .form-group
         %label カード番号
         %span.form-require 必須
-        = text_field_tag "number", "", class: "form-text", placeholder: "半角数字のみ" ,maxlength: "16"
+        = text_field_tag "number", "", class: "form-text", placeholder: "半角数字のみ" ,maxlength: "16", type: "text"
         %ul.signup-card-list
           %li
             %img{alt:"", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3951034907", width: "49"}/
@@ -25,9 +25,8 @@
         %label 有効期限
         %span.form-require 必須
         %br/
-        .birthday-select-wrap
-          .select-wrap
-          %select.select__default#exp_month{name: "exp_month", type: "text"}
+        .card-select-wrap
+          %select#exp_month{name: "exp_month", type: "text"}
             %option{value: ""} --
             %option{value: "1"} 1
             %option{value: "2"} 2
@@ -41,28 +40,30 @@
             %option{value: "10"} 10
             %option{value: "11"} 11
             %option{value: "12"} 12
+          = fa_icon "chevron-down", class: "select-icon"
           %span 月
-          .select-wrap
-          %select.select__default#exp_year
+          %select#exp_year{name: "exp_year", type: "text"}
             %option{value: ""} --
-            %option{value: "19"} 19
-            %option{value: "20"} 20
-            %option{value: "21"} 21
-            %option{value: "22"} 22
-            %option{value: "23"} 23
-            %option{value: "24"} 24
-            %option{value: "25"} 25
-            %option{value: "26"} 26
-            %option{value: "27"} 27
-            %option{value: "28"} 28
-            %option{value: "29"} 29
+            %option{value: "2019"} 19
+            %option{value: "2020"} 20
+            %option{value: "2021"} 21
+            %option{value: "2022"} 22
+            %option{value: "2023"} 23
+            %option{value: "2024"} 24
+            %option{value: "2025"} 25
+            %option{value: "2026"} 26
+            %option{value: "2027"} 27
+            %option{value: "2028"} 28
+            %option{value: "2029"} 29
+          = fa_icon "chevron-down", class: "select-icon"
           %span 年
       .form-group
         %label{for:"security_code"} セキュリティコード
         %span.form-require 必須
-        = text_field_tag "cvc", "", class: "form-text", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
       .form-group.text-right
         .form-body
           %span.question ?
           %p.question カード裏面の番号とは?
-      = submit_tag "次へ進む",class: "btn-default"
+      #card_token
+      = submit_tag "追加する",  class: "btn-default"
