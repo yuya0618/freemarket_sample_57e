@@ -102,10 +102,9 @@ end
     #   @item = FactoryBot.create(:item)
     # end
 
-    
+
     # it "responds successfully" do
     #   # sign_in @user
     #   get :show,params:{id:2}
     #   expect(response).to be_success
     # end
-
