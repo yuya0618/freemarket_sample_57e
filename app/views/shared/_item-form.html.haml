@@ -5,7 +5,7 @@
 
   .item-registration
     %h2.item-registration__head 商品の情報を入力
-    = form_with model: @item, class:'item-registration__form dropzone', id: 'upload-dropzone', local: true, html: { multipart: true } do |f|
+    = form_with model: @item, class:'item-registration__form', id: 'item-registration-form', local: true, html: { multipart: true } do |f|
       -# 画像
       .item-registration__form__group
         %span.item-registration__form__group__box__label.large-label 出品画像

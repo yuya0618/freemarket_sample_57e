@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
 
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('faaaaaail!!');
-      alert('ファイルの取得に失敗しました。');
+      // alert('ファイルの取得に失敗しました。');
       console.log("ajax通信に失敗しました");
       console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
       console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
@@ -58,7 +58,7 @@ $(document).on('turbolinks:load', function() {
 
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('faaaaaailggg!!');
-      alert('ファイルの取得に失敗しました。');
+      // alert('ファイルの取得に失敗しました。');
       console.log("ajax通信に失敗しました");
       console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
       console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
@@ -85,7 +85,7 @@ $(document).on('turbolinks:load', function() {
 
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('faaaaaailsss!!');
-      alert('ファイルの取得に失敗しました。');
+      // alert('ファイルの取得に失敗しました。');
       console.log("ajax通信に失敗しました");
       console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
       console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー

@@ -1,3 +1,49 @@
+// $(function() {
+
+//   Dropzone.autoDiscover = false;
+
+//   let myDropzone = new Dropzone(".item-registration__form__group__image", {
+//     url: "/items",
+//     method: "post",
+//     uploadmultiple: true,
+//     parallelUploads: 10,
+//     paramName: "file",
+//     maxFiles: 10,
+//     addRemoveLinks: true,
+//     dictRemoveFile: "削除",
+//     autoProcessQueue: false
+//   });
+
+//   $('#item-registration-form').submit(function(e) {
+//     e.preventDefault();
+//     console.log(myDropzone);
+//     console.log('うーん');
+
+//     let formData = new FormData(this);
+//     $.ajax({
+//       url: "/items",
+//       type: "post",
+//       data: formData,
+//       dataType: 'json',
+//       processData: false,
+//       contentType: false
+//     })
+//     .done(function(){
+//       console.log('doneaaa');
+//     })
+//     .fail(function(){
+//       alert('error');
+//     })
+
+//     myDropzone.processQueue();
+
+//   });
+
+// });
+
+
+
+
 // let myDropzone = {};
 
 // Dropzone.autoDiscover = false;
@@ -17,52 +63,35 @@
 //   url: "/items"
 // });
 
-$(function() {
-
-Dropzone.autoDiscover = false;
-
-let myDropzone = new Dropzone(".item-registration__form__group__image", {
-  url: "/items",
-  paramName: "file",
-  addRemoveLinks: true,
-  dictRemoveFile: "削除",
-  autoProcessQueue: false
-});
-
-$('form').submit(function() {
-  myDropzone.processQueue();
-});
-
-});
 
 
 
 
-$(function() {
-  let myDropzone;
-  Dropzone.autoDiscover = false;
-  Dropzone.options.myAwesomeDropzone = {
-    paramName: "file",
-    parallelUploads: 1,
-    acceptedFiles: 'image/*',
-    maxFiles: 2,
-    maxFilesize: 0.5,
-    dictFileTooBig: "uploaded file is too large({{filesize}}MiB). limit: {{maxFilesize}}MiB.",
-    dictInvalidFileType: "Image file only",
-    dictMaxFilesExceeded: "10 files limit"
-  };
+// $(function() {
+//   let myDropzone;
+//   Dropzone.autoDiscover = false;
+//   Dropzone.options.myAwesomeDropzone = {
+//     paramName: "file",
+//     parallelUploads: 1,
+//     acceptedFiles: 'image/*',
+//     maxFiles: 2,
+//     maxFilesize: 0.5,
+//     dictFileTooBig: "uploaded file is too large({{filesize}}MiB). limit: {{maxFilesize}}MiB.",
+//     dictInvalidFileType: "Image file only",
+//     dictMaxFilesExceeded: "10 files limit"
+//   };
 
-  myDropzone = new Dropzone(".item-registration__form__group__image", {
-    url: "/items",
-    addRemoveLinks: true,
-    dictRemoveFile: "削除",
-    autoProcessQueue: false
-  });
+//   myDropzone = new Dropzone(".item-registration__form__group__image", {
+//     url: "/items",
+//     addRemoveLinks: true,
+//     dictRemoveFile: "削除",
+//     autoProcessQueue: false
+//   });
 
-  $('form').submit(function() {
-    myDropzone.processQueue();
-  });
-});
+//   $('form').submit(function() {
+//     myDropzone.processQueue();
+//   });
+// });
 
 
 
