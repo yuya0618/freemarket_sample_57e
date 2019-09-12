@@ -1,6 +1,7 @@
 FactoryBot.define do
 
   factory :user do
+
     nickname              {"タローサンタマリア"}
     email                 {"taro@gmail.com"}
     phone_number          {"08012345678"}
