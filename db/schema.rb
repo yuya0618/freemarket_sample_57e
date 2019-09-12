@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(version: 2019_09_06_090436) do
     t.string "encrypted_password"
     t.string "phone_number", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["encrypted_password"], name: "index_users_on_encrypted_password", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

@@ -1,0 +1,2 @@
+.select-box.select-box-top
+  = select_tag 'item[category_id]', options_from_collection_for_select( gchildren, :id, :name), {prompt: '---', class: 'select-box__body'} 
