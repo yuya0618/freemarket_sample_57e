@@ -106,11 +106,12 @@ ActiveRecord::Schema.define(version: 2019_09_12_055044) do
     t.string "firstname", null: false
     t.string "firstname_kana", null: false
     t.string "lastname_kana", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
     t.string "lastname", null: false
     t.text "text"
+    t.integer "birth_year"
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.string "encrypted_password"
     t.string "phone_number", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

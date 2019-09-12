@@ -63,6 +63,7 @@ class ItemsController < ApplicationController
 
 
   def create
+    binding.pry
     @item = Item.create!(item_params)
     @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
@@ -97,9 +98,44 @@ class ItemsController < ApplicationController
       redirect_to complete_item_path(@item)
   end
 
-
   def complete
   end
+
+  def children
+    @children = Category.find(params[:parentId].to_i).children
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js { render 'children.js.erb'}
+    end
+  end
+
+  def gchildren
+    @gchildren = Category.find(params[:childrenId].to_i).children
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js { render 'gchildren.js.erb'}
+    end
+  end
+
+  def size
+    if Category.find(params[:childrenId].to_i).categories_sizes != []
+      ccat_sizes = Category.find(params[:childrenId].to_i).categories_sizes.map{|x| x[:size_id]}
+      @size = Size.where(id: ccat_sizes)
+      respond_to do |format|
+        format.html { redirect_to :root }
+        format.js { render 'size.js.erb'}
+      end
+    elsif Category.find(params[:gchildrenId].to_i).categories_sizes != []
+      gcat_sizes = Category.find(params[:gchildrenId].to_i).categories_sizes.map{|x| x[:size_id]}
+      @size = Size.where(id: gcat_sizes)
+      respond_to do |format|
+        format.html { redirect_to :root }
+        format.js { render 'size.js.erb'}
+      end
+    else
+    end
+  end
+
 
 
   private

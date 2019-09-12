@@ -19,6 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:email] = request.env["omniauth.auth"].info.email
       session[:provider_data]["uid"] = request.env["omniauth.auth"].uid
       session[:provider_data]["provider"] = provider.to_s
+      binding.pry
       redirect_to signup_registration_path
     end
   end

@@ -57,6 +57,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'meta_request'
 end
 
 group :test do
@@ -92,5 +93,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'breadcrumbs_on_rails'
 gem 'ancestry'
-gem "dropzonejs-rails"
 gem 'turbolinks'
+gem 'rails-i18n'

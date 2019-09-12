@@ -5,16 +5,17 @@
 
   .item-registration
     %h2.item-registration__head 商品の情報を入力
-    = form_with model: @item, class:'item-registration__form', local: true, html: { multipart: true } do |f|
+    = form_with model: @item, class:'item-registration__form', id: 'item-registration-form', local: true, html: { multipart: true } do |f|
       -# 画像
       .item-registration__form__group
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        = f.fields_for :images, class: 'dropzone', id: 'upload-dropzone' do |fin|
+        = f.fields_for :images do |fin|
           =fin.label :image, multiple: true do
             .item-registration__form__group__image
               .nest-form
+                .preview
                 .nest-form__head
                   = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
                   %p ドラッグアンドドロップ
@@ -46,31 +47,33 @@
           .item-registration__form__detail__box__category
             %span.item-registration__form__detail__box__category__label カテゴリー
             %span.item-registration__form__detail__box__category__necessary 必須
-          .select-box.select-box-top
-            = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-          .select-box.select-box-top
-            = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-          .select-box.select-box-top
-            = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-            
+            .select-box.select-box-top
+              = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# = render partial: 'items/categories', locals: {f: f}
+            -# .select-box.select-box-top
+            -#   = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# .select-box.select-box-top
+            -#   = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+
           -# サイズ(仮)
-          .item-registration__form__detail__box__category
-            %span.item-registration__form__detail__box__category__label サイズ
-            %span.item-registration__form__detail__box__category__necessary 必須
-          .select-box.select-box-top
-            = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
+          -# .item-registration__form__detail__box__size
+          -#   %span.item-registration__form__detail__box__category__label サイズ
+          -#   %span.item-registration__form__detail__box__category__necessary 必須
+          -# .select-box.select-box-top
+          -#   = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
           -# ブランド(仮)
-          .item-registration__form__detail__box__category
+          .item-registration__form__detail__box__brand
             %span.item-registration__form__detail__box__category__label ブランド
             %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
           .select-box.select-box-top
-            = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            -# = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
+            = f.text_field :brand_id, placeholder:'例) シャネル', class: 'select-box__body'
 
 
 
 
           -# 商品の状態
-          .item-registration__form__detail__box__category
+          .item-registration__form__detail__box__condition
             %span.item-registration__form__group__box__label 商品の状態
             %span.item-registration__form__group__box__necessary 必須
           .select-box
