@@ -68,7 +68,7 @@
               %tr
                 %th 商品のサイズ
                 %td
-                  = Size.find(@item.size_id).name
+                  = Size.find(@item.size_id)&.name
 
               %tr
                 %th 商品の状態

@@ -1,0 +1,68 @@
+.search-content{
+  width:800px;
+  .bold{
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .count{
+    margin-top: 8px;
+    color: gray;
+  }
+  .items-container{
+    margin: 15px auto;
+    .items-box{
+      display: flex;
+      flex-wrap: wrap;
+      .item-box{
+        background-color: white;
+        width: 160px;
+        margin: 15px 0 0 20px;
+        &-photo{
+          width: 160px;
+          height: 160px;
+          &-pic{
+            height: 100%;
+            width:100%;
+          }
+        }
+        &-body{
+          height: 100px;
+          padding: 16px;
+          &-name{
+            color: black;
+            overflow: hidden;
+            position: relative;
+            font-weight: 400;
+            height: 3em;
+            line-height: 1.5;
+            word-break: break-word;
+            white-space: normal;
+          }
+          &-num{
+            display: flex;
+            justify-content: space-between;
+            margin:8px 0 0;
+            &-price{
+              font-size:15px;
+              font-weight: 600;
+              color:#333;
+            }
+            &-like{
+              color: #333;
+            }
+            &-icon{
+              font-size: 15px;
+              font-weight: 400;
+              color: #333;
+            }
+            span{
+              font-size: 15px;
+              font-weight: 400;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
