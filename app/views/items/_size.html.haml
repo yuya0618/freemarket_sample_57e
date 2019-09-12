@@ -1,0 +1,5 @@
+.item-registration__form__detail__box__size
+  %span.item-registration__form__detail__box__category__label サイズ
+  %span.item-registration__form__detail__box__category__necessary 必須
+  .select-box.select-box-top
+    = select_tag 'item[size_id]', options_from_collection_for_select( size, :id, :name), {prompt: '---', class: 'select-box__body'} 

@@ -1,0 +1,2 @@
+$('.item-registration__form__detail__box__size').remove();
+$(".item-registration__form__detail__box__category").after("<%= j(render partial: 'items/size', locals: { size: @size }) %>");

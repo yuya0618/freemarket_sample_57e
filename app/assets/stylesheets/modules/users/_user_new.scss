@@ -3,6 +3,8 @@
   background:#f5f5f5;
   height:100vh;
   width:100vw;
+  overflow-y:scroll;
+  line-height: 1;
   .header.single-header{
     height: 128px;
     padding: 49px 0 12px;
@@ -86,19 +88,18 @@
   }
   .single-container-session{
     width: 456px;
-    background: white;
     margin:0 auto;
     line-height: inherit;
     display:block;
     padding: 40px 64px;
-    min-height: 100%;
-    &__top{
-    margin:0 auto;
-    line-height: 1.5;
-    font-size:14px;
-    height: 97px;
-    margin-bottom: 16px;
-    border-bottom: solid 1px #f5f5f5;
+    background: white;
+    .single-container-session-top{
+      margin:0 auto;
+      line-height: 1.5;
+      font-size:14px;
+      height: 97px;
+      margin-bottom: 16px;
+      border-bottom: solid 1px #f5f5f5;
       .new-registration{
         border: 1px solid #0099e8;
         background: #0099e8;
@@ -148,37 +149,38 @@
           }
         }
       }
-      main.single-main{
-        section.l-single-container{
-          margin: 0 auto;
-          .forming{
-            .l-single-content{
-              border-bottom: 1px solid #f5f5f5;
-              width:343px;
-              margin:0 auto;
-              .form-group{
-                margin: 24px 0 0;
-                .form-text{
-                  margin: 8px 0 0;
-                  height: 48px;
-                  padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: #fff;
-                  line-height: 1.5;
-                  font-size: 16px;
-                  width: 100%;
-                }
-              }
-              .btn-default{
-                margin: 24px 0 50px;
-                background: #ea352d;
-                border: 1px solid #ea352d;
-                color: #fff;
+    }
+    .single-main{
+      margin-top:180px;
+      section.l-single-container{
+        margin: 0 auto;
+        .forming{
+          .l-single-content{
+            border-bottom: 1px solid #f5f5f5;
+            width:343px;
+            margin:0 auto;
+            .form-group{
+              margin: 24px 0 0;
+              .form-text{
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
                 width: 100%;
-                height:50px;
-                font-size: 14px;
               }
+            }
+            .btn-default{
+              margin: 24px 0 50px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              width: 100%;
+              height:50px;
+              font-size: 14px;
             }
           }
         }
@@ -187,10 +189,14 @@
   }
   .footer.single-footer{
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    z-index: 1;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
     height:250px;
     z-index: 1;
     padding: 40px 0;
@@ -205,17 +211,9 @@
             color: #333;
             font-size:14px;
             text-decoration: none;
-
           }
         }
       }
-    }
-    a.single-footer-logo{
-      // img{
-      //   width: 500px;
-      //   height: 65px;
-      //   margin: 40px auto 0;
-      // }
     }
   }
 }
