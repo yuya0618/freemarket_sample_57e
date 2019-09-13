@@ -136,6 +136,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def brand
+    if cc_brands = Category.find(params[:gchildrenId]).sizes
+      @brands = cc_brands.where('name LIKE ?', "%#{params[:keyword]}%")
+    elsif cc_brands = Category.find(params[:childrenId]).sizes
+      @brands = cc_brands.where('name LIKE ?', "%#{params[:keyword]}%")
+    elsif pc_brands = Category.find(params[:parentId]).sizes
+      @brands = pc_brands.where('name LIKE ?', "%#{params[:keyword]}%")
+    else
+    end
+
+    render ''
+  end
 
 
   private

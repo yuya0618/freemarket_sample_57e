@@ -69,20 +69,18 @@ $(document).on('turbolinks:load', function() {
 
 
   $(document).on('change', '#item_category_id', function() {
+    let parentId = $('#item_category_parent_id').val();
     let childrenId = $('#item_category_children_id').val();
     let gchildrenId = $('#item_category_id').val();
-    console.log(childrenId);
     $.ajax({
       url: '/items/size',
       type: "GET",
       data: { childrenId: childrenId, gchildrenId: gchildrenId},
       dataType: 'script'
     })
-
     .done(function(){
       console.log('doooonesss!!');
     })
-
     .fail(function(jqXHR, textStatus, errorThrown){
       console.log('faaaaaailsss!!');
       // alert('ファイルの取得に失敗しました。');
@@ -93,6 +91,33 @@ $(document).on('turbolinks:load', function() {
       // console.log("URL            : " + url);
       $('.item-registration__form__detail__box__size').remove();
     })
+
+    let input = $("#item_brand_id").val();
+    $.ajax({
+      type: 'GET',
+      url: '/items/brand',
+      data: {
+        keyword: input,
+        patentId: parentId,
+        childrenId: childrenId,
+        gchildrenId: gchildrenId
+      },
+      dataType: 'json'
+    })
+    .done(function(users) {
+      $(".user-search-result").empty();
+      if (input.length !== 0) {
+        users.forEach(function(user){
+          var html = appendUser(user);
+          $(".user-search-result").append(html);
+        });
+      }
+    })
+    .fail(function(){
+      alert('通信に失敗しました');
+    });
+
+
   });
 
 

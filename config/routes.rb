@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'children'
       get 'gchildren'
       get 'size'
+      get 'brand'
     end
     resources :images, only: [:index, :create, :delete]
   end
