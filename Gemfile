@@ -95,6 +95,6 @@ gem 'breadcrumbs_on_rails'
 gem 'ancestry'
 gem 'turbolinks'
 gem 'rails-i18n'
-
-
+gem 'ransack'
+gem 'jquery-validation-rails'
 gem 'jquery-validation-rails'

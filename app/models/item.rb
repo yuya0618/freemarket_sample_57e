@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user
-  belongs_to :category
+  belongs_to :user ,optional: true
+  belongs_to :category ,optional: true
 
-  belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to_active_hash :size
 
   has_many :images, dependent: :destroy
@@ -11,6 +11,15 @@ class Item < ApplicationRecord
   has_one :order
 
   validates :name, presence: true, length: { maximum: 40}
+  validates :price, presence: true
+  validates :details, presence: true
+  validates :condition, presence: true
+  validates :delivery_fee, presence: true
+  validates :delivery_method, presence: true
+  validates :delivery_location, presence: true
+  validates :delivery_term, presence: true
+  validates :user_id, presence: true
+  validates :category_id, presence: true
 
 
   enum condition: {'---': 0, '新品、未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, 'やや傷や汚れあり': 4, '傷や汚れあり': 5, '全体的に状態が悪い': 6}, _prefix: true
