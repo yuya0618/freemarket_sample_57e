@@ -1,6 +1,7 @@
 FactoryBot.define do
 
   factory :item do
+
     name                  {"Supremeパーカー"}
     price                 {"5000"}
     details                {"使用予定なしのため出品します"}

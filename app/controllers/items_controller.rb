@@ -7,13 +7,14 @@ class ItemsController < ApplicationController
   add_breadcrumb 'メルカリ', '/'
 
   def index
+    @all_items = Item.all
     @items = Item.order("created_at DESC").limit(4)
     @women_items = Item.where(category_id:159..365).order("created_at DESC").limit(4)
     @mens_items = Item.where(category_id:357..500).order("created_at DESC").limit(4)
     @baby_items = Item.where(category_id:501..634).order("created_at DESC").limit(4)
     @interior_items = Item.where(category_id:635..774).order("created_at DESC").limit(4)
     @chanel_items = Item.where(brand_id:2447)
-    .or(Item.where(brand_id:8376))
+    .or(Item.where(brand_id:8386))
     .or(Item.where(brand_id:11783))
     .or(Item.where(brand_id:12826))
     .or(Item.where(brand_id:13618)).order("created_at DESC").limit(4)
@@ -63,7 +64,6 @@ class ItemsController < ApplicationController
 
 
   def create
-    binding.pry
     @item = Item.create!(item_params)
     @item.images.create!(image_params)
     redirect_to root_path, notice: '商品が投稿されました'
@@ -79,6 +79,10 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy if @item.user == current_user
     redirect_to list_user_path(current_user.id)
+  end
+
+  def search
+    add_breadcrumb params[:q][:name_or_details_cont]
   end
 
   def buy

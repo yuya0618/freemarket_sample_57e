@@ -1,0 +1,38 @@
+-# - binding.pry
+= render partial: 'shared/search-header'
+
+%main.main-container
+  = render 'shared/search-side'
+
+  .search-content
+    %h1
+      %span.bold
+        = insert_item(params[:q][:name_or_details_cont])
+      の検索結果
+    %p.count
+      = @search_items.count
+      件ヒットしました
+    .items-container
+      .items-box
+        -@search_items.each do |item|
+          .item-box
+            = link_to item_path(item) do
+              .item-box-photo
+                = image_tag item.images.first.image[0].url, class:"item-box-photo-pic"
+              .item-box-body
+                %h3.item-box-body-name
+                  = item.name
+                .item-box-body-num
+                  .item-box-body-num-price
+                    %span¥
+                    =item.price.to_s(:delimited)
+                  .item-box-body-num-like
+                    %i.item-box-body-num-like-icon ♡
+                    %span 18
+
+
+.bread
+  = render_breadcrumbs separator: ' > '
+= render partial: 'shared/sell-btn'
+= render partial: 'shared/bottom-banner'
+= render partial: 'shared/footer-black'

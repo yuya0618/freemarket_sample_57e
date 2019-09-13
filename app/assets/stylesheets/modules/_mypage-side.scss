@@ -1,6 +1,18 @@
 .main-side {
   margin-right: 40px;
   width: 280px;
+  .select{
+    &-box{
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      height: 45px;
+    }
+  }
+  .search-box{
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    margin-top:40px;
+  }
 }
 .mypage-nav li {
   background-color: rgb(255, 255, 255);

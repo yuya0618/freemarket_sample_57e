@@ -48,9 +48,9 @@
           = current_user.address.address_number
           %br
           = current_user.address.building
-          -# 本名にする
           %br
-          = current_user.nickname
+          = current_user.firstname
+          = current_user.lastname
         .confirm-link
           = link_to("変更する＞","#")
       .confirm-user.confirm-user--btm
@@ -68,7 +68,7 @@
             %span /
             = @cards[0]["exp_year"] % 100
           .confirm-link
-            = link_to("変更する＞","#")
+            = link_to("変更する＞",payment_user_path(current_user.id))
 
 
 
