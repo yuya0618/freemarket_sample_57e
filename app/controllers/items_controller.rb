@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     @baby_items = Item.where(category_id:501..634).order("created_at DESC").limit(4)
     @interior_items = Item.where(category_id:635..774).order("created_at DESC").limit(4)
     @chanel_items = Item.where(brand_id:2447)
-    .or(Item.where(brand_id:8376))
+    .or(Item.where(brand_id:8386))
     .or(Item.where(brand_id:11783))
     .or(Item.where(brand_id:12826))
     .or(Item.where(brand_id:13618)).order("created_at DESC").limit(4)
