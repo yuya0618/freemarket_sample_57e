@@ -229,6 +229,32 @@
               p.form-info-text{
               }
             }
+            #emsg_nickname,
+            #emsg_email,
+            #emsg_password,
+            #emsg_password_confirmation,
+            #emsg_firstname,
+            #emsg_firstname_kana,
+            #emsg_lastname,
+            #emsg_lastname_kana,
+            #emsg_birth_year,
+            #emsg_birth_month,
+            #emsg_birth_day,
+            #emsg_phone_number,
+            #emsg_zipcode,
+            #emsg_address_prefecture,
+            #emsg_address_city,
+            #emsg_address_number,
+            #emsg_building{
+              font-weight: 300;
+              color:#EA352D;
+              padding-top:10px;
+              font-size:12px;
+              line-height: 16px;
+              span{
+                font-weight: 600;
+              }
+            }
             .l-single-content{
               .form-group{
                 .g-recaptcha.signup-recaptcha{

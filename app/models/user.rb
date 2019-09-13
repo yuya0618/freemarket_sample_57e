@@ -40,18 +40,17 @@ class User < ApplicationRecord
   has_many :items
 
   # バリデーション
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email,presence: true, format: { with: VALID_EMAIL_REGEX }
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email,presence: true
   validates :nickname, presence:true
   validates :firstname, presence:true
   validates :lastname, {presence:true}
-  validates :firstname_kana, presence: true, format:  {with: /\A[\p{katakana}\p{blank}ー－]+\z/} #カタカナ表記
-  validates :lastname_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} #カタカナ表記
+  validates :firstname_kana, presence: true
+  validates :lastname_kana, presence: true
   validates :birth_year, presence:true
   validates :birth_month, presence:true
   validates :birth_day, presence:true
-  validates :password, presence: true, length: { minimum: 7 }  #7文字以上
-  validates :password_confirmation, presence: true, length: { minimum: 7 } #7文字以上
-  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
-  validates :phone_number, presence: true, format: { with: VALID_PHONE_REGEX } #10桁もしくは11桁
+  validates :password, presence: true, length: { minimum: 6 }  #7文字以上
+  validates :password_confirmation, presence: true, length: { minimum: 6 } #7文字以上
+  validates :phone_number, presence: true
 end
