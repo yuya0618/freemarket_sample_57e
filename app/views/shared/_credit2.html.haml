@@ -25,8 +25,7 @@
         %label 有効期限
         %span.form-require 必須
         %br/
-        .birthday-select-wrap
-          .select-wrap
+        .card-select-wrap
           %select#exp_month{name: "exp_month", type: "text"}
             %option{value: ""} --
             %option{value: "1"} 1
@@ -42,7 +41,6 @@
             %option{value: "11"} 11
             %option{value: "12"} 12
           %span 月
-          .select-wrap
           %select#exp_year{name: "exp_year", type: "text"}
             %option{value: ""} --
             %option{value: "2019"} 19

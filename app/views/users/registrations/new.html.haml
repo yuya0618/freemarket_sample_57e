@@ -9,7 +9,7 @@
       新規会員登録
     .single-container-registration__link
       = link_to signup_registration_path, class: 'single-container-registration__link__e-mail' do
-        = fa_icon 'envelope', class: 'icon'
+        = fa_icon 'envelope', class: 'icon', size: "25×25" 
         メールアドレスで登録する
       = link_to user_facebook_omniauth_authorize_path, class: 'single-container-registration__link__facebook' do
         = image_tag "faebook_log.1.png", size: "25×25" 
