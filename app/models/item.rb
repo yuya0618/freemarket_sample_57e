@@ -20,8 +20,6 @@ class Item < ApplicationRecord
   validates :delivery_term, presence: true
   validates :user_id, presence: true
   validates :category_id, presence: true
-  validates :size_id, presence: true
-  validates :brand_id, presence: true
 
 
   enum condition: {'---': 0, '新品、未使用': 1, '未使用に近い': 2, '目立った傷や汚れなし': 3, 'やや傷や汚れあり': 4, '傷や汚れあり': 5, '全体的に状態が悪い': 6}, _prefix: true
