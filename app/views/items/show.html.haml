@@ -10,22 +10,25 @@
 
         .item__info
           .item__left
-            //TODO 条件分岐
-            -# -if order_status == "soldout"
-            -#   .triangle
-            -#   .sold SOLD
-            -#   .item__left__main
-            -#     =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
-            -# -else
+            //購入された場合
+            -if @item.buyer_id != nil
+              .triangle
+              .sold SOLD
+              .item__left__main
+                =image_tag @item.images.first.image[0].url, class: "item__left__mainpic"
+              .item__left__sub1
+                -@images.each do |image|
+                  =image_tag image.image[0].url, class: "item__left__subpic"
 
-            .item__left__main
-              =image_tag @item.images.first.image[0].url, class: "item__left__mainpic"
+              .item__left__sub2
+            -else
+              .item__left__main
+                =image_tag @item.images.first.image[0].url, class: "item__left__mainpic"
+              .item__left__sub1
+                -@images.each do |image|
+                  =image_tag image.image[0].url, class: "item__left__subpic"
 
-            .item__left__sub1
-              -@images.each do |image|
-                =image_tag image.image[0].url, class: "item__left__subpic"
-
-            .item__left__sub2
+              .item__left__sub2
 
           .item__right
             %table
@@ -112,8 +115,12 @@
           .description
             = @item.details
         - else
-          .check
-            =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
+          -if @item.buyer_id != nil
+            .check
+              =link_to "売り切れました", "#", class: "to_selled"
+          -else
+            .check
+              =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
 
           .description
             = @item.details
@@ -146,9 +153,6 @@
         %textarea
       .action
         %button コメントする
-      -# コメント部分実装なし
-
-    -# TODO １をcurrent_user.idにする
 
     - unless @item.user_id == current_user&.id
 

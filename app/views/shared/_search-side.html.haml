@@ -1,10 +1,69 @@
-.main-side
-  .select
-    %select.select-box
+= search_form_for(Item.ransack(params[:q]), url:search_items_path, class: "main-side__form") do |f|
+  .main-search
+    .select
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] },class:"sort-box" )
 
-  .search-box
-  -#   = form_with model: @item, class:'item-registration__form', id: 'item-registration-form', local: true, html: { multipart: true } do |f|
-  -#   %h1 詳細検索
-  -#   %h1 ➕キーワードを追加する
-  -#   = f.text_field :name, value: ""
+    .search-box
+      %h3.search-box-title
+        詳細検索
+      -# キーワード検索
+      .search-box-group
+        %label
+          = fa_icon "plus", class: "search-box-group-icon"
+          %span
+            キーワードを追加する
+        = f.text_field :name_or_details_cont, class: "search-box-group-form"
+      -# カテゴリー選択
+      .search-box-group.item-registration__form__detail__box__category
+        %label
+          = fa_icon "list", class: "search-box-group-icon"
+          %span
+            カテゴリーを選択する
+        = f.collection_select :category_id, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
+      -# ブランド選択
+      .search-box-group
+        %label
+          = fa_icon "tag", class: "search-box-group-icon"
+          %span
+            ブランドを選択する
+        = f.text_field :brand_id_eq, placeholder:'例) シャネル', class: 'search-box-group-form'
+      -# サイズ選択
+      .search-box-group
+        %label
+          = fa_icon "expand", class: "search-box-group-icon"
+          %span
+            サイズを選択する
+        = f.collection_select :size_id_eq, Size.all, :id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
+      -# 価格検索
+      .search-box-group
+        %label
+          = fa_icon "dollar", class: "search-box-group-icon"
+          %span
+            価格
+        %div
+          = f.search_field :price_gteq, placeholder: "¥ Min", class: "search-box-group-halfform"
+          %span ~
+          = f.search_field :price_lteq, placeholder: "¥ Max", class: "search-box-group-halfform"
+      -# 商品の状態
+      .search-box-group
+        %label
+          = fa_icon "star", class: "search-box-group-icon"
+          %span
+            商品の状態
+        %div
+          .search-box-group-checkbox
+            -# = f.collection_check_boxes :condition, Item.conditions.keys, :id, :name, include_blank: "指定なし"
+      -# 配送料の負担
+      .search-box-group
+        %label
+          = fa_icon "truck", class: "search-box-group-icon"
+          %span
+            配送料の負担
+        %div
+          .search-box-group-checkbox
+            -# = f.collection_check_boxes :delivery_fee, Item.delivery_fees.keys, :id, :name, include_blank: "指定なし"
+      -# 検索ボタン
+      .search-box-btn
+        %input.search-box-btn-left{ type: "reset", value: "クリア"}
+        = f.submit class: "search-box-btn-right"
 

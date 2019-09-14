@@ -41,7 +41,6 @@ $(document).on('turbolinks:load', function() {
     })
   });
 
-
   $(document).on('change', '#item_category_children_id', function() {
     let childrenId = $('#item_category_children_id').val();
     console.log(childrenId);
