@@ -204,24 +204,4 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
-
     pm: 午後
-
-
-# ja:
-#  activerecord:
-#  models:
-#  attributes:
-#  user:
-#  nicknamename: 名前
-#  email: メールアドレス
-#  password: パスワード
-#  firstname: 名前（性）
-#  firstname_kana: ナマエ
-#  lastname: 名前（名）
-#  lastname_kana: ナマエ
-#  birth_year: 誕生日（年）
-#  birth_month: 誕生日（月）
-#  birth_day: 誕生日（日）
-#  phone_number: 電話番号
-
