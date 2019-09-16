@@ -1,0 +1,9 @@
+.item-registration__form__detail__box__brand
+  %span.item-registration__form__detail__box__category__label ブランド
+  %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
+  .select-box.select-box-top
+    -# = f.text_field :brand_name, placeholder:'例) シャネル', class: 'select-box__body'
+    -# = f.text_field :brand_id, class: 'brand-id-hidden'
+    = text_field_tag 'item[brand_name]', '', placeholder:'例) シャネル', class: 'select-box__body'
+    = text_field_tag 'item[brand_id]', '', class: 'brand-id-hidden'
+    .brand-suggest

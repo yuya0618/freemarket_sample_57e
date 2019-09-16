@@ -1,0 +1,2 @@
+$('.delivery-method').remove();
+$(".delivery-fee").after("<%= j(render partial: 'items/delivery_method', locals: { delivery_methods: @delivery_methods}) %>");
