@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'complete'
     end
     collection do
+      get 'searchChild'
+      get 'searchGchild'
       get 'children'
       get 'gchildren'
       get 'size'

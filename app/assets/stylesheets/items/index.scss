@@ -84,12 +84,13 @@
           width: 213px;
           margin: 0 0 0 20px;
           &-photo{
+            position: relative;
             width: 213px;
             height: 213px;
-            &-pic{
-              height: 100%;
-              width:100%;
-            }
+              &-pic{
+                height: 100%;
+                width:100%;
+              }
           }
           &-body{
             height: 110px;
