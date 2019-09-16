@@ -17,10 +17,5 @@
       = link_to user_google_oauth2_omniauth_authorize_path, class: 'single-container-registration__link__google' do
         = image_tag "google_logo.png", size: "25×25" 
         Googleで登録する
-    %script{:src => "https://kmdsbng.github.io/zipcode_jp/api.js"}
-    :javascript
-      ZipCodeJp.setZipCodeBaseUrl('https://https://github.com/okamokokorooo/zipcode_jp')
-      複数住所に結びついてる郵便番号例: 4980000, 9070000, 8070042
-      #container
   .footer.single-footer
     = render 'shared/loginfooter'
