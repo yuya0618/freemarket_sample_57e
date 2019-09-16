@@ -117,7 +117,7 @@
         - else
           -if @item.buyer_id != nil
             .check
-              =link_to "売り切れました", "#", class: "to_selled"
+              =link_to "売り切れました", "", class: "to_selled",disabled:true
           -else
             .check
               =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
@@ -138,7 +138,7 @@
           = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
         %p or
         .edit-delete
-          = link_to "出品を一旦中止する",root_path, class:"edit-delete_btn"
+          = link_to "出品を一旦中止する","", class:"edit-delete_btn",disabled:true
         .edit-delete
           = link_to "この商品を削除する",item_path(@item), method: :delete, class:"edit-delete_btn"
 

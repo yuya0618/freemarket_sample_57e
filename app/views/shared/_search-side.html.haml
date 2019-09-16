@@ -52,7 +52,7 @@
             商品の状態
         %div
           .search-box-group-checkbox
-            -# = f.collection_check_boxes :condition, Item.conditions.keys, :id, :name, include_blank: "指定なし"
+            = f.collection_check_boxes :condition_in, Condition.all,:id, :name, include_blank: "指定なし"
       -# 配送料の負担
       .search-box-group
         %label
@@ -61,7 +61,7 @@
             配送料の負担
         %div
           .search-box-group-checkbox
-            -# = f.collection_check_boxes :delivery_fee, Item.delivery_fees.keys, :id, :name, include_blank: "指定なし"
+            = f.collection_check_boxes :delivery_fee_in, DeliveryFee.all, :id, :name, include_blank: "指定なし"
       -# 検索ボタン
       .search-box-btn
         %input.search-box-btn-left{ type: "reset", value: "クリア"}

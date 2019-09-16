@@ -1,3 +1,4 @@
 .select-box.select-box-top
-  -# = f.collection_select :category_id_eq, Category.all.where(ancestry: '1/14'),:id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
-  = select_tag :category_id_eq, options_from_collection_for_select( gchildren, :id, :name), {prompt: '---', class: 'search-box-group-form'}
+= search_form_for(Item.ransack(params[:q]), url:search_items_path, class: "main-side__form") do |f|
+  .search-box-group-checkbox2
+    = f.collection_check_boxes :category_id_in, Category.where(ancestry: '1/14'), :id, :name, include_blank: "指定なし"

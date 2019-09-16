@@ -64,9 +64,14 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.create!(item_params)
-    @item.images.create!(image_params)
-    redirect_to root_path, notice: '商品が投稿されました'
+    @item = Item.new(item_params)
+    if @item.images.present?
+      @item.save!
+      @item.images.create!(image_params)
+      redirect_to root_path, notice: '商品が投稿されました'
+    else
+      redirect_to new_item_path, notice:'必須項目が入力されていません'
+    end
   end
 
 
