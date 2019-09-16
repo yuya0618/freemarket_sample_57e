@@ -1,0 +1,4 @@
+%ul.brand-suggest__list
+  - brands.each do |brand|
+    %li{id: brand[:id]}
+      = brand[:name]

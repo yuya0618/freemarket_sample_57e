@@ -1,0 +1,7 @@
+.delivery-method
+  %span.item-delivery__box__label 配送方法
+  %span.item-delivery__box__necessary 必須
+  .select-box.select-box-top
+    -# collection_selectにする
+    -# =f.select :delivery_method, Item.delivery_method_cods.keys, {}, {class: 'select-box__body'}
+    = select_tag 'item[delivery_method]', options_for_select( delivery_methods ), { class: 'select-box__body'}

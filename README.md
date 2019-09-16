@@ -108,6 +108,9 @@ Column|Type|Options|
 - has_many :items
 - has_many :categories_sizes
 - has_many :sizes, through: :categories_sizes
+- has_many :brands_categories
+- has_many :brands, through: :brands_categories
+
 <!-- 自己結合でなく'ancestry'gemを使うことにした -->
 <!-- - belongs_to :parent, class_name: 'Category', optional: true
 - has_many :children, class_name: 'Category', foreign_key: 'parent_id' -->
@@ -117,9 +120,12 @@ has_ancestry
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
+- has_many :categories
+- has_many :categories, through: brands_categories
 
 ## categories_sizesテーブル
 |Column|Type|Options|
@@ -130,6 +136,17 @@ has_ancestry
 ### Association
 - belongs_to :size
 - belongs_to :category
+
+## brands_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_id|references|null: false, foreign_key: true|
+|category_id|refernces|null: false, foreign_key: true|
+
+### Association
+- belongs_to :brand
+- belongs_to :category
+
 
 ## imagesテーブル
 |Column|Type|Options|

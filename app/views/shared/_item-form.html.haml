@@ -11,15 +11,21 @@
         %span.item-registration__form__group__box__label.large-label 出品画像
         %span.item-registration__form__group__box__necessary 必須
         %p.item-registration__form__group__notice 最大10枚までアップロードできます
-        = f.fields_for :images do |fin|
-          =fin.label :image, multiple: true do
-            .item-registration__form__group__image
-              .nest-form
-                .preview
-                .nest-form__head
-                  = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
-                  %p ドラッグアンドドロップ
-                  %p またはクリックしてファイルをアップロード
+
+        .item-registration__form__group__image-wrapper
+          .dropzone-previews
+          .item-registration__form__group__image{id: 'file-drop-area'}
+
+        -# = f.fields_for :images do |fin|
+        -#   =fin.label :image, multiple: true do
+        -#     .item-registration__form__group__image{id: 'file-drop-area'}
+        -#       .nest-form
+        -#         .dropzone-previews
+        -#         .nest-form__head
+        -#           = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
+        -#           %p ドラッグアンドドロップ
+        -#           %p またはクリックしてファイルをアップロード
+                  
       -# 商品名・説明
       .item-registration__form__group
         -# 商品名
@@ -62,13 +68,13 @@
           -# .select-box.select-box-top
           -#   = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
           -# ブランド(仮)
-          .item-registration__form__detail__box__brand
-            %span.item-registration__form__detail__box__category__label ブランド
-            %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
-          .select-box.select-box-top
-            -# = f.collection_select :brand_id, @brands,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-            = f.text_field :brand_id, placeholder:'例) シャネル', class: 'select-box__body'
-
+          -# .item-registration__form__detail__box__brand
+          -#   %span.item-registration__form__detail__box__category__label ブランド
+          -#   %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
+          -# .select-box.select-box-top
+          -#   = f.text_field :brand_name, placeholder:'例) シャネル', class: 'select-box__body'
+          -#   = f.text_field :brand_id, class: 'brand-id-hidden'
+          -#   .brand-suggest
 
 
 
@@ -77,7 +83,6 @@
             %span.item-registration__form__group__box__label 商品の状態
             %span.item-registration__form__group__box__necessary 必須
           .select-box
-            -# collection_selectにする
             = f.select :condition, Item.conditions.keys, {}, {class: 'select-box__body'}
             -# = f.text_field :category_id, value:'---', class: 'select-box__body'
 
@@ -89,16 +94,15 @@
           -# 配送料の負担
           %span.item-delivery__box__label 配送料の負担
           %span.item-delivery__box__necessary 必須
-          .select-box.select-box-top
-            -# collection_selectにする
-            =f.select :delivery_fee, Item.delivery_fees.keys, {}, {class: 'select-box__body'}
-            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
+          .select-box.select-box-top.delivery-fee
+            -# =f.select :delivery_fee, Item.delivery_fees.keys, {}, {class: 'select-box__body'}
+            =f.select :delivery_fee, Item.delivery_fees.keys,{}, {class: 'select-box__body'}
           -# 配送方法
-          %span.item-delivery__box__label 配送方法
-          %span.item-delivery__box__necessary 必須
-          .select-box.select-box-top
-            -# collection_selectにする
-            =f.select :delivery_method, Item.delivery_methods.keys, {}, {class: 'select-box__body'}
+          -# .delivery-method
+          -#   %span.item-delivery__box__label 配送方法
+          -#   %span.item-delivery__box__necessary 必須
+          -#   .select-box.select-box-top
+          -#     =f.select :delivery_method, Item.delivery_method_cods.keys, {}, {class: 'select-box__body'}
 
 
           -# 発送元の地域

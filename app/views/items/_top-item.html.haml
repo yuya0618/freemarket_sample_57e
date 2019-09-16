@@ -1,6 +1,7 @@
 .item-box
   = link_to item_path(item) do
     .item-box-photo
+
       -if item.buyer_id != nil
         = image_tag item.images.first.image[0].url, class:"item-box-photo-pic"
         .triangle
@@ -8,6 +9,7 @@
         .item__left__main
       -else
         = image_tag item.images.first.image[0].url, class:"item-box-photo-pic"
+
     .item-box-body
       %h3.item-box-body-name
         = item.name

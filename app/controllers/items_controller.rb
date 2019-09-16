@@ -64,14 +64,24 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.new(item_params)
-    if @item.images.present?
-      @item.save!
-      @item.images.create!(image_params)
-      redirect_to root_path, notice: '商品が投稿されました'
-    else
-      redirect_to new_item_path, notice:'必須項目が入力されていません'
+    #
+    # @item = Item.new(item_params)
+    # if @item.images.present?
+    #   @item.save!
+    #   @item.images.create!(image_params)
+    #   redirect_to root_path, notice: '商品が投稿されました'
+    # else
+    #   redirect_to new_item_path, notice:'必須項目が入力されていません'
+    # end
+
+
+    @item = Item.create!(item_params)
+    # @item.images.create!(image_params)
+    image_params[:image].each do |num, image|
+      @item.images.create(image: image, item_id: @item.id)
     end
+    redirect_to root_path, notice: '商品が投稿されました'
+
   end
 
 
@@ -120,10 +130,7 @@ class ItemsController < ApplicationController
 
   def children
     @children = Category.find(params[:parentId].to_i).children
-    respond_to do |format|
-      format.html { redirect_to :root }
-      format.js { render 'children.js.erb'}
-    end
+    render 'children.js.erb'
   end
 
   def searchChild
@@ -137,10 +144,7 @@ class ItemsController < ApplicationController
 
   def gchildren
     @gchildren = Category.find(params[:childrenId].to_i).children
-    respond_to do |format|
-      format.html { redirect_to :root }
-      format.js { render 'gchildren.js.erb'}
-    end
+    render 'gchildren.js.erb'
   end
 
   def searchGchild
@@ -155,22 +159,47 @@ class ItemsController < ApplicationController
     if Category.find(params[:childrenId].to_i).categories_sizes != []
       ccat_sizes = Category.find(params[:childrenId].to_i).categories_sizes.map{|x| x[:size_id]}
       @size = Size.where(id: ccat_sizes)
-      respond_to do |format|
-        format.html { redirect_to :root }
-        format.js { render 'size.js.erb'}
-      end
+        render 'size.js.erb'
     elsif Category.find(params[:gchildrenId].to_i).categories_sizes != []
       gcat_sizes = Category.find(params[:gchildrenId].to_i).categories_sizes.map{|x| x[:size_id]}
       @size = Size.where(id: gcat_sizes)
-      respond_to do |format|
-        format.html { redirect_to :root }
-        format.js { render 'size.js.erb'}
-      end
+      render 'size.js.erb'
     else
     end
   end
 
+  def brand
+    if Category.find(params[:gchildrenId]).brands != [] \
+      || Category.find(params[:childrenId]).brands != [] \
+      || Category.find(params[:childrenId]).brands != []
+      render 'brand.js.erb'
+    else
+    end
+  end
 
+  def brand_search
+    if Category.find(params[:gchildrenId]).brands != []
+      @brands = Category.find(params[:gchildrenId]).brands.where('name LIKE ?', "%#{params[:keyword]}%").limit(20)
+      render 'brand_search.js.erb'
+    elsif Category.find(params[:childrenId]).brands != []
+      @brands = Category.find(params[:childrenId]).brands.where('name LIKE ?', "%#{params[:keyword]}%").limit(20)
+      render 'brand_search.js.erb'
+    elsif Category.find(params[:parentId]).brands != []
+      @brands = Category.find(params[:parentId]).brands.where('name LIKE ?', "%#{params[:keyword]}%").limit(20)
+      render 'brand_search.js.erb'
+    else
+    end
+  end
+
+  def delivery_method
+    if params[:deliveryFee] == '送料込み(出品者負担)'
+      @delivery_methods = Item.delivery_methods.keys
+    elsif params[:deliveryFee] == '着払い(購入者負担)'
+      @delivery_methods = Item.delivery_method_cods.keys
+    else
+    end
+    render 'delivery_method.js.erb'
+  end
 
   private
     def set_item
@@ -195,7 +224,9 @@ class ItemsController < ApplicationController
     end
 
     def image_params
-      params.require(:images).permit({image: []})
+      # params.require(:images).permit({image: []})
+      params.require(:images).permit({image: {}})
+      # params.require(:images).permit(:image)
     end
 
     def set_card

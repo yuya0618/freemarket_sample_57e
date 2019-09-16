@@ -1,0 +1,2 @@
+$('.brand-suggest__list').remove();
+$(".brand-suggest").append("<%= j(render partial: 'items/brand-suggest', locals: { brands: @brands }) %>");

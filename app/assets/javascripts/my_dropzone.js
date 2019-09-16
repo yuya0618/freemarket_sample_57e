@@ -1,45 +1,38 @@
-// $(function() {
+$(function() {
 
-//   Dropzone.autoDiscover = false;
+  Dropzone.autoDiscover = false;
 
-//   let myDropzone = new Dropzone(".item-registration__form__group__image", {
-//     url: "/items",
-//     method: "post",
-//     uploadmultiple: true,
-//     parallelUploads: 10,
-//     paramName: "file",
-//     maxFiles: 10,
-//     addRemoveLinks: true,
-//     dictRemoveFile: "削除",
-//     autoProcessQueue: false
-//   });
+  let csrfToken = $('input[name="authenticity_token"]').val();
+  let myDropzone = new Dropzone("#file-drop-area", {
+    url: "/items",
+    uploadMultiple: true,
+    parallelUploads: 10,
+    paramName: "images[image]",
+    maxFiles: 10,
+    previewsContainer: '.dropzone-previews',
+    addRemoveLinks: true,
+    dictRemoveFile: "削除",
+    autoProcessQueue: false
+  });
 
-//   $('#item-registration-form').submit(function(e) {
-//     e.preventDefault();
-//     console.log(myDropzone);
-//     console.log('うーん');
+  $('#item-registration-form').submit(function(e) {
+    e.preventDefault();
+    let formDataAry = $(this).serializeArray();
+    console.log(formDataAry);
+    let csrfToken = $('input[name="authenticity_token"]').val();
+    // console.log(...formData.entries());
+    myDropzone.on("sending", function(file, xhr, formData) {
+      formData.append("authenticity_token", csrfToken);
+      formDataAry.forEach(function(fields){
+        formData.append(fields.name, fields.value);
+      })
+    });
+  
+    myDropzone.processQueue();
 
-//     let formData = new FormData(this);
-//     $.ajax({
-//       url: "/items",
-//       type: "post",
-//       data: formData,
-//       dataType: 'json',
-//       processData: false,
-//       contentType: false
-//     })
-//     .done(function(){
-//       console.log('doneaaa');
-//     })
-//     .fail(function(){
-//       alert('error');
-//     })
+  });
 
-//     myDropzone.processQueue();
-
-//   });
-
-// });
+});
 
 
 
