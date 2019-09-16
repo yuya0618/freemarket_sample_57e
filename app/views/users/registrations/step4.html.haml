@@ -62,6 +62,14 @@
                   = a.text_field :building, placeholder: "例）柳ビル103", class:"form-text"
                 #emsg_building
                 = f.submit "次へ進む", class: "btn-default"
+                -# #container.jsfiddle-container
+                  %form{:autocomplete => "nope"}
+                    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                      %input#zip.mdl-textfield__input{:autocomplete => "nope", :type => "text"}/
+                      %label.mdl-textfield__label{:for => "zip"} 郵便番号を入力
+                    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                      %input#state.mdl-textfield__input{:autocomplete => "nope", :type => "text"}/
+                      %label.mdl-textfield__label{:for => "state"} 都道府県
 
       .footer.single-footer
         = render 'shared/loginfooter'
