@@ -108,13 +108,13 @@ window.addEventListener("turbolinks:load", function() {
         katakana:"名(カナ) は全角カタカナで入力してください"
       },
       "user[birth_year]":{
-        required: "\"年\" は必須項目です"
+        required: "\"生年月日（年）\" は必須項目です"
       },
       "user[birth_month]":{
-        required: "\"月\" は必須項目です"
+        required: "\"生年月日（月）\" は必須項目です"
       },
       "user[birth_day]":{
-        required: "\"日\" は必須項目です"
+        required: "\"生年月日（日）\" は必須項目です"
       },
       "user[phone_number]":{
         required: "電話番号 は必須項目です",
