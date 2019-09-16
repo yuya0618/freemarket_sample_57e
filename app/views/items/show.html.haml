@@ -15,18 +15,18 @@
               .triangle
               .sold SOLD
               .item__left__main
-                =image_tag @item.images.first.image[0].url, class: "item__left__mainpic"
+                =image_tag @item.images.first.image_url, class: "item__left__mainpic"
               .item__left__sub1
                 -@images.each do |image|
-                  =image_tag image.image[0].url, class: "item__left__subpic"
+                  =image_tag image.image_url, class: "item__left__subpic"
 
               .item__left__sub2
             -else
               .item__left__main
-                =image_tag @item.images.first.image[0].url, class: "item__left__mainpic"
+                =image_tag @item.images.first.image_url, class: "item__left__mainpic"
               .item__left__sub1
                 -@images.each do |image|
-                  =image_tag image.image[0].url, class: "item__left__subpic"
+                  =image_tag image.image_url, class: "item__left__subpic"
 
               .item__left__sub2
 
