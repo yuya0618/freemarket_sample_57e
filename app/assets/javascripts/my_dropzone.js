@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', function() {
     myDropzone.processQueue();
 
     myDropzone.on("success", function(file, response) {
-      console.log(response);
+      eval(response);
     })
 
   });
