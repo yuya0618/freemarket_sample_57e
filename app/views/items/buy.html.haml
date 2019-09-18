@@ -8,7 +8,7 @@
       購入内容の確認
     .confirm-content
       .confirm-item
-        = image_tag @item.images.first.image[0].url, class: 'confirm-item__image'
+        = image_tag @item.images.first.image_url, class: 'confirm-item__image'
         %p.confirm-item__name
           - if @item.name.length > 39
             = @item.name.slice(0..38)

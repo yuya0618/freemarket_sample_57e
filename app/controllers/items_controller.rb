@@ -63,6 +63,17 @@ class ItemsController < ApplicationController
 
 
   def create
+    #
+    # @item = Item.new(item_params)
+    # if @item.images.present?
+    #   @item.save!
+    #   @item.images.create!(image_params)
+    #   redirect_to root_path, notice: '商品が投稿されました'
+    # else
+    #   redirect_to new_item_path, notice:'必須項目が入力されていません'
+    # end
+
+
     @item = Item.create!(item_params)
     image_params[:image].each do |num, image|
       @item.images.create(image: image, item_id: @item.id)
@@ -85,23 +96,31 @@ class ItemsController < ApplicationController
 
   def search
     add_breadcrumb params[:q][:name_or_details_cont]
+    @category_parent = Category.all.where(ancestry: nil)
+    @category_children = Category.all.where(ancestry: '1')
+    @category_gchildren = Category.all.where(ancestry: '1/14')
+    @brands = Brand.all.limit(200)
   end
 
   def buy
   end
 
   def purchase
-    cards = current_user.credit_cards
-    card = cards[0]
-    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
-    Payjp::Charge.create(
-      amount: @item.price,
-      customer: card.customer,
-      currency: 'jpy'
-    )
-      #TODO秋葉 db追加後、追記する
-      # @item.update(order_status: true, buyer_id: current_user.id)
-      redirect_to complete_item_path(@item)
+    if @item.buyer_id != nil
+      redirect_to root_path
+    else
+      cards = current_user.credit_cards
+      card = cards[0]
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer,
+        currency: 'jpy'
+      )
+        #購入したらbuyer_idが入る
+        @item.update(buyer_id: current_user.id)
+        redirect_to complete_item_path(@item)
+    end
   end
 
   def complete
@@ -112,9 +131,26 @@ class ItemsController < ApplicationController
     render 'children.js.erb'
   end
 
+  def searchChild
+    # binding.pry
+    @children = Category.find(params[:parentId].to_i).children
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js { render 'children-search.js.erb'}
+    end
+  end
+
   def gchildren
     @gchildren = Category.find(params[:childrenId].to_i).children
     render 'gchildren.js.erb'
+  end
+
+  def searchGchild
+    @gchildren = Category.find(params[:childrenId].to_i).children
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.js { render 'gchildren-search.js.erb'}
+    end
   end
 
   def size

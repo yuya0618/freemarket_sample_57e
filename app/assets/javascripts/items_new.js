@@ -15,7 +15,10 @@ $(document).on('turbolinks:load', function() {
     })
   });
 
+
+
   // 子カテゴリー選択すると孫カテゴリー出現
+
   $(document).on('change', '#item_category_children_id', function() {
     let childrenId = $('#item_category_children_id').val();
     $.ajax({
@@ -56,9 +59,9 @@ $(document).on('turbolinks:load', function() {
     $.ajax({
       url: '/items/brand',
       type: "GET",
-      data: { 
+      data: {
         parentId: parentId,
-        childrenId: childrenId, 
+        childrenId: childrenId,
         gchildrenId: gchildrenId
       },
       dataType: 'script'
@@ -80,10 +83,10 @@ $(document).on('turbolinks:load', function() {
       $.ajax({
         url: '/items/brand_search',
         type: "GET",
-        data: { 
+        data: {
           keyword: input,
           parentId: parentId,
-          childrenId: childrenId, 
+          childrenId: childrenId,
           gchildrenId: gchildrenId
         },
         dataType: 'script'

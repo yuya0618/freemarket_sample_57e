@@ -27,7 +27,7 @@
             .progress-status
             .progress-status2
     %main.single-main
-      = form_for @user, url: signup_credit_path, method: :get do |f|
+      = form_for @user, url: signup_credit_path, method: :get, html: { id: "user_signup-form"} do |f|
         = f.fields_for :address do |a|
           %section.l-single-container
             %h2.l-single-head.registration 発送元・お届け先住所入力
@@ -37,6 +37,7 @@
                   %label{for:"zip_code"} 郵便番号
                   %span.form-require 必須
                   = a.text_field :zip_code, placeholder: "例）123456", class:"form-text"
+                #emsg_zipcode
                 .form-group
                   %label{for: "ad"} 都道府県
                   %span.form-require 必須
@@ -44,19 +45,31 @@
                     .prefecture-wrap
                       %i.icon-arrow-bottom
                       = a.collection_select :prefecture_id, Prefecture.all, :id, :name
+                #emsg_address_prefecture
                 .form-group
                   %label{for: "adress_city"} 市区町村
                   %span.form-require 必須
                   = a.text_field :address_city, placeholder: "例）横浜市緑区", class:"form-text"
+                #emsg_address_city
                 .form-group
                   %label{for: "adress_number"} 番地
                   %span.form-require 必須
                   = a.text_field :address_number, placeholder: "例）123番地456号", class:"form-text"
+                #emsg_address_number
                 .form-group
                   %label{for: "building"} 建物名
                   %span.form-more 任意
                   = a.text_field :building, placeholder: "例）柳ビル103", class:"form-text"
+                #emsg_building
                 = f.submit "次へ進む", class: "btn-default"
+                -# #container.jsfiddle-container
+                  %form{:autocomplete => "nope"}
+                    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                      %input#zip.mdl-textfield__input{:autocomplete => "nope", :type => "text"}/
+                      %label.mdl-textfield__label{:for => "zip"} 郵便番号を入力
+                    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                      %input#state.mdl-textfield__input{:autocomplete => "nope", :type => "text"}/
+                      %label.mdl-textfield__label{:for => "state"} 都道府県
 
       .footer.single-footer
         = render 'shared/loginfooter'

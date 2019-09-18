@@ -1,3 +1,95 @@
+.main-search {
+  margin-right: 40px;
+  width: 260px;
+  .select{
+    height: 50px;
+    .sort-box{
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      height: 45px;
+      padding: 10px;
+    }
+  }
+  .search-box{
+    background-color: rgb(255, 255, 255);
+    margin-top:40px;
+    padding: 20px;
+    &-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: darkslategrey;
+    margin-bottom: 10px;
+    }
+    &-group{
+      margin-bottom: 15px;
+      label{
+        font-weight: 600;
+        font-size: 18px;
+        color: darkslategrey;
+      }
+      &-form{
+        border: solid 1px lightgray;
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        margin-top: 6px;
+      }
+      &-halfform{
+        width: 40%;
+        height: 40px;
+        border: solid 1px lightgray;
+        border-radius: 5px;
+        margin-top: 6px;
+      }
+      &-checkbox{
+        input{
+          margin-left: 50px;
+          margin-right: 5px;
+        }
+        input::before {
+          content: "\A" ;
+          white-space: pre ;
+        }
+        label{
+          font-size: 15px;
+          font-weight: 100;
+        }
+      }
+      &-checkbox2{
+        input{
+          margin-right: 5px;
+        }
+        input::before {
+          content: "\A" ;
+          white-space: pre ;
+        }
+        label{
+          font-size: 15px;
+          font-weight: 100;
+        }
+      }
+    }
+    &-btn{
+      display: flex;
+      &-left{
+        width: 50%;
+        height: 50px;
+        background-color: #aaa;
+        color: #fff;
+        margin-right: 10px;
+      }
+      &-right{
+        width: 50%;
+        height: 50px;
+        background-color: #ea352d;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
 .search-content{
   width:800px;
   .bold{

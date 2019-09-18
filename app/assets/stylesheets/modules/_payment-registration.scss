@@ -165,13 +165,16 @@ main.credit-main{
             font-size: 16px;
           }
           .birthday-select-wrap{
+            display:flex;
+            justify-content: space-around;
             .select-wrap{
-              display:flex;
-              margin: 8px 0 0;
-              width: calc(34% - 17px);
               height: 48px;
               background-color:white;
               display: flex;
+              .select-box{
+                width: 120px;
+                border: 1px solid lightgray;
+              }
               i.icon-arrow-bottom{
                 display:inline-block;
                 font-size: 8px;
@@ -187,6 +190,9 @@ main.credit-main{
                 height: 48px;
                 background-color:white;
                 display:flex;
+              }
+              span{
+                line-height: 48px;
               }
             }
           }
@@ -205,22 +211,14 @@ main.credit-main{
               }
             }
           }
-          span{
-          }
-          p.form-info-text{
-          }
         }
         .l-single-content{
-          .form-group{
-            .g-recaptcha.signup-recaptcha{
-            }
-            p.l-single-text.text-center{
+          p.l-single-text.text-center{
               a{
                 text-decoration: none;
               }
             }
           }
-        }
         .btn-default{
           margin: 24px 0 50px;
           background: #ea352d;
@@ -282,4 +280,13 @@ main.credit-main{
       }
     }
   }
+}
+.form-group{
+.cvc{
+width: 100%;
+height: 60px;
+border: 1px solid lightgray;
+border-radius: 5px;
+margin-top: 10px;
+}
 }

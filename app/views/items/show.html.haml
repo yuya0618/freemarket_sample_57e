@@ -10,22 +10,25 @@
 
         .item__info
           .item__left
-            //TODO 条件分岐
-            -# -if order_status == "soldout"
-            -#   .triangle
-            -#   .sold SOLD
-            -#   .item__left__main
-            -#     =image_tag "https://static.mercdn.net/thumb/photos/m45970728176_1.jpg?1564629716", class: "item__left__mainpic"
-            -# -else
+            //購入された場合
+            -if @item.buyer_id != nil
+              .triangle
+              .sold SOLD
+              .item__left__main
+                =image_tag @item.images.first.image_url, class: "item__left__mainpic"
+              .item__left__sub1
+                -@images.each do |image|
+                  =image_tag image.image_url, class: "item__left__subpic"
 
-            .item__left__main
-              =image_tag @item.images.first.image_url, class: "item__left__mainpic"
+              .item__left__sub2
+            -else
+              .item__left__main
+                =image_tag @item.images.first.image_url, class: "item__left__mainpic"
+              .item__left__sub1
+                -@images.each do |image|
+                  =image_tag image.image_url, class: "item__left__subpic"
 
-            .item__left__sub1
-              -@images.each do |image|
-                =image_tag image.image_url, class: "item__left__subpic"
-
-            .item__left__sub2
+              .item__left__sub2
 
           .item__right
             %table
@@ -112,8 +115,12 @@
           .description
             = @item.details
         - else
-          .check
-            =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
+          -if @item.buyer_id != nil
+            .check
+              =link_to "売り切れました", "", class: "to_selled",disabled:true
+          -else
+            .check
+              =link_to "購入画面に進む", buy_item_path(@item), class: "to_checkout"
 
           .description
             = @item.details
@@ -131,7 +138,7 @@
           = link_to "商品の編集",edit_item_path(@item), class:"edit-edit_btn"
         %p or
         .edit-delete
-          = link_to "出品を一旦中止する",root_path, class:"edit-delete_btn"
+          = link_to "出品を一旦中止する","", class:"edit-delete_btn",disabled:true
         .edit-delete
           = link_to "この商品を削除する",item_path(@item), method: :delete, class:"edit-delete_btn"
 
@@ -146,9 +153,6 @@
         %textarea
       .action
         %button コメントする
-      -# コメント部分実装なし
-
-    -# TODO １をcurrent_user.idにする
 
     - unless @item.user_id == current_user&.id
 
@@ -162,7 +166,7 @@
       -#   = link_to item_path(@previous), class:"page__btn1" do
       -#     %i.fa.fa-chevron-left
       -#     = @previous.name
-          
+
       -#   = link_to item_path(@next), class:"page__btn2" do
       -#     = @next.name
       -#     %i.fa.fa-chevron-right
@@ -201,5 +205,3 @@
   = render_breadcrumbs separator: ' > '
 = render partial: 'shared/bottom-banner'
 = render partial: 'shared/footer-black'
-
-
