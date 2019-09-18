@@ -1,0 +1,8 @@
+console.log(<%= @current_scrollY%>);
+let fromTop = -1*<%= @current_scrollY%>;
+console.log(fromTop);
+let fromTopPx = String(fromTop) + 'px';
+console.log(fromTopPx);
+$('.item-new-wrapper').css({ position: 'fixed', top: fromTop, width: '100%'});
+$(".create-modal-wrapper").append("<%= j(render partial: 'items/create-modal.html.haml', locals: {item: @item}) %>");
+$('.create-modal-wrapper').fadeIn();
