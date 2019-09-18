@@ -17,7 +17,7 @@
           .item-registration__form__group__image{id: 'file-drop-area'}
             %pre
               = preserve "ドラッグアンドドロップ\nまたはクリックしてファイルをアップロード"
-
+      %p.error-message__image
         -# = f.fields_for :images do |fin|
         -#   =fin.label :image, multiple: true do
         -#     .item-registration__form__group__image{id: 'file-drop-area'}
@@ -38,6 +38,7 @@
             %p.error= message
         .item-registration__form__group__box__select
           = f.text_field :name, placeholder: "商品名（必須40文字まで）", value: ""
+        %p.error-message__name
         -# 商品の説明
         %span.item-registration__form__group__box__label 商品の説明
         %span.item-registration__form__group__box__necessary 必須
@@ -46,6 +47,7 @@
             %p.error= message
         .item-registration__form__group__box__select
           = f.text_area :details, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        %p.error-message__details
 
       -# 商品の詳細
       .item-registration__form__detail
@@ -57,36 +59,14 @@
             %span.item-registration__form__detail__box__category__necessary 必須
             .select-box.select-box-top
               = f.collection_select :category_parent_id, @category_parent,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-            -# = render partial: 'items/categories', locals: {f: f}
-            -# .select-box.select-box-top
-            -#   = f.collection_select :category_child_id, @category_children,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-            -# .select-box.select-box-top
-            -#   = f.collection_select :category_id, @category_gchildren,:id, :name, {prompt: '---'}, {class: 'select-box__body'}
-
-          -# サイズ(仮)
-          -# .item-registration__form__detail__box__size
-          -#   %span.item-registration__form__detail__box__category__label サイズ
-          -#   %span.item-registration__form__detail__box__category__necessary 必須
-          -# .select-box.select-box-top
-          -#   = f.collection_select :size_id, Size.all, :id, :name, {}, {class: 'select-box__body'}
-          -# ブランド(仮)
-          -# .item-registration__form__detail__box__brand
-          -#   %span.item-registration__form__detail__box__category__label ブランド
-          -#   %span.item-registration__form__detail__box__category__necessary{style:"background:#ccc;"} 任意
-          -# .select-box.select-box-top
-          -#   = f.text_field :brand_name, placeholder:'例) シャネル', class: 'select-box__body'
-          -#   = f.text_field :brand_id, class: 'brand-id-hidden'
-          -#   .brand-suggest
-
-
-
+          %p.error-message__category
           -# 商品の状態
           .item-registration__form__detail__box__condition
             %span.item-registration__form__group__box__label 商品の状態
             %span.item-registration__form__group__box__necessary 必須
           .select-box
             = f.select :condition, Item.conditions.keys, {}, {class: 'select-box__body'}
-            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
+          %p.error-message__condition
 
       -# 配送について
       .item-delivery
@@ -97,8 +77,8 @@
           %span.item-delivery__box__label 配送料の負担
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top.delivery-fee
-            -# =f.select :delivery_fee, Item.delivery_fees.keys, {}, {class: 'select-box__body'}
             =f.select :delivery_fee, Item.delivery_fees.keys,{}, {class: 'select-box__body'}
+          %p.error-message__delivery-fee
           -# 配送方法
           -# .delivery-method
           -#   %span.item-delivery__box__label 配送方法
@@ -106,21 +86,19 @@
           -#   .select-box.select-box-top
           -#     =f.select :delivery_method, Item.delivery_method_cods.keys, {}, {class: 'select-box__body'}
 
-
           -# 発送元の地域
           %span.item-delivery__box__label 配送元の地域
           %span.item-delivery__box__necessary 必須
           .select-box.select-box-top
-            -# collection_selectにする
             = f.collection_select :delivery_location, Prefecture.all, :id, :name, {}, {class: 'select-box__body'}
-            -# = f.text_field :category_id, value:'---', class: 'select-box__body'
+          %p.error-message__delivery-location
 
           -# 発送までの日数
           %span.item-delivery__box__label 配送までの日数
           %span.item-delivery__box__necessary 必須
           .select-box
-            -# collection_selectにする
             =f.select :delivery_term, Item.delivery_terms.keys, {}, {class: 'select-box__body'}
+          %p.error-message__delivery-term
 
       -# 販売価格
       .item-price
@@ -134,6 +112,7 @@
             .price-box
               %span ¥
               = f.text_field :price, placeholder: "例）300", value: '', class:"price-box__body"
+            %p.error-message__price
           .item-price__box__list
             .item-price__box__list--left
               %p 販売手数料(10%)

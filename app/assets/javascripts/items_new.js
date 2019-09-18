@@ -147,4 +147,8 @@ $(document).on('turbolinks:load', function() {
   }
   })
 
+
+  // console.log($('.test-parent')[0]);
+  // if ($('.dropzone-previews')[0] == null)
+
 });

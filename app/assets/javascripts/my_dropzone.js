@@ -24,25 +24,30 @@ $(document).on('turbolinks:load', function() {
 
   $('#item-registration-form').submit(function(e) {
     e.preventDefault();
-    let formDataAry = $(this).serializeArray();
-    console.log(formDataAry);
-    let csrfToken = $('input[name="authenticity_token"]').val();
-    // console.log(...formData.entries());
-    let current_scrollY = $(window).scrollTop(); 
-    myDropzone.on("sending", function(file, xhr, formData) {
-      formData.append("authenticity_token", csrfToken);
-      formData.append("current_scrollY", current_scrollY)
-      formDataAry.forEach(function(fields){
-        formData.append(fields.name, fields.value);
+    console.log(itemValidation());
+    if (itemValidation() == false) {
+      errorMessage();
+    } else {
+      let formDataAry = $(this).serializeArray();
+      console.log(formDataAry);
+      let csrfToken = $('input[name="authenticity_token"]').val();
+      // console.log(...formData.entries());
+      let current_scrollY = $(window).scrollTop(); 
+      myDropzone.on("sending", function(file, xhr, formData) {
+        formData.append("authenticity_token", csrfToken);
+        formData.append("current_scrollY", current_scrollY)
+        formDataAry.forEach(function(fields){
+          formData.append(fields.name, fields.value);
+        })
+      });
+    
+      myDropzone.processQueue();
+
+      myDropzone.on("success", function(file, response) {
+        eval(response);
       })
-    });
-  
-    myDropzone.processQueue();
 
-    myDropzone.on("success", function(file, response) {
-      eval(response);
-    })
-
+    }
   });
 
 });
