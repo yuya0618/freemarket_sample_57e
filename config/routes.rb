@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get 'size'
       get 'brand'
       get 'brand_search'
+      get 'brand_search2'
       get 'delivery_method'
       get 'search'
     end

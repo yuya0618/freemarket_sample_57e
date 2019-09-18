@@ -191,6 +191,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def brand_search2
+    @brands = Brand.where('name LIKE ?', "%#{params[:keyword]}%").limit(20)
+    render 'brand_search.js.erb'
+  end
+
   def delivery_method
     if params[:deliveryFee] == '送料込み(出品者負担)'
       @delivery_methods = Item.delivery_methods.keys
