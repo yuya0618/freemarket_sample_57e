@@ -19,14 +19,16 @@
           = fa_icon "list", class: "search-box-group-icon"
           %span
             カテゴリーを選択する
-        = f.collection_select :category_id, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
+        = f.collection_select :category_id_eq, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form parent_category'}
       -# ブランド選択
       .search-box-group
         %label
           = fa_icon "tag", class: "search-box-group-icon"
           %span
             ブランドを選択する
-        = f.text_field :brand_id_eq, placeholder:'例) シャネル', class: 'search-box-group-form'
+        = f.text_field :brand_name_eq, placeholder:'例) シャネル', class: 'search-box-group-form'
+        = text_field_tag 'item[brand_id]', '', class: 'brand-id-hidden'
+        .brand-suggest
       -# サイズ選択
       .search-box-group
         %label

@@ -2,4 +2,5 @@
 = search_form_for(Item.ransack(params[:q]), url:search_items_path, class: "main-side__form") do |f|
   .search-box-group-checkbox2
     -# = f.collection_check_boxes :category_id_eq, Category.where(ancestry: '1/14'), :id, :name, include_blank: "指定なし"
-    = f.collection_check_boxes :category_id_eq, gchildren, :id, :name, include_blank: "指定なし"
+    = f.collection_check_boxes :category_id_in, gchildren, :id, :name, include_blank: "指定なし"
+    = f.submit class: "search-box-btn-right"
