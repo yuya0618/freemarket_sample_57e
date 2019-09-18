@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
 
   let myDropzone;
 
-  if ($("#file-drop-area")[0] != null){
+  if ($("#file-drop-area")[0] != null && myDropzone != undefined ){
     myDropzone = new Dropzone("#file-drop-area", {
       url: "/items",
       uploadMultiple: true,
@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function() {
       dictInvalidFileType: "Image file only",
       autoProcessQueue: false
     });
-  }
+  };
 
 
   $('#item-registration-form').submit(function(e) {
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', function() {
     myDropzone.processQueue();
 
     myDropzone.on("success", function(file, response) {
-      eval(response);
+      console.log(response);
     })
 
   });
