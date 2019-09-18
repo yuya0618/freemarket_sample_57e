@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
 
   let myDropzone;
 
-  if ($("#file-drop-area")[0] != null && myDropzone != undefined ){
+  if ($("#file-drop-area")[0] != null && myDropzone == undefined ){
     myDropzone = new Dropzone("#file-drop-area", {
       url: "/items",
       uploadMultiple: true,
