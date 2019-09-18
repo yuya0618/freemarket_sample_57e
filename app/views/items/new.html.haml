@@ -1,4 +1,16 @@
-= render 'shared/item-form'
+.item-new-wrapper
+  = render 'shared/item-form'
 
-.footer.single-footer
-  = render 'shared/loginfooter'
+  .footer.single-footer
+    = render 'shared/loginfooter'
+
+.create-modal-wrapper
+  -# .create-modal
+  -#   .create-modal__bg
+  -#   .create-modal__content
+  -#     %h3.create-modal__head
+  -#       出品が完了しました
+  -#     .create-modal__body
+  -#       あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+  -#       = link_to '続けて出品する', '#', class: 'create-modal__continue-link'
+  -#       = link_to '商品ページへ行ってシェアする', '#', class: 'create-modal__show-link'

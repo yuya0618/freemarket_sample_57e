@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
     .or(Item.where(brand_id:13052))
     .or(Item.where(brand_id:14448)).order("created_at DESC").limit(4)
     @supureme_items = Item.where(brand_id:8413).order("created_at DESC").limit(4)
-
   end
 
   def show
@@ -76,12 +75,11 @@ class ItemsController < ApplicationController
 
 
     @item = Item.create!(item_params)
-    # @item.images.create!(image_params)
     image_params[:image].each do |num, image|
       @item.images.create(image: image, item_id: @item.id)
     end
-    redirect_to root_path, notice: '商品が投稿されました'
-
+    @current_scrollY = params[:current_scrollY]
+    render 'create.js.erb'
   end
 
 
@@ -224,9 +222,7 @@ class ItemsController < ApplicationController
     end
 
     def image_params
-      # params.require(:images).permit({image: []})
       params.require(:images).permit({image: {}})
-      # params.require(:images).permit(:image)
     end
 
     def set_card
