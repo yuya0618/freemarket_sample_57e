@@ -2,20 +2,25 @@ $(document).on('turbolinks:load', function() {
 
   Dropzone.autoDiscover = false;
 
-  let myDropzone = new Dropzone("#file-drop-area", {
-    url: "/items",
-    uploadMultiple: true,
-    parallelUploads: 10,
-    paramName: "images[image]",
-    maxFiles: 10,
-    previewsContainer: '.dropzone-previews',
-    addRemoveLinks: true,
-    dictRemoveFile: "削除",
-    headers: {"Accept": "text/javascript"},
-    dictMaxFilesExceeded: "10 files limit",
-    dictInvalidFileType: "Image file only",
-    autoProcessQueue: false
-  });
+  let myDropzone;
+
+  if ($("#file-drop-area")[0] != null){
+    myDropzone = new Dropzone("#file-drop-area", {
+      url: "/items",
+      uploadMultiple: true,
+      parallelUploads: 10,
+      paramName: "images[image]",
+      maxFiles: 10,
+      previewsContainer: '.dropzone-previews',
+      addRemoveLinks: true,
+      dictRemoveFile: "削除",
+      headers: {"Accept": "text/javascript"},
+      dictMaxFilesExceeded: "10 files limit",
+      dictInvalidFileType: "Image file only",
+      autoProcessQueue: false
+    });
+  }
+
 
   $('#item-registration-form').submit(function(e) {
     e.preventDefault();

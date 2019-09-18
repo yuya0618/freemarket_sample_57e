@@ -147,4 +147,12 @@ $(document).on('turbolinks:load', function() {
   }
   })
 
+  $(function(){
+    if ($("#file-drop-area")[0] != null){
+      console.log('exists');
+    } else {
+      console.log('not exists');
+    }
+  })
+
 });
