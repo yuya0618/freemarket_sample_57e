@@ -14,7 +14,7 @@
         .item-registration__form__group-images
           -item.images.each do |image|
             .item-registration__form__group-images-image
-              = image_tag image.image[0].url,class:"item-registration__form__group-images-image-pic",style:"height:150px;"
+              = image_tag image.image_url,class:"item-registration__form__group-images-image-pic",style:"height:150px;"
               .item-registration__form__group-images-image-btn
                 .item-registration__form__group-images-image-btn-edit
                   = link_to "編集","#",class:"item-registration__form__group-images-image-btn-edit-btn"

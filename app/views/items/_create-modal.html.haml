@@ -1,0 +1,9 @@
+.create-modal
+  .create-modal__bg
+  .create-modal__content
+    %h3.create-modal__head
+      出品が完了しました
+    .create-modal__body
+      あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+      = link_to '続けて出品する', new_item_path, class: 'create-modal__continue-link'
+      = link_to '商品ページへ行ってシェアする', item_path(item), class: 'create-modal__show-link'

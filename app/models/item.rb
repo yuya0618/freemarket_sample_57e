@@ -12,7 +12,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 40}
   validates :price, presence: true
-  validates :details, presence: true
+  validates :details, presence: true, length: { maximum: 1000}
   validates :condition, presence: true
   validates :delivery_fee, presence: true
   validates :delivery_method, presence: true

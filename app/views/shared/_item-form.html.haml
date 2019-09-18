@@ -15,6 +15,8 @@
         .item-registration__form__group__image-wrapper
           .dropzone-previews
           .item-registration__form__group__image{id: 'file-drop-area'}
+            %pre
+              = preserve "ドラッグアンドドロップ\nまたはクリックしてファイルをアップロード"
 
         -# = f.fields_for :images do |fin|
         -#   =fin.label :image, multiple: true do
@@ -23,8 +25,8 @@
         -#         .dropzone-previews
         -#         .nest-form__head
         -#           = fin.file_field :image, multiple: true, name: 'images[image][]', style:"display:none;"
-        -#           %p ドラッグアンドドロップ
-        -#           %p またはクリックしてファイルをアップロード
+                  -# %p ドラッグアンドドロップ
+                  -# %p またはクリックしてファイルをアップロード
                   
       -# 商品名・説明
       .item-registration__form__group
@@ -145,16 +147,16 @@
 
       -# 確認事項と出品ボタン
       .item-registration__form__group
-        %div
+        %div.terms-n-exhibit
           = link_to '禁止されている出品', '#'
           %p 
           = link_to '行為', '#'
           %p を必ずご確認ください。
-        %div
+        %div.terms-n-exhibit
           %p またブランド品でシリアルナンバー等がある場合はご記載ください。
           = link_to '偽ブランドの販売', '#'
           %p は犯罪であり処罰される可能性があります。
-        %div
+        %div.terms-n-exhibit
           %p また、出品をもちまして
           = link_to '加盟店規約', '#'
           %p に同意したことになります。
