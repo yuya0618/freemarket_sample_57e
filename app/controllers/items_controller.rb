@@ -76,11 +76,11 @@ class ItemsController < ApplicationController
 
 
     @item = Item.create!(item_params)
-    # @item.images.create!(image_params)
     image_params[:image].each do |num, image|
       @item.images.create(image: image, item_id: @item.id)
     end
-    redirect_to root_path, notice: '商品が投稿されました'
+    @current_scrollY = params[:current_scrollY]
+    render 'create.js.erb'
 
   end
 
