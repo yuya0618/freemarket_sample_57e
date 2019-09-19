@@ -19,7 +19,7 @@
           = fa_icon "list", class: "search-box-group-icon"
           %span
             カテゴリーを選択する
-        = f.collection_select :category_id_eq, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form parent_category'}
+        = f.collection_select :category_id_gteq, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form parent_category'}
       -# ブランド選択
       .search-box-group
         %label
@@ -30,12 +30,39 @@
         = text_field_tag 'item[brand_id]', '', class: 'brand-id-hidden'
         .brand-suggest
       -# サイズ選択
-      .search-box-group
+      .search-box-group.size-area
         %label
           = fa_icon "expand", class: "search-box-group-icon"
           %span
             サイズを選択する
-        = f.collection_select :size_id_eq, Size.all, :id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
+        %select.search-box-group-form.size-select
+          %option
+            すべて
+          %option
+            洋服のサイズ
+          %option
+            キッズ服のサイズ
+          %option
+            メンズ靴のサイズ
+          %option
+            レディース靴のサイズ
+          %option
+            キッズ靴のサイズ
+          %option
+            テレビのサイズ
+          %option
+            タイヤのサイズ
+          %option
+            バイクのサイズ
+          %option
+            スキー板のサイズ
+          %option
+            カメラのサイズ
+          %option
+            スノーボードのサイズ
+          %option
+            アクセサリーのサイズ
+        -# = f.collection_select :size_id_eq, Size.all, :id, :name, {prompt: '---'}, {class: 'search-box-group-form'}
       -# 価格検索
       .search-box-group
         %label
@@ -64,6 +91,15 @@
         %div
           .search-box-group-checkbox
             = f.collection_check_boxes :delivery_fee_in, DeliveryFee.all, :id, :name, include_blank: "指定なし"
+      -# 販売状況
+      -# .search-box-group
+      -#   %label
+      -#     = fa_icon "search", class: "search-box-group-icon"
+      -#     %span
+      -#       販売状況
+      -#   %div
+      -#     .search-box-group-checkbox
+      -#       = f.collection_check_boxes :delivery_fee_in, DeliveryFee.all, :id, :name, include_blank: "指定なし"
       -# 検索ボタン
       .search-box-btn
         %input.search-box-btn-left{ type: "reset", value: "クリア"}

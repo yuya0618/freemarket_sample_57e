@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'children'
       get 'gchildren'
       get 'size'
+      get 'size_search'
       get 'brand'
       get 'brand_search'
       get 'brand_search2'
