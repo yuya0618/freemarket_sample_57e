@@ -1,6 +1,8 @@
 .select-box.select-box-top
-= search_form_for(Item.ransack(params[:q]), url:search_items_path, class: "main-side__form") do |f|
-  .search-box-group-checkbox2
-    -# = f.collection_check_boxes :category_id_eq, Category.where(ancestry: '1/14'), :id, :name, include_blank: "指定なし"
-    = f.collection_check_boxes :category_id_in, gchildren, :id, :name, include_blank: "指定なし"
-    = f.submit class: "search-box-btn-right"
+    .search-box-group-checkbox2
+        -gchildren.each do|gchild|
+            = check_box_tag '[q][category_id_in]', gchild.id
+            = gchild.name
+        -# = select_tag '[q][category_id_eq]', options_from_collection_for_select( gchildren, :id, :name), {prompt: '---', class: 'search-box-group-form gchild_category'}
+    -# = f.collection_check_boxes :category_id_in, gchildren, :id, :name, include_blank: "指定なし"
+    -# = f.submit class: "search-box-btn-right"

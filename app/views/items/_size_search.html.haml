@@ -1,0 +1,4 @@
+.search-box-group-checkbox3
+  -sizes.each do|size|
+    = check_box_tag '[q][size_id_in]', size.id
+    = size.name

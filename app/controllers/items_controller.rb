@@ -168,6 +168,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def size_search
+    # binding.pry
+    @sizes = Size.where(id: params[:sizeGroup])
+    render 'size_search.js.erb'
+  end
+
   def brand
     if Category.find(params[:gchildrenId]).brands != [] \
       || Category.find(params[:childrenId]).brands != [] \

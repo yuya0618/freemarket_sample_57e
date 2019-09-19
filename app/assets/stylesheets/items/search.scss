@@ -55,9 +55,30 @@
           font-weight: 100;
         }
       }
+      &-checkbox3{
+        font-size: 15px;
+        font-weight: 100;
+        color: darkslategray;
+        input{
+          margin-left: 87px;
+          margin-right: 5px;
+        }
+        input::before {
+          content: "\A" ;
+          white-space: pre ;
+        }
+        label{
+          font-size: 15px;
+          font-weight: 100;
+        }
+      }
       &-checkbox2{
+        font-size: 15px;
+        font-weight: 100;
+        color: darkslategray;
         input{
           margin-right: 5px;
+          margin-left: 67px;
         }
         input::before {
           content: "\A" ;

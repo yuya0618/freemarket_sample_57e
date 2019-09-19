@@ -16,7 +16,7 @@ class Size < ActiveHash::Base
     {id: 9, name: '4XL(5L以上)'},{id: 10, name: 'FREE SIZE'},
 
 
-
+    # アクセサリーサイズ
     {id: 11, name: 'XSサイズ以下'}, {id: 12, name: 'Sサイズ'},
     {id: 13, name: 'Mサイズ'}, {id: 14, name: 'Lサイズ'},
     {id: 15, name: 'XLサイズ'},{id: 16, name: 'XXLサイズ'},
