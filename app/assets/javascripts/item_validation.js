@@ -6,7 +6,7 @@ function itemValidation () {
     && $('#item_category_children_id').val() != ""
     && $('#item_category_id').val() != ""
     && $('#item_condition').val() != "---"
-    && $('#item_delivery_fee').val() != ""
+    && $('#item_delivery_fee').val() != "---"
     && $('#item_delivery_method').val() != "---"
     && $('#item_delivery_location').val() != ""
     && $('#item_delivery_term').val() != "---"
@@ -40,19 +40,19 @@ function errorMessage () {
   if ($('#item_category_parent_id').val() == "" || $('#item_category_children_id').val() == "" || $('#item_category_id').val() == "" ) {
     $('.error-message__category').text('選択してください')
   }
-  if ($('#item_condition').val() == "") {
+  if ($('#item_condition').val() == "---") {
     $('.error-message__condition').text('選択してください')
   }
-  if ($('#item_delivery_fee').val() == "") {
+  if ($('#item_delivery_fee').val() == "---") {
     $('.error-message__delivery-fee').text('選択してください')
   }
-  if ($('#item_delivery_method').val() == "") {
+  if ($('#item_delivery_method').val() == "---") {
     $('.error-message__delivery-method').text('選択してください')
   }
   if ($('#item_delivery_location').val() == "") {
     $('.error-message__delivery-location').text('選択してください')
   }
-  if ($('#item_delivery_term').val() == "") {
+  if ($('#item_delivery_term').val() == "---") {
     $('.error-message__delivery-term').text('選択してください')
   }
   if ($('#item_price').val() == "") {
