@@ -15,10 +15,7 @@ $(document).on('turbolinks:load', function() {
     })
   });
 
-
-
   // 子カテゴリー選択すると孫カテゴリー出現
-
   $(document).on('change', '#item_category_children_id', function() {
     let childrenId = $('#item_category_children_id').val();
     $.ajax({
@@ -146,7 +143,6 @@ $(document).on('turbolinks:load', function() {
     $('.item-price__box__list--right > h3').text('-');
   }
   })
-
 
   // console.log($('.test-parent')[0]);
   // if ($('.dropzone-previews')[0] == null)

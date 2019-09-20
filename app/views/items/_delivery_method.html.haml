@@ -5,3 +5,4 @@
     -# collection_selectにする
     -# =f.select :delivery_method, Item.delivery_method_cods.keys, {}, {class: 'select-box__body'}
     = select_tag 'item[delivery_method]', options_for_select( delivery_methods ), { class: 'select-box__body'}
+  %p.error-message__delivery-method

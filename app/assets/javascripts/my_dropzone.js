@@ -24,12 +24,12 @@ $(document).on('turbolinks:load', function() {
 
   $('#item-registration-form').submit(function(e) {
     e.preventDefault();
-    console.log(itemValidation());
+    // console.log(itemValidation());
     if (itemValidation() == false) {
       errorMessage();
+      $( "#item-submit").prop( "disabled", false );
     } else {
       let formDataAry = $(this).serializeArray();
-      console.log(formDataAry);
       let csrfToken = $('input[name="authenticity_token"]').val();
       // console.log(...formData.entries());
       let current_scrollY = $(window).scrollTop(); 
@@ -48,6 +48,12 @@ $(document).on('turbolinks:load', function() {
       })
 
     }
+    $( "#item-submit").prop( "disabled", false );
   });
+
+  // $( "#item-submit").change(function(){
+  //   console.log('変わった！');
+  //   console.log($( "#item-submit").prop( "disabled"));
+  // })
 
 });
