@@ -545,8 +545,15 @@
   }
 }
 
-// .item-new-wrapper {
-//   position: fixed;
-//   width: 100%;
-//   top: -200px;
-// }
+.error-message__image,
+.error-message__name,
+.error-message__details,
+.error-message__category,
+.error-message__condition,
+.error-message__delivery-fee,
+.error-message__delivery-method,
+.error-message__delivery-location,
+.error-message__delivery-term,
+.error-message__price {
+  color: #ea352d;
+}
