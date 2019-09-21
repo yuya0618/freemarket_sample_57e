@@ -1,2 +1,2 @@
 .select-box.select-box-top
-  = select_tag 'category_id', options_from_collection_for_select( children, :id, :name), {prompt: '---', class: 'search-box-group-form child_category'}
+  = select_tag '[q][category_children_id]', options_from_collection_for_select( children, :id, :name), {prompt: '---', class: 'search-box-group-form child_category'}

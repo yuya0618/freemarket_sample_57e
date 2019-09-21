@@ -19,7 +19,7 @@
           = fa_icon "list", class: "search-box-group-icon"
           %span
             カテゴリーを選択する
-        = f.collection_select :category_id_gteq, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form parent_category'}
+        = f.collection_select :category_id, Category.all.where(ancestry: nil),:id, :name, {prompt: '---'}, {class: 'search-box-group-form parent_category'}
       -# ブランド選択
       .search-box-group
         %label
@@ -35,6 +35,7 @@
           = fa_icon "expand", class: "search-box-group-icon"
           %span
             サイズを選択する
+        -# = f.select({ '並び替え','価格の安い順','価格の高い順','出品の新しい順'} , { selected: params[:q]},class:"sort-box" )
         %select.search-box-group-form.size-select
           %option
             すべて
@@ -105,3 +106,4 @@
         %input.search-box-btn-left{ type: "reset", value: "クリア"}
         = f.submit class: "search-box-btn-right"
 
+.hidden_info

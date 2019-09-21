@@ -26,31 +26,40 @@ $(document).on('turbolinks:load', function() {
     })
   });
 
-  // 親カテゴリーが入っている時に発火（２周目以降）
-  // $('.parent_category').val(function() {
-  //   let parentId = $('.parent_category').val();
-  //   console.log(parentId);
-  //   $.ajax({
-  //     url: '/items/searchChild',
-  //     type: "GET",
-  //     data: { parentId: parentId },
-  //     dataType: 'script'
-  //   })
+  // 親カテゴリーの値を取得（２周目以降）
+// let parentCategoryInfo = $('.parent_category_info').html();
+// // debugger;
+// console.log(parentCategoryInfo);
 
-  //   .done(function(){
-  //     console.log('doooone!!');
-  //   })
+// if (typeof parentCategoryInfo !== 'undefined' && parentCategoryInfo !== "  "){
+//   // 親カテゴリーが入っている時に発火（２周目以降）
+//   console.log('hoge');
+//   // $('.parent_category').val(parentCategoryInfo);
+//   //   console.log($('.parent_category'));
+//     let parentId = $('.parent_category').val(parentCategoryInfo);
+//     // parentId = Number(parentId);
+//     console.log(parentId);
+//     $.ajax({
+//       url: '/items/searchChild',
+//       type: "GET",
+//       data: { parentId: parentId },
+//       dataType: 'script'
+//     })
 
-  //   .fail(function(jqXHR, textStatus, errorThrown){
-  //     console.log('faaaaaail!!');
-  //     // alert('ファイルの取得に失敗しました。');
-  //     console.log("ajax通信に失敗しました");
-  //     console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
-  //     console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
-  //     console.log("errorThrown    : " + errorThrown.message); // 例外情報
-  //     // console.log("URL            : " + url);
-  //   })
-  // });
+//     .done(function(){
+//       console.log('doooone!!');
+//     })
+
+//     .fail(function(jqXHR, textStatus, errorThrown){
+//       console.log('faaaaaail!!');
+//       // alert('ファイルの取得に失敗しました。');
+//       console.log("ajax通信に失敗しました");
+//       console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+//       console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+//       console.log("errorThrown    : " + errorThrown.message); // 例外情報
+//       // console.log("URL            : " + url);
+//     })
+// };
 
   // 検索機能の子カテゴリー発火
   $(document).on('change', '.child_category', function() {

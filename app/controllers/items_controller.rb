@@ -97,6 +97,8 @@ class ItemsController < ApplicationController
   end
 
   def search
+    # binding.pry
+    @info = params[:q]
     add_breadcrumb params[:q][:name_or_details_cont]
     @category_parent = Category.all.where(ancestry: nil)
     @category_children = Category.all.where(ancestry: '1')
@@ -198,7 +200,7 @@ class ItemsController < ApplicationController
   end
 
   def brand_search2
-    @brands = Brand.where('name LIKE ?', "%#{params[:keyword]}%").limit(20)
+    @brands = Brand.where('name LIKE ?', "%#{params[:keyword]}%").limit(10)
     render 'brand_search.js.erb'
   end
 
