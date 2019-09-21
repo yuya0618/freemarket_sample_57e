@@ -66,15 +66,21 @@
 
       .header-bottom__right
         %ul.header-bottom__user-nav
-          %li.header-bottom__likes
-            = fa_icon 'heart', class: 'header-bottom__right-icon'
-            %span.header-bottom__item いいね！一覧
-          %li.header-bottom__notification
-            = fa_icon 'bell', class: 'header-bottom__right-icon'
-            %span.header-bottom__item お知らせ
-          %li.header-bottom__todo
-            = fa_icon 'check', class: 'header-bottom__right-icon'
-            %span.header-bottom__item やることリスト
-          %li.header-bottom__mypage
-            = fa_icon 'user-circle', class: 'header-bottom__right-icon'
-            =link_to "マイページ",users_path,class:"header-bottom__item"
+          -if user_signed_in?
+            %li.header-bottom__likes
+              = fa_icon 'heart', class: 'header-bottom__right-icon'
+              %span.header-bottom__item いいね！一覧
+            %li.header-bottom__notification
+              = fa_icon 'bell', class: 'header-bottom__right-icon'
+              %span.header-bottom__item お知らせ
+            %li.header-bottom__todo
+              = fa_icon 'check', class: 'header-bottom__right-icon'
+              %span.header-bottom__item やることリスト
+            %li.header-bottom__mypage
+              = fa_icon 'user-circle', class: 'header-bottom__right-icon'
+              =link_to "マイページ",users_path,class:"header-bottom__item"
+          -else
+            %li.header-bottom-button
+              = link_to "新規会員登録", signup_path,class:"header-bottom-button__resi "
+            %li.header-bottom-button
+              = link_to "ログイン", new_user_session_path,class:"header-bottom-button__login "

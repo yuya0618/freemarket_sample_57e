@@ -29,7 +29,18 @@
                   .item-box-body-num-like
                     %i.item-box-body-num-like-icon ♡
                     %span 18
+-# -binding.pry
+.hidden_info.parent_category_info
+  = @info[:category_id]
 
+.hidden_info.children_category_info
+  = @info[:category_children_id]
+
+  .hidden_info.gchild_category_info
+  = @info[:category_id_in]
+
+  -# .hidden_info.size_info
+  -# = @info[:category_id]
 
 .bread
   = render_breadcrumbs separator: ' > '

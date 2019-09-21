@@ -46,6 +46,20 @@
       display: flex;
       justify-content: space-between;
       margin-top: 8px;
+      &-button{
+        &__resi{
+          color: #fff;
+          background-color: tomato;
+          padding: 10px;
+          border-radius: 4px;
+        }
+        &__login{
+          padding: 10px;
+          border: 2px solid lightblue;
+          border-radius: 4px;
+          color: lightblue;
+        }
+      }
       &__nav {
         display: flex;
         li {
