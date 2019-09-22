@@ -40,7 +40,7 @@ class User < ApplicationRecord
   has_many :items
 
   # バリデーション
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email,presence: true
   validates :nickname, presence:true
   validates :firstname, presence:true

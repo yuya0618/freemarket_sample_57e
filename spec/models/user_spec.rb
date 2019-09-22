@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:nickname]).to include("を入力してください")
   end
+  
 
   it "is invalid without an email" do
     user = FactoryBot.build(:user, email: nil)
@@ -91,7 +92,7 @@ RSpec.describe User, type: :model do
   end
 
   it "is invalid when first name kana is not in katakana" do
-    user = FactoryBot.build(:user, family_name_kana: "めるかり")
+    user = FactoryBot.build(:user, firstname_kana: "めるかり")
     user.valid?
     expect(user.errors[:firstname_kana]).to include("はカナ文字を入力してください" )
   end
