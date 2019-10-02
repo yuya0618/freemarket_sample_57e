@@ -1,6 +1,6 @@
 # README
 
-
+[mercarierd.pdf](https://github.com/yuya0618/freemarket_sample_57e/files/3679634/mercarierd.pdf)
 
 ## usersテーブル
 |Column|Type|Options|
