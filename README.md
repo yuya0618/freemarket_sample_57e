@@ -6,6 +6,9 @@ Basic認証→　id：teame、pass：mercari
 パスワード: testuser  
 でログイン可能  
 
+![a4a31604cda7b46f7429aa380ce11cec](https://user-images.githubusercontent.com/52994356/66020712-fabf4a80-e522-11e9-8eb4-1af894032432.gif)
+
+
 [mercarierd.pdf](https://github.com/yuya0618/freemarket_sample_57e/files/3679634/mercarierd.pdf)
 
 ## usersテーブル
