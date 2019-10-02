@@ -1,10 +1,10 @@
 # README
 
-Basic認証→　id：teame、pass：mercari
+Basic認証→　id：teame、pass：mercari  
 
-メールアドレス: test@mail.com 
-パスワード: testuser
-でログイン可能 
+メールアドレス: test@mail.com  
+パスワード: testuser  
+でログイン可能  
 
 [mercarierd.pdf](https://github.com/yuya0618/freemarket_sample_57e/files/3679634/mercarierd.pdf)
 
